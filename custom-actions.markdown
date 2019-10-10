@@ -3,7 +3,9 @@ title: Custom Actions
 order: 10
 ---
 
-With Custom Actions, it is possible to string together a set of actions that are executed whenever a Webhook.site URL receives a request. The actions can extract data from the request and use it to send another request as well as modify the response. With this, you can connect different APIs together that aren't compatible.
+With Custom Actions, it is possible to string together a set of actions that are executed whenever a Webhook.site URL receives a request. The actions can extract data from the request and use it to send another request as well as modify the response. 
+
+With this, you can connect APIs that aren't compatible, convert a request to an email, and much more.
 
 ![Custom actions screenshot](/custom-actions.png)
 
