@@ -1,6 +1,6 @@
 ---
 title: API
-order: 10
+navigation_weight: 100
 ---
 
 The API doesn't require authentication and is relatively easy to use. 

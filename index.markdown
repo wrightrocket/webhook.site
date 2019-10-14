@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Webhook.site
-order: 0
+navigation_weight: 0
 ---
 
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/fredsted/webhook.site.svg)](https://hub.docker.com/r/fredsted/webhook.site)
@@ -19,6 +19,6 @@ The app was built with Laravel for the API and Angular.js for the frontend SPA.
 
 ## Donate
 
-* Patreon: https://www.patreon.com/webhooktester
+* [Patreon](https://www.patreon.com/webhooktester)
+* [Paypal](https://paypal.me/fredsted)
 * Bitcoin address: 1Maf64K9Wkpy7oBGEtqEda8H1H2drLSUuF
-* Paypal: https://paypal.me/fredsted

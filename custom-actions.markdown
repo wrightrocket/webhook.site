@@ -1,6 +1,6 @@
 ---
 title: Custom Actions
-order: 10
+navigation_weight: 400
 ---
 
 With Custom Actions, it is possible to string together a set of actions that are executed whenever a Webhook.site URL receives a request. The actions can extract data from the request and use it to send another request as well as modify the response. 

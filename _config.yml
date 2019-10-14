@@ -1,10 +1,10 @@
-title: ⚓️ Webhook.site
-email: webhook.site@webhook.site
+# Base theme: https://github.com/jekyll/minima
+
+title: ⚓️ Webhook.site Docs
+author: © Simon Fredsted
 description: ""
 baseurl: ""
 url: ""
-twitter_username: fredsted
-github_username:  fredsted
 
 # Build settings
 theme: minima
