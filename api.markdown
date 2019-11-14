@@ -3,9 +3,12 @@ title: API
 navigation_weight: 100
 ---
 
-The API doesn't require authentication and is relatively easy to use. 
+The Webhook.site API is public, free to use, doesn't require authentication and is relatively easy to use. 
+Please note that fair use guidelines and other limitations apply as described by the [Terms of Service](https://webhook.site/terms).
 
-At its core, Webhook.site takes your data (HTTP requests) and shows it back to you, and also letting you execute various actions based on the contents.
+At its core, Webhook.site takes your data (HTTP requests) and returns it back to you, and also letting you execute various actions based on the contents with [Custom Actions](/custom-actions.html).
+
+Base URL: `https://webhook.site`.
 
 ## 1 Tokens
 
@@ -13,7 +16,7 @@ At its core, Webhook.site takes your data (HTTP requests) and shows it back to y
 
 **POST** `/token`
 
-A token is a container for requests. You can create as many as you want. They expire after about a week, deleting all requests, too.
+A token is a container for requests. You can create as many as you want. They expire after about a week, deleting all requests, too. A token corresponds to a Webhook.site URL.
 
 #### Request
 
@@ -52,6 +55,8 @@ A token is a container for requests. You can create as many as you want. They ex
 
 **PUT** `/token/:id`
 
+Takes `?password=` parameter.
+
 *Request*
 
 [*See **POST** `/token`*](#11-create-token)
@@ -69,7 +74,7 @@ A token is a container for requests. You can create as many as you want. They ex
 *Request*
 
 ```json
-{"password": "hunter2"}
+{"password": "hunter2", "old_password": "hunter1"}
 ```
 
 *Response*
@@ -81,6 +86,8 @@ A token is a container for requests. You can create as many as you want. They ex
 **PUT** `/token/:id/alias`
 
 *[Premium]* Sets the alias for the token. (Can be used when creating requests.)
+
+Takes `?password=` parameter.
 
 *Request*
 
@@ -96,17 +103,21 @@ A token is a container for requests. You can create as many as you want. They ex
 
 **GET** `/token/:id`
 
+Takes `?password=` parameter.
+
 *Response*
 
 [*See **POST** `/token`*](#11-create-token)
 
-### 1.6 Delete token
+### 1.6 Delete token 
 
 **DELETE** `/token/:id`
 
+Takes `?password=` parameter.
+
 *Response*
 
-`200 No Content`
+`204 No Content`
 
 ## 2 Requests
 
@@ -116,9 +127,7 @@ A token is a container for requests. You can create as many as you want. They ex
 ***(any method)*** `/:tokenId/:statusCode` <br>
 ***(any method)*** `/:tokenId/(anything)`
 
-This request will be stored as a *request*.
-
-If valid `statusCode`, that HTTP status will be used in the response (instead of the default.)
+If `statusCode` is valid, that HTTP status will be used in the response (instead of the default.)
 
 Instead of `tokenId`, an alias can also be supplied.
 
@@ -224,4 +233,4 @@ If no ID, all requests related to the token will be deleted.
 
 *Response*
 
-`204 No content`
+`204 No Content`
