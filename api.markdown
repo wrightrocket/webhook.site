@@ -16,7 +16,9 @@ Base URL: `https://webhook.site`.
 
 **POST** `/token`
 
-A token is a container for requests. You can create as many as you want. They expire after about a week, deleting all requests, too. A token corresponds to a Webhook.site URL.
+A token is a container for requests, and corresponds to a Webhook.site URL.
+
+If there's no incoming requests for about a week, and the token is not upgraded to premium, the token is automatically deleted along with any other data.
 
 #### Request
 
