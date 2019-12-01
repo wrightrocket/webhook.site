@@ -9,18 +9,19 @@ WebhookScript is an extremely easy to use scripting language for executing actio
 
 ### Validate request
 
+In this example, we use a common method of verifying webhooks by taking a hash of its contents concatenated to a secret. It demonstrates the way WebhookScript can get various information about the request by using the `get_variable()` function, as well as string concatenation, hashing, if statements and returning responses with content, status codes and headers.
+
 ```javascript
+verification_secret = "JHRlc3RTY3JpcHRTZWNyZXQ";
+verification_challenge = get_variable("request.header.x-request-verification");
+verification_result = hash_sha256(get_variable('request.content') + verification_secret);
 
-verification_secret = "6eb50e0a-0b8f-4eea-aec3-7f5d270ff9b0";
-
-if (get_variable('request.header.X-Request-Verification') =! hash_sha256(get_variable('request.content') + verification_secret)) {
-  set_content("Invalid request");
-  set_status(401)
-} else {
-  set_content("OK")
-  set_status(200)
+if (!verification_challenge or verification_challenge != verification_result) {
+    respond("Invalid request", 500);
 }
 
+headers = ["X-Success: Yes", "X-Verification: "+verification_challenge];
+respond("Successful request", 200, headers);
 ```
 
 ## Syntax
@@ -48,19 +49,23 @@ These are the functions that can be used in your script, and includes various ut
 
 ### General
 
-`debug(*any* value)` - halts script and returns a value for debugging
+`debug(*any* value)` - halts script and immediately return a value for debugging
 
-`get_variable(*string* variable_name) : mixed` - gets a specific Webhook.site variable
+`get_variable(*string* variable_name) : mixed` - gets a specific Webhook.site Variable. Variables should be without the `$` format used in other actions, e.g. `request.header.x-request-verification`, `request.content`
+
+`respond(*string* content, *int* status, *array* headers)` - break script and immediately return a response
 
 `set_content(*string* content)` - sets the response content of the URL
 
-`set_header(*string* header_name, *string* header_value)` - sets or overwrites a response header of the URL
+`set_header(*string* header_name, *string* header_value)` - sets or overwrites a response header of the URL. Headers should be an array of strings e.g. `["X-Example: Value"]`
+
+`set_response(*string* content, *int* status, *array* headers)` - set response content, status and headers in single function
 
 `set_status(*number* status)` - sets the http status of the URL
 
 `set_variable(*string* variable_name, *string* variable_value)` - sets a variable for usage in a later (Script) action
 
-`variables() : array` - returns an array with all available Webhook.site variables
+`variables : array` - global variable containing an associative array with all available Webhook.site variables
 
 ### String
 
