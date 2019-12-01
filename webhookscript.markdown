@@ -11,8 +11,7 @@ WebhookScript is an extremely easy to use scripting language for executing actio
 
 In this example, we use a common method of verifying webhooks by taking a hash of its contents concatenated to a secret. It demonstrates the way WebhookScript can get various information about the request by using the `get_variable()` function, as well as string concatenation, hashing, if statements and returning responses with content, status codes and headers using `respond()`.
 
-#### ```javascript
-
+``javascript
 verification_secret = "JHRlc3RTY3JpcHRTZWNyZXQ";
 verification_challenge = get_variable("request.header.x-request-verification");
 verification_result = hash_sha256(get_variable('request.content') + verification_secret);
@@ -23,8 +22,7 @@ if (!verification_challenge or verification_challenge != verification_result) {
 
 headers = ["X-Success: Yes", "X-Verification: "+verification_challenge];
 respond("Successful request", 200, headers);
-
-#### ```
+```
 
 ## Syntax
 
