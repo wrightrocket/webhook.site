@@ -11,6 +11,10 @@ With this, you can connect APIs that aren't compatible, convert a request to an 
 
 ## Available actions
 
+### WebhookScript
+
+Executes custom scripts. [More information here](/webhookscript.html)
+
 ### Extract JSONPath
 
 This action runs a JSONPath query on the contents of a request. With it, you can extract any data from a JSON document and store it in a variable, which can then be used in a downstream action.
