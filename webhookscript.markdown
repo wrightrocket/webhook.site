@@ -49,11 +49,17 @@ These are the functions that can be used in your script, and includes various ut
 
 ### General
 
+#### `echo(*string* string)`
 
+Adds `string` to script debug output
 
-#### `debug(*any* value)`
+#### `dd(*any* value)`
 
 Halts script and immediately return a value for debugging
+
+#### `dump(*any* value)`
+
+Adds `value` to script debug output
 
 #### `get_variable(*string* variable_name) : mixed`
 
@@ -97,9 +103,17 @@ Returns md5 hash of value
 
 Returns sha256 hash of value
 
-#### `jsonpath(*string* json, *string* jsonpath) : string`
+#### `json_decode(*string* json) : array`
 
-Returns parses the *json* string using the JSONPath; multiple values are comma-separated
+Decodes `json` and returns an array
+
+#### `json_enccode(*array* array) : string`
+
+Takes an array and encodes it as a JSON string
+
+#### `json_path(*string* json, *string* jsonpath) : string`
+
+Returns parses the `json` string using the JSONPath; multiple values are comma-separated
 
 #### `regex_match(*regex* regex, *string* subject) : string`
 
