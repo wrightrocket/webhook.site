@@ -107,7 +107,7 @@ Returns sha256 hash of value
 
 Decodes `json` and returns an array
 
-#### `json_enccode(*array* array) : string`
+#### `json_encode(*array* array) : string`
 
 Takes an array and encodes it as a JSON string
 
