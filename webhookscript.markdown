@@ -55,7 +55,7 @@ Adds `string` to script debug output
 
 #### `dd(*any* value)`
 
-Halts script and immediately return a value for debugging
+Halts Custom Action execution and adds `value` to debug output
 
 #### `dump(*any* value)`
 
@@ -67,7 +67,7 @@ gets a specific Webhook.site Variable. Variables should be without the `$` forma
 
 #### `respond(*string* content, *int* status, *array* headers)`
 
-Break script and immediately return a response
+Halts Custom Action execution and return a response
 
 #### `set_content(*string* content)`
 
