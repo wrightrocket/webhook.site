@@ -65,6 +65,12 @@ Adds `value` to script debug output
 
 gets a specific Webhook.site Variable. Variables should be without the `$` format used in other actions. Examples: `request.header.x-request-verification`, `request.content`
 
+#### `request(*string* url, *string* content = '', *string* method = 'GET', *array* headers = []) : array`
+
+Sends a HTTP request and returns an array with the following keys: `content`, `status`, `headers`, `url`.
+
+The headers should be an array of strings in the form of `Header-Key: Value`.
+
 #### `respond(*string* content, *int* status, *array* headers)`
 
 Halts Custom Action execution and return a response
