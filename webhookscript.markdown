@@ -24,6 +24,68 @@ headers = ["X-Success: Yes", "X-Verification: "+verification_challenge];
 respond("Successful request", 200, headers);
 ```
 
+### Transform and resend
+
+In the following, an incoming request is JSON decoded to an array, transformed and sent to "Web Service 1". Then the output is saved and passed on to "Web Service 2" in XML format. Basic error handling and validation is demonstrated.
+
+```js
+// Configuration
+ws1_api_key = 'xxxxx';
+ws2_user_token = 'yyyyy';
+
+// Parse original request
+orig_req = json_decode(get_variable('request.content'));
+first_name = orig_req['firstName'];
+last_name = orig_req['lastName'];
+list_id = orig_req['listId'];
+group_id = orig_req['groupingId'];
+
+
+// Send request to Web Service 1
+ws1_url = 'https://ws1.example.com/3.0/lists/'+ list_id +'/interest-categories/'+ group_id +'/interests';
+ws1_content = '{"first_name": "'+ first_name +'", "last_name": "'+ last_name +'"}';
+ws1_response = request(
+  ws1_url,
+  ws1_content,
+  'POST',
+  ['Authorization: Basic '+ws1_api_key]
+)
+
+// Don't go further if the Web Service 1 step didn't succeed
+if (ws1_response['status'] != 200) {
+  echo(ws1_response['content']); // Log content to debug log
+  respond('Error', 500);
+}
+
+// Get a value from the Web Service 1 request
+ws1_group_id = ws1_content['id'];
+
+// Pass response on to Web Service 2 in XML format
+ws2_content = '<qdbapi>'+
+    '<usertoken>'+ ws2_user_token +'</usertoken>'+
+    '<listid>'+to_string(list_id)+'</listid>'+
+    '<field fid="7">'+ws1_group_id+'</field>'+
+  '</qdbapi>';
+ws2_response = request(
+  'https://ws2.example.com/db/zzzzzz',
+  ws2_content,
+  'POST', 
+  [
+    "Action: API_EditRecord", 
+    "Content-Type: application/xml"
+  ]
+);
+
+if (ws2_response['status'] != 200) {
+  echo(ws2_response['content']); // Log content to debug log
+  respond('Error', 500);
+}
+
+// Output the WS2 response content to debug output
+echo(ws2_response['content']);
+respond('OK', 200);
+```
+
 ## Syntax
 
 WebhookScript is based on [Primi](https://github.com/smuuf/primi) with a few extra additions and functions that are relevant to the flow of requests at Webhook.site. 
