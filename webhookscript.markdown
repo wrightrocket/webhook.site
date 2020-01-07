@@ -28,7 +28,7 @@ respond("Successful request", 200, headers);
 
 In the following, an incoming request is JSON decoded to an array, transformed and sent to "Web Service 1". Then the output is saved and passed on to "Web Service 2" in XML format. Basic error handling and validation is demonstrated.
 
-```js
+```javascript
 // Configuration
 ws1_api_key = 'xxxxx';
 ws2_user_token = 'yyyyy';
