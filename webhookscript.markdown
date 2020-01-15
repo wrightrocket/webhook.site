@@ -157,6 +157,10 @@ Sets the http status of the URL
 
 Sets a variable for usage in a later (Script) action
 
+#### `stop()`
+
+Stop executing current script.
+
 #### `variables : array`
 
 Global variable containing an associative array with all available Webhook.site variables
@@ -278,6 +282,10 @@ Returns true or false depending on whether *array* contains *needle*
 #### `array_copy(*array* array) : array`
 
 Returns a copy of *array*
+
+#### `array_diff(*array* array1, *array* array2) : array`
+
+Returns the items of array1 that are not present in array2 while keeping the array indices.
 
 #### `array_get(*array* array, *string/number* index, *any* default) : any` 
 
