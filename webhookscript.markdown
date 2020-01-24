@@ -183,10 +183,28 @@ Decodes `json` and returns an array
 
 Takes an array and encodes it as a JSON string
 
-#### `json_path(*string* json, *string* jsonpath) : string`
+#### `json_path(*string* json, *string* jsonpath, *bool* return_first = true) : string`
 
-Returns parses the `json` string using the JSONPath; multiple values are comma-separated
+Returns parses the `json` string using the JSONPath functionality.
 
+Per default, if there's just one match (e.g. if matching on a property value that's a string), this value is returned. To always return an array, set `return_first` to false. 
+
+```javascript
+dump(json_path('{"v": []}', 'v[*]', false))
+dump(json_path('{"v": []}', 'v[*]', true))
+// []
+// ""
+ 
+dump(json_path('{"v": ["item1"]}', 'v[*]', false))
+dump(json_path('{"v": ["item1"]}', 'v[*]', true))
+// [0: "item1"]
+// "item1"
+ 
+dump(json_path('{"v": ["item1", "item2"]}', 'v[*]', false))
+dump(json_path('{"v": ["item1", "item2"]}', 'v[*]', true))
+// [0: "item1", 1: "item2"]
+// [0: "item1", 1: "item2"]
+```
 #### `regex_match(*regex* regex, *string* subject) : string`
 
 Returns the first matching string, otherwise false
