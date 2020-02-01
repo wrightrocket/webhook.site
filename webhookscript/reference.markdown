@@ -4,7 +4,13 @@ nav_order: 100
 parent: WebhookScript
 ---
 
-# Language reference
+# Language Reference
+{: .no_toc }
+
+These are the functions that can be used in your script, and includes various utility functions and functions to interact with your Webhook.site URL.
+
+1. TOC
+{:toc}
 
 ## Syntax
 
@@ -51,6 +57,7 @@ f = "hello" == r"l{2}"; // true
 Both integer and float values are supported.
 
 Example usage:
+
 ```js
 a = 4 - 3; // 1
 b = a / 3; // 0.333...
@@ -67,6 +74,7 @@ c = a + " " + b; // "hello wóóórld!"
 ```
 
 ### Regex
+
 Regex data type exists for advanced string matching. It is defined using the `r"..."` literal *(a string literal prefixed with `r`)* and treated as PCRE (Perl-compatible) regular expressions *(the same as within PHP itself)* with Unicode mode enabled.
 
 Example usage:
@@ -77,6 +85,7 @@ c = a == b; // true
 ```
 
 ### Array
+
 Arrays are untyped *(PHP-style)* containers that can accomodate multiple values of different *(or same)* types. Optionally, array index can be defined for a value. By default, integer index starting from the lowest index found (or from `0`) is used, but strings can also be used.
 
 Example usage:
@@ -97,6 +106,7 @@ b = json_encode(["the_number": 123, "other_numbers": [42, 1337, 80085]])
 ```
 
 #### Ranges
+
 Simple way of defining ranges between numbers is provided via the `a..[s..]b` *range* syntax.
 
 - `a` is the **from** value.
@@ -116,6 +126,7 @@ d = _x.._z.._y; // (array) [0: 3, 1: 5]
 Return value of such "range literal" is a new *`array`* having values that are based on the range's parameters.
 
 ### Functions
+
 Function is a value type that represents *a "unit" of some self-contained logic*. In WebhookScript they have their own type and are treated as first-class citizens: they can be **stored inside variables** and **passed around** as such. Direct invocation of an anonymous function is supported, provided that the anonymous function's definition is enclosed in parentheses. A function *does capture* its surrounding variables.
 
 Example usage:
@@ -159,7 +170,7 @@ sub_3(1, 2); // Returns -1
 In addition to classical function invocation, WebhookScript additionaly supports [Uniform Function Call Syntax (UFCS)](https://en.wikipedia.org/wiki/Uniform_Function_Call_Syntax) as a way to call functions "on values". Essentially, it means that calling `foo(bar);` is ***equivalent*** to calling `bar.foo()`, or *- to provide an example with additional parameters -* that calling `foo(bar, 1, true, "something");` is ***equivalent*** to calling `bar.foo(1, true, "something")`.
 
 #### Value-type based inference of called function name
-When using chained function invocation, WebhookScript **interpreter will try to find the most fitting function to call**. "Most fitting" meaning that when the client calls `bar()` function on a value having the `string` type, WebhookScript will try to find and use the `string_bar()` first. If such function is not defined, only then will the interpreter use the original `bar()` function.
+When using chained function invocation, the **interpreter will try to find the most fitting function to call**. "Most fitting" meaning that when the client calls `bar()` function on a value having the `string` type, WebhookScript will try to find and use the `string_bar()` first. If such function is not defined, only then will the interpreter use the original `bar()` function.
 
 Consider this *a syntactic sugar* to make coding in WebhookScript a bit more user-friendly. Because of this the user is able to call `"something".length()` on a string the same way as calling `[1, 2, 3].length()` on an array, even though there are in fact two separate functions `string_length()` and `array_length()` invoked behind the scenes.
 

@@ -12,11 +12,7 @@ While the other actions like Extract Regex and Send Email allows you to create f
 
 ## Syntax
 
-WebhookScript is based on [Primi](https://github.com/smuuf/primi) with a few extra additions and functions that are relevant to the flow of requests at Webhook.site. 
-
-See also the [full language specification](https://github.com/smuuf/primi/blob/master/docs/language_reference.md).
-
-The syntax is very similar to PHP and JavaScript.
+The syntax is very similar to PHP and JavaScript. See also the [full language specification](/webhookscript/reference.html).
 
 ## Types
 

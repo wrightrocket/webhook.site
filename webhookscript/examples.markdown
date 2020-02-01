@@ -6,6 +6,8 @@ parent: WebhookScript
 
 # WebhookScript Examples
 
+Do you have a nice example to share with other users? Please contact [support@webhook.site](mailto:support@webhook.site) 😊
+
 ## Validate request
 
 In this example, we use a common method of verifying webhooks by taking a hash of its contents concatenated to a secret. It demonstrates the way WebhookScript can get various information about the request by using the `get_variable()` function, as well as string concatenation, hashing, if statements and returning responses with content, status codes and headers using `respond()`, which halts execution.
