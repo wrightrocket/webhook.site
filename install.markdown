@@ -1,10 +1,12 @@
 ---
-title: Installation
+title: Install
 order: 20
-navigation_weight: 300
+nav_order: 300
 ---
 
-You can choose to run Webhook.site either via Docker, or install it on a Web server with PHP7 support.
+# Installation
+
+You can choose to run the Open Source version of Webhook.site either via Docker, or install it on any Web server with PHP7 support. 
 
 ## Optional Features
 

@@ -1,7 +1,9 @@
 ---
 title: API
-navigation_weight: 100
+nav_order: 100
 ---
+
+# Webhook.site API
 
 The Webhook.site API is public, free to use, doesn't require authentication and is relatively easy to use. 
 Please note that fair use guidelines and other limitations apply as described by the [Terms of Service](https://webhook.site/terms).
@@ -59,11 +61,11 @@ If there's no incoming requests for about a week, and the token is not upgraded 
 
 Takes `?password=` parameter.
 
-*Request*
+#### Request
 
 [*See **POST** `/token`*](#11-create-token)
 
-*Response*
+#### Response
 
 [*See **POST** `/token`*](#11-create-token)
 
@@ -73,13 +75,13 @@ Takes `?password=` parameter.
 
 *[Premium]* Sets a password to view the requests of a token.
 
-*Request*
+#### Request
 
 ```json
 {"password": "hunter2", "old_password": "hunter1"}
 ```
 
-*Response*
+#### Response
 
 [*See **POST** `/token`*](#11-create-token)
 
@@ -91,13 +93,13 @@ Takes `?password=` parameter.
 
 Takes `?password=` parameter.
 
-*Request*
+#### Request
 
 ```json
 {"alias": "my-webhook"}
 ```
 
-*Response*
+#### Response
 
 [*See **POST** `/token`*](#11-create-token)
 
@@ -107,7 +109,7 @@ Takes `?password=` parameter.
 
 Takes `?password=` parameter.
 
-*Response*
+#### Response
 
 [*See **POST** `/token`*](#11-create-token)
 
@@ -117,7 +119,7 @@ Takes `?password=` parameter.
 
 Takes `?password=` parameter.
 
-*Response*
+#### Response
 
 `204 No Content`
 
@@ -149,7 +151,7 @@ Lists all request sent to a token.
 
 Takes `?password=` parameter.
 
-*Response*
+#### Response
 
 ```json
 {
@@ -191,7 +193,7 @@ Takes `?password=` parameter.
 
 **GET** `/token/:id/request/:id`
 
-*Response*
+#### Response
 
 ```json
 {
@@ -233,6 +235,6 @@ Deletes a request.
 
 If no ID, all requests related to the token will be deleted.
 
-*Response*
+#### Response
 
 `204 No Content`

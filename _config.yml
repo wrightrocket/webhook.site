@@ -1,12 +1,19 @@
 # Base theme: https://github.com/jekyll/minima
 
-title: ⚓️ Webhook.site Docs
+title: ⚓️ Webhook.site
 author: © Simon Fredsted
 description: ""
 baseurl: ""
 url: ""
 
+logo: logo.png
+
+aux_links:
+  "Github": "//github.com/fredsted/webhook.site"  
+  "Support": "//support.webhook.site"
+  "Back to Webhook.site": "//webhook.site"
+
 # Build settings
-theme: minima
+theme: just-the-docs
 plugins:
   - jekyll-feed
