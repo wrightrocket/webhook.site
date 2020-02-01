@@ -1,7 +1,6 @@
 ---
 title: Examples
 nav_order: 500
-has_children: true
 parent: WebhookScript
 ---
 
