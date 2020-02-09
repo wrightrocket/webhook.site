@@ -15,6 +15,8 @@ With this, you can connect APIs that aren't compatible, convert a request to an 
 
 ### WebhookScript
 
+!["WebhookScript" Custom Action screenshot](/webhookscript-action.png)
+
 Executes custom scripts. [More information here](/webhookscript.html)
 
 ### Extract JSONPath
@@ -53,3 +55,28 @@ This will send a email with variable contents from the Webhook.site cloud. Varia
 ### Modify Response
 
 This action can be used to modify the response of the Webhook.site URL based on the input.
+
+### Condition
+
+!["Condition" Custom Action screenshot](/condition-action.png)
+
+Useful if you need to validate that the request does or does not conform to certain criteria, the Condition action will either stop or continue based on a condition.
+
+In both the *input* and the *value* fields, variables will be replaced (including Global Variables from the Control Panel), so you can compare e.g. JSONPath or Regex values - or even values from a previous HTTP request that was sent. 
+
+Currently, two *actions* are provided: stop and continue. *Stop* will stop further action execution of the condition is a match. *Continue* will *only* continue further execution if the condition is a match, and otherwise stop.
+
+The following "operators" are available:
+
+* is equal to
+* is not equal to
+* starts with
+* ends with
+* contains
+* does not contain
+* is greater than
+* is greater than or equal to
+* is less than
+* is less than or equal to
+
+The "result" of the condition will be logged below the request details, so you can see what happened.
