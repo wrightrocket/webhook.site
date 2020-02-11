@@ -9,16 +9,30 @@ nav_order: 0
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/fredsted/webhook.site.svg)](https://hub.docker.com/r/fredsted/webhook.site)
 [![GitHub last commit](https://img.shields.io/github/last-commit/fredsted/webhook.site.svg)](https://github.com/fredsted/webhook.site/commits/master)
 
-With Webhook.site, you can easily test HTTP webhooks and other types of HTTP requests. 
+With [Webhook.site](https://webhook.site), you instantly get a unique, random URL that you can use to test and debug Webhooks and HTTP requests, as well as to create your own workflows using the [Custom Actions](/custom-actions.html) graphical editor or [WebhookScript](/webhookscript.html), a simple scripting language, to transform, validate and process HTTP requests. 
 
-A completely open-source version is available on [Github](https://github.com/fredsted/webhook.site), while https://webhook.site hosts a similar version, but with more features, some of them requiring a paid subscription.
+What are people using it for?
 
-Upon visiting the app, you get a random URL to send your requests and webhooks to, and they're all logged in the app – instantly. Check it out at [https://webhook.site](https://webhook.site). 
+* Testing Webhooks without needing an internet-facing Web server
+* Transforming Webhooks into other formats, and re-sending them to different systems
+* Connect different APIs that aren't compatible
+* Building contact forms that send emails
+* Instantly build APIs without needing infrastructure
 
 Built by Simon Fredsted ([@fredsted](https://twitter.com/fredsted)).
 
+## Open Source
+
+There are two versions of Webhook.site: 
+
+* The completely open-source, MIT-licensed version is available on [Github](https://github.com/fredsted/webhook.site), which can be self-hosted using e.g. Docker, is great for testing Webhooks, but doesn't include features like Custom Actions.
+
+* The cloud version at https://webhook.site which has more features, some of them requiring a paid subscription.
+
 ## Acknowledgements
 
-The app was built with [Laravel](https://laravel.com) for the API and Angular.js for the frontend SPA.
-
-WebhookScript based on [Primi](https://github.com/smuuf/primi) Copyright (c) Přemysl Karbula.
+* The app was built with [Laravel](https://laravel.com) for the API and Angular.js for the frontend SPA. 
+* WebhookScript based on [Primi](https://github.com/smuuf/primi) Copyright (c) Přemysl Karbula. 
+* The WebhookScript editor is using the [Ace](https://ace.c9.io). 
+* JSONPath extraction provided by [FlowCommunications](https://github.com/FlowCommunications/JSONPath). 
+* This documentation site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
