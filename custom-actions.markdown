@@ -43,10 +43,10 @@ Variables extracted previously can be used.
 
 The response of the request is stored in a series of variable names prefixed with a value of your choosing. The following variables are set after the request has been fired:
 
-* `$your_prefix$.content`
-* `$your_prefix$.status`
-* `$your_prefix$.headers`
-* `$your_prefix$.url`
+* `$your_prefix.content$` - response body content
+* `$your_prefix.status$` - response status code
+* `$your_prefix.headers$` - response headers
+* `$your_prefix.url$` - the URL the request was sent to
 
 ### Send Email
 
