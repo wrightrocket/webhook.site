@@ -50,6 +50,12 @@ Global variable (not a function) containing an associative array with all availa
 
 ## HTTP
 
+### query(***array*** form_values) : string
+
+Converts an associative array into a form-style string, like would be used for `application/x-www-form-urlencoded` requests or HTTP query strings.
+
+Example: `query(['country': 'Curaçao', 'population': 158665])` returns `country=Cura%C3%A7ao&population=158665`
+
 ### request(***string*** url, ***string*** content = '', ***string*** method = 'GET', ***array*** headers = []) : array
 
 Sends a HTTP request and returns an array with the following keys: `content`, `status`, `headers`, `url`.
@@ -66,6 +72,16 @@ if (decoded) {
   value = decoded['value']
 }
 ```
+
+### url_decode(***string*** value) : string
+
+Returns an URL-decoded version of *value*.
+
+### url_encode(***string*** value) : string
+
+Returns an URL-encoded version of *value*.
+
+Example: `url_encode('here\'s a value')` returns `here%27s+a+value`.
 
 ## Flow Control and Responses
 
