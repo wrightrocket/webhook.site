@@ -25,6 +25,17 @@ headers = ["X-Success: Yes", "X-Verification: "+verification_challenge];
 respond("Successful request", 200, headers);
 ```
 
+## Send a x-www-form-urlencoded request
+
+```javascript
+content = query([
+    'country': 'Curaçao', 
+    'population': 158665
+])
+headers = ['Content-Type: application/x-www-form-urlencoded'];
+response = request('https://example.com', content, 'POST', headers);
+```
+
 ## Transform and resend
 
 In the following, an incoming request is JSON decoded to an array, transformed and sent to "Web Service 1". Then the output is saved and passed on to "Web Service 2" in XML format. Basic error handling and validation is demonstrated.
@@ -101,3 +112,4 @@ if (ws2_response['status'] != 200) {
 echo(ws2_response['content'])
 respond('OK', 200)
 ```
+
