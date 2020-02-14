@@ -113,3 +113,95 @@ echo(ws2_response['content'])
 respond('OK', 200)
 ```
 
+## Telegram bot
+
+The Messaging service Telegram allows bots using their API. The general principle is this:
+
+1. Create a Bot using the /newbot command sent to the BotFather Telegram User
+2. Use the token to send an API request and create a Webhook subscription (using your Webhook.site URL)
+3. Add some logic using WebhookScript!
+
+Note: Everywhere you see `TELEGRAM_TOKEN`, replace it with the token you got from BotFather!
+
+### Subscribe to Webhook
+
+Assuming you've already created a bot, you create the Webhook subscription by going to the following URL in your browser, changing the token and the Webhook.site URL to your own:
+
+https://api.telegram.org/bot`TELEGRAM_TOKEN`/setWebhook?url=`https://webhook.site/a1351781-bd17-c542-d1c3-00c58cfbba25`
+
+You should get a result similar to this:
+
+```json
+{
+  "ok": true,
+  "result": true,
+  "description": "Webhook was set"
+}
+```
+
+### First incoming Webhook
+
+When you add your bot to your contacts list, Telecom automatically sends a `/start` command, which will trigger a Webhook similar to this:
+
+```json
+{
+  "update_id": 176446573,
+  "message": {
+    "message_id": 1,
+    "from": {
+      "id": 2346545645,
+      "is_bot": false,
+      "first_name": "Simon",
+      "language_code": "en"
+    },
+    "chat": {
+      "id": 34534673234,
+      "first_name": "Simon",
+      "type": "private"
+    },
+    "date": 1581706369,
+    "text": "/start",
+    "entities": [
+      {
+        "offset": 0,
+        "length": 6,
+        "type": "bot_command"
+      }
+    ]
+  }
+}
+```
+
+From this, we can pretty easily build a little script that answers to commands, like this:
+
+```javascript
+// Telegram API token
+token = 'TELEGRAM_TOKEN';
+
+content = json_decode(var('$request.content$'));
+msg = content['message']['text'];
+
+// Default message
+response = "Couldn't come up with anything witty.";
+
+if (msg == "How's it going?") {
+    response = 'Pretty good.'
+}
+if (msg == "How's the weather?") {
+    response = 'Raining.'
+}
+if (msg == "/start") {
+    response = "Hi! I'm WebhookBot."
+}
+
+// Send a JSON request to the Telegram API using the chat ID and the response message
+json = [
+    'chat_id': content['message']['chat']['id'],
+    'text': response
+];
+request('https://api.telegram.org/bot{}/sendMessage'.format(token), json_encode(json), 'POST');
+```
+
+!["WebhookScript" Telegram Bot screenshot](/webhookscript/example-telegram-bot.png)
+
+And that's it! Congratulations on your bot. It's not very smart, but from here, the possibilities are endless!
