@@ -121,19 +121,19 @@ respond('OK', 200)
 
 The Messaging service Telegram allows bots using their API. The general principle is this:
 
-1. Create a Bot using the /newbot command sent to the BotFather Telegram User
-2. Use the token to send an API request and create a Webhook subscription (using your Webhook.site URL)
+1. [Create a Bot using the /newbot command](https://core.telegram.org/bots#6-botfather) sent to the *BotFather* Telegram User
+2. Using the bot token sent from *BotFather*, use the Telegram API to [create a Webhook subscription](https://core.telegram.org/bots/api#setwebhook) (using your Webhook.site URL)
 3. Add some logic using WebhookScript!
 
 Note: Everywhere you see `TELEGRAM_TOKEN`, replace it with the token you got from BotFather!
 
 ### Subscribe to Webhook
 
-Assuming you've already created a bot, you create the Webhook subscription by going to the following URL in your browser, changing the token and the Webhook.site URL to your own:
+To create the Webhook subscription, change the token and the Webhook.site URL to your own and go to the following URL in your browser:
 
-https://api.telegram.org/bot`TELEGRAM_TOKEN`/setWebhook?url=`https://webhook.site/a1351781-bd17-c542-d1c3-00c58cfbba25`
+https://api.telegram.org/bot**TELEGRAM_TOKEN**/setWebhook?url=**https://webhook.site/a1351781**
 
-You should get a result similar to this:
+You should get a response similar to this:
 
 ```json
 {
@@ -145,7 +145,7 @@ You should get a result similar to this:
 
 ### First incoming Webhook
 
-When you add your bot to your contacts list, Telecom automatically sends a `/start` command, which will trigger a Webhook similar to this:
+When you add your bot to your Telegram contacts list, Telegram automatically sends a `/start` command to the bot, which triggers a Webhook similar to this:
 
 ```json
 {
@@ -176,7 +176,9 @@ When you add your bot to your contacts list, Telecom automatically sends a `/sta
 }
 ```
 
-From this, we can pretty easily build a little script that answers to commands, like this:
+You should be able to see this in the Webhook.site requests list.
+
+From this, we have all the parts needed to build a script that answers to commands:
 
 ```javascript
 // Telegram API token

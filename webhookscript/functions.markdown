@@ -12,6 +12,40 @@ These are the functions that can be used in your script, and includes various ut
 1. TOC
 {:toc}
 
+## Chaining
+
+Functions can be chained directly to a primitive (strings, numbers, arrays).
+
+These two statements are equivalent:
+
+```javascript
+'Hello World'.echo()
+```
+
+```javascript
+echo('Hello World')
+```
+
+They can even be chained, for example:
+
+```javascript
+'Hello World'.hash('md5').echo() 
+```
+
+Read more about functions in the [reference](/webhookscript/reference.html#functions).
+
+## Custom functions
+
+Define your own functions like this:
+
+```javascript
+function sub(a, b) {
+    return a - b;
+}
+```
+
+Read more about functions in the [reference](/webhookscript/reference.html#functions).
+
 ## Debugging and output
 
 ### echo(***string*** string)
@@ -111,13 +145,13 @@ Sets the HTTP response status of the current URL.
 
 ## String
 
-### hash_md5(***string/number*** value) : string
+### hash(***string/number*** value, ***string*** algo) : string
 
-Returns md5 hash of value
+Returns a hashed version of `value` using the `algo` algorithm.
 
-### hash_sha256(***string/number*** value) : string
+`hash('md5', 'hello world')` returns `5eb63bbbe01eeed093cb22bb8f5acdc3`.
 
-Returns sha256 hash of value
+The following algorithms are available: `md2`, `md4`, `md5`, `sha1`, `sha224`, `sha256`, `sha384`, `sha512/224`, `sha512/256`, `sha512`, `sha3-224`, `sha3-256`, `sha3-384`, `sha3-512`, `ripemd128`, `ripemd160`, `ripemd256`, `ripemd320`, `whirlpool`, `tiger128,3`, `tiger160,3`, `tiger192,3`, `tiger128,4`, `tiger160,4`, `tiger192,4`, `snefru`, `snefru256`, `gost`, `gost-crypto`, `adler32`, `crc32`, `crc32b`, `fnv132`, `fnv1a32`, `fnv164`, `fnv1a64`, `joaat`, `haval128,3`, `haval160,3`, `haval192,3`, `haval224,3`, `haval256,3`, `haval128,4`, `haval160,4`, `haval192,4`, `haval224,4`, `haval256,4`, `haval128,5`, `haval160,5`, `haval192,5`, `haval224,5`, `haval256,5`.
 
 ### json_decode(***string*** json) : array
 
