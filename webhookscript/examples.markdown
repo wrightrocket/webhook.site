@@ -186,8 +186,6 @@ token = 'TELEGRAM_TOKEN';
 
 content = json_decode(var('$request.content$'));
 msg = content['message']['text'];
-
-// Default message
 response = "Couldn't come up with anything witty.";
 
 if (msg == "How's it going?") {
@@ -196,17 +194,27 @@ if (msg == "How's it going?") {
 if (msg == "How's the weather?") {
     response = 'Raining.'
 }
+if (msg == r"You're (.*)") {
+    match = regex_extract_first(r"You're (.*)", msg)
+    response = 'No, YOU are {}'.format(match);
+}
 if (msg == "/start") {
     response = "Hi! I'm WebhookBot."
 }
 
-// Send a JSON request to the Telegram API using the chat ID and the response message
+url = 'https://api.telegram.org/bot{}/sendMessage'.format(token)
 json = [
     'chat_id': content['message']['chat']['id'],
     'text': response
 ];
-request('https://api.telegram.org/bot{}/sendMessage'.format(token), json_encode(json), 'POST');
+request(url, json_encode(json), 'POST');
 ```
+
+Things to note:
+
+* The API token is added to the script, but could also have been saved in Global Variables in Control Panel and fetched out with the `var()` function.
+* The third if-statement uses regex matching to provide a dynamic response. Someone typing "You're a bot" would receive "No, YOU are a bot"
+* Finally, we JSON encode a WebhookScript array and send it using the `request()` function.
 
 Simply copy this script into a WebhookScript Custom Action (remember to change the token!), and click Save Action.
 
