@@ -184,9 +184,9 @@ dump(json_path('{"v": ["item1", "item2"]}', 'v[*]'))
 // [0: "item1", 1: "item2"]
 ```
 
-### regex_extract(***regex*** regex, ***string*** subject) : string
+### regex_extract(***regex*** regex, ***string*** subject) : array/false
 
-Returns the matching string and all match groups as an array.
+Returns the matching string and all match groups as an array, and `false` on failure.
 
 ```javascript
 input = "You're a good bot"
@@ -196,9 +196,9 @@ output = regex_extract(r"You're (\w) (.*)", input)
 dump(output) // [0: "You're a good bot", 1: "a", 2: "good bot"]
 ```
 
-### regex_extract_first(***regex*** regex, ***string*** subject) : string
+### regex_extract_first(***regex*** regex, ***string*** subject) : string/false
 
-Returns the first match group of a regex.
+Returns the first match group of a regex, and `false` on failure.
 
 ```javascript
 input = "You're a good bot"
@@ -208,7 +208,7 @@ output = regex_extract(r"You're (.*)", input)
 dump(output) // "a good bot"
 ```
 
-### regex_match(***regex*** regex, ***string*** subject) : string
+### regex_match(***regex*** regex, ***string*** subject) : string/false
 
 Returns the first matching string, otherwise false.
 
