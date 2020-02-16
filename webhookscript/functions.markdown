@@ -215,7 +215,7 @@ Returns the first matching string, otherwise false.
 ```javascript
 input = "You're a good bot"
 
-output = regex_match(r"You're (.*)", input)
+output = regex_match(r"You're .*", input)
 
 dump(output) // "You're a good bot"
 ```
