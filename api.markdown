@@ -4,6 +4,7 @@ nav_order: 100
 ---
 
 # Webhook.site API
+{: .no_toc }
 
 The Webhook.site API is public, free to use, doesn't require authentication and is relatively easy to use. 
 Please note that fair use guidelines and other limitations apply as described by the [Terms of Service](https://webhook.site/terms).
@@ -12,15 +13,18 @@ At its core, Webhook.site takes your data (HTTP requests) and returns it back to
 
 Base URL: `https://webhook.site`.
 
-## 1 Tokens
+1. TOC
+{:toc}
 
-### 1.1 Create token
+## Tokens
+
+### Create token/URL
 
 **POST** `/token`
 
 A token is a container for requests, and corresponds to a Webhook.site URL.
 
-If there's no incoming requests for about a week, and the token is not upgraded to premium, the token is automatically deleted along with any other data.
+After creating your token, the URL at `https://webhook.site/{token.uuid}` becomes accessible.
 
 #### Request
 
@@ -55,7 +59,9 @@ If there's no incoming requests for about a week, and the token is not upgraded 
 }
 ```
 
-### 1.2 Update token
+Note about expiry: If there's no incoming requests for about a week, and the token is not upgraded to premium, the token is automatically deleted along with any other data.
+
+### Update token
 
 **PUT** `/token/:id`
 
@@ -69,7 +75,7 @@ Takes `?password=` parameter.
 
 [*See **POST** `/token`*](#11-create-token)
 
-### 1.3 Set password [P]
+### Set password [P]
 
 **PUT** `/token/:id/password`
 
@@ -85,7 +91,7 @@ Takes `?password=` parameter.
 
 [*See **POST** `/token`*](#11-create-token)
 
-### 1.4 Set alias [P]
+### Set alias [P]
 
 **PUT** `/token/:id/alias`
 
@@ -103,7 +109,7 @@ Takes `?password=` parameter.
 
 [*See **POST** `/token`*](#11-create-token)
 
-### 1.5 Get token
+### Get token
 
 **GET** `/token/:id`
 
@@ -113,7 +119,7 @@ Takes `?password=` parameter.
 
 [*See **POST** `/token`*](#11-create-token)
 
-### 1.6 Delete token 
+### Delete token 
 
 **DELETE** `/token/:id`
 
@@ -123,9 +129,9 @@ Takes `?password=` parameter.
 
 `204 No Content`
 
-## 2 Requests
+## Requests
 
-### 2.1 Create request
+### Create request
 
 ***(any method)*** `/:tokenId` <br>
 ***(any method)*** `/:tokenId/:statusCode` <br>
@@ -143,7 +149,7 @@ Instead of `tokenId`, an alias can also be supplied.
 
 *(The default response of the Token.)*
 
-### 2.2 Get requests
+### Get requests
 
 **GET** `/token/:id/requests`
 
@@ -189,7 +195,7 @@ Takes `?password=` parameter.
 }
 ```
 
-### 2.3 Get single request
+### Get single request
 
 **GET** `/token/:id/request/:id`
 
@@ -221,13 +227,13 @@ Takes `?password=` parameter.
 }
 ```
 
-### 2.4 Get raw request content
+### Get raw request content
 
 **GET** `/token/:id/request/:id/raw`
 
 Returns the request as a response (body, content-type.)
 
-### 2.5 Delete request
+### Delete request
 
 **DELETE** `/token/:tokenId/request/(:id)`
 

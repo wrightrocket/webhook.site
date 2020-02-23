@@ -163,7 +163,7 @@ Takes an array and encodes it as a JSON string
 
 ### json_path(***string*** json, ***string*** jsonpath, ***bool*** return_first = true) : string
 
-Returns parses the `json` string using the JSONPath functionality.
+Returns the result of a `json` string parsed using the [JSONPath](/custom-actions.html#extract-jsonpath) functionality.
 
 Per default, if there's just one match (e.g. if matching on a property value that's a string), this value is returned. To always return an array, set `return_first` to false. 
 

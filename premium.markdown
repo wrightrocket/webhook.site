@@ -7,7 +7,7 @@ nav_order: 390
 
 With Webhook.site Premium, you get more features that allows you to do more with your URL, as well as keep it private.
 
-[Click here to sign up.](https://webhook.site/register)
+[Click here to subscribe](https://webhook.site/register){: .btn .btn-blue }
 
 ## Feature List
 

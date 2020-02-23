@@ -23,7 +23,41 @@ Executes custom scripts. [More information here](/webhookscript.html)
 
 This action runs a JSONPath query on the contents of a request. With it, you can extract any data from a JSON document and store it in a variable, which can then be used in a downstream action.
 
-JSONPath is very similar to the `jq` commandline utility. 
+JSONPath is very similar to the `jq` commandline utility.
+
+#### JSONPath Examples
+
+JSONPath                  | Result
+--------------------------|-------------------------------------
+`$.store.books[*].author` | the authors of all books in the store
+`$..author`                | all authors
+`$.store..price`           | the price of everything in the store.
+`$..books[2]`              | the third book
+`$..books[(@.length-1)]`   | the last book in order.
+`$..books[-1:]`            | the last book in order.
+`$..books[0,1]`            | the first two books
+`$..books[:2]`             | the first two books
+`$..books[::2]`            | every second book starting from first one
+`$..books[1:6:3]`          | every third book starting from 1 till 6
+`$..books[?(@.isbn)]`      | filter all books with isbn number
+`$..books[?(@.price<10)]`  | filter all books cheapier than 10
+`$..*`                     | all elements in the data (recursively extracted)
+
+
+#### JSONPath Syntax
+
+Symbol                | Description
+----------------------|-------------------------
+`$`                   | The root object/element (not strictly necessary)
+`@`                   | The current object/element
+`.` or `[]`           | Child operator
+`..`                  | Recursive descent
+`*`                   | Wildcard. All child elements regardless their index.
+`[,]`                 | Array indices as a set
+`[start:end:step]`    | Array slice operator borrowed from ES4/Python.
+`?()`                 | Filters a result set by a script expression
+`()`                  | Uses the result of a script expression as the index
+
 
 For more details on what's possible with JSONPath, [take a look at the docs](https://github.com/FlowCommunications/JSONPath#jsonpath-examples).
 
