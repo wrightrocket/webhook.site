@@ -39,12 +39,9 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 
 ## 25 Feburary 2019
 
+* New feature: It's now possible to receive emails, which are treated like Webhooks – so you can automate emails with Custom Actions on Webhook.site. You can also test email deliverability using DKIM, DMARC and SPF validation.
 * JSON formatting is now always enabled per default.
 * The requests view is cleared after deleting the last request, and the tutorial text is shown.
-
-## 25 Feburary 2019
-
-* New feature: It's now possible to receive emails, which are treated like Webhooks – so you can automate emails with Custom Actions on Webhook.site. You can also test email deliverability using DKIM, DMARC and SPF validation.
 
 ## 16 Feburary 2019
 
