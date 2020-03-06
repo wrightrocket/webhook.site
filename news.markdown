@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 6 March 2019
+
+* New feature: Extract XPath Custom Action with accompanying xpath() WebhookScript function. [Read more.](/custom-actions.html#extract-xpath)
+
 ## 29 Feburary 2019
 
 * Values are no longer required for Condition actions, so it's possible to compare an empty string or missing value.

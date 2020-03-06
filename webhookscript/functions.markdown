@@ -276,6 +276,27 @@ Converts a regex string to a regex type
 
 Returns ***value*** as string 
 
+### xpath(***string*** xpath, ***string*** input)
+
+Returns the result of an XPath query on XML document `input`.
+
+Given input of:
+
+```
+<?xml version="1.0"?>
+<organization name="ExampleCo">
+  <employees>
+    <employee id="1">Jack</employee>
+    <employee id="2">Ann</employee>
+  </employees>
+</organization>
+```
+
+* `xpath(var('$request.content$'), '//employee[1]') // returns "Jack"`
+* `var('$request.content$').xpath('//employee[1]') // returns "Jack"`
+
+[More information and examples regarding XPath](/custom-actions.html#extract-xpath).
+
 ## Math and Numbers
 
 ### abs(***number*** number) : number
