@@ -276,11 +276,11 @@ Converts a regex string to a regex type
 
 Returns ***value*** as string 
 
-### xpath(***string*** xpath, ***string*** input)
+### xpath(***string*** xpath, ***string*** input): string/null
 
-Returns the result of an XPath query on XML document `input`.
+Returns the first result of an XPath query on XML document `input`.
 
-Given input of:
+Given a request with the following content:
 
 ```
 <?xml version="1.0"?>
@@ -294,6 +294,27 @@ Given input of:
 
 * `xpath(var('$request.content$'), '//employee[1]') // returns "Jack"`
 * `var('$request.content$').xpath('//employee[1]') // returns "Jack"`
+
+[More information and examples regarding XPath](/custom-actions.html#extract-xpath).
+
+### xpath_all(***string*** xpath, ***string*** input): string/null
+
+Returns the results of an XPath query on XML document `input` as an array.
+
+Given a request with the following content:
+
+```
+<?xml version="1.0"?>
+<organization name="ExampleCo">
+  <employees>
+    <employee id="1">Jack</employee>
+    <employee id="2">Ann</employee>
+  </employees>
+</organization>
+```
+
+* `xpath_all(var('$request.content$'), '//employee]') // returns [0: "Jack", 1: "Ann"]`
+* `var('$request.content$').xpath('//employee') // returns [0: "Jack", 1: "Ann"]`
 
 [More information and examples regarding XPath](/custom-actions.html#extract-xpath).
 
