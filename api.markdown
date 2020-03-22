@@ -65,7 +65,7 @@ Note about expiry: If there's no incoming requests for about a week, and the tok
 
 ### Update token
 
-**PUT** `/token/:id`
+**PUT** `/token/:token_id`
 
 Takes `?password=` parameter.
 
@@ -79,7 +79,7 @@ Takes `?password=` parameter.
 
 ### Set password [P]
 
-**PUT** `/token/:id/password`
+**PUT** `/token/:token_id/password`
 
 *[Premium]* Sets a password to view the requests of a token.
 
@@ -95,7 +95,7 @@ Takes `?password=` parameter.
 
 ### Set alias [P]
 
-**PUT** `/token/:id/alias`
+**PUT** `/token/:token_id/alias`
 
 *[Premium]* Sets the alias for the token. (Can be used when creating requests.)
 
@@ -113,7 +113,7 @@ Takes `?password=` parameter.
 
 ### Get token
 
-**GET** `/token/:id`
+**GET** `/token/:token_id`
 
 Takes `?password=` parameter.
 
@@ -123,7 +123,7 @@ Takes `?password=` parameter.
 
 ### Delete token 
 
-**DELETE** `/token/:id`
+**DELETE** `/token/:token_id`
 
 Takes `?password=` parameter.
 
@@ -153,7 +153,7 @@ Instead of `tokenId`, an alias can also be supplied.
 
 ### Get requests
 
-**GET** `/token/:id/requests`
+**GET** `/token/:token_id/requests`
 
 Lists all request sent to a token. 
 
@@ -199,7 +199,7 @@ Takes `?password=` parameter.
 
 ### Get single request
 
-**GET** `/token/:id/request/:id`
+**GET** `/token/:token_id/request/:request_id`
 
 #### Response
 
@@ -231,13 +231,13 @@ Takes `?password=` parameter.
 
 ### Get raw request content
 
-**GET** `/token/:id/request/:id/raw`
+**GET** `/token/:token_id/request/:request_id/raw`
 
 Returns the request as a response (body, content-type.)
 
 ### Delete request
 
-**DELETE** `/token/:tokenId/request/(:id)`
+**DELETE** `/token/:token_id/request/(:request_id)`
 
 Deletes a request. 
 
