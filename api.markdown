@@ -171,7 +171,7 @@ Takes `?password=` parameter.
       "hostname": "webhook.site",
       "method": "POST",
       "user_agent": "Paw\/3.1.8 (Macintosh; OS X\/10.14.6) GCDHTTPRequest",
-      "content": "{"first_name\":\"Arch\",\"last_name\":\"Weber\"}",
+      "content": "{\"first_name\":\"Arch\",\"last_name\":\"Weber\"}",
       "query": {
         "action": "create"
       },
@@ -211,7 +211,7 @@ Takes `?password=` parameter.
   "hostname": "webhook.site",
   "method": "POST",
   "user_agent": "Paw\/3.1.8 (Macintosh; OS X\/10.14.6) GCDHTTPRequest",
-  "content": "{"first_name\":\"Arch\",\"last_name\":\"Weber\"}",
+  "content": "{\"first_name\":\"Arch\",\"last_name\":\"Weber\"}",
   "query": {
     "action": "create"
   },
