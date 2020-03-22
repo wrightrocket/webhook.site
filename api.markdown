@@ -18,11 +18,13 @@ Base URL: `https://webhook.site`.
 
 ## Tokens
 
-### Create token/URL
+A **token** is a container for incoming requests and emails, and corresponds to a Webhook.site URL or Email. A **token ID** is a 36 character UUID consisting of hexadecimal characters and dashes.
+
+Simply, the token ID is the part after `https://webhook.site/` in the URL, or before `@email.webhook.site` in the email address.
+
+### Create token
 
 **POST** `/token`
-
-A token is a container for requests, and corresponds to a Webhook.site URL.
 
 After creating your token, the URL at `https://webhook.site/{token.uuid}` becomes accessible.
 
