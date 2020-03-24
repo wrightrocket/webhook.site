@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 24 March 2019
+
+* Fix: It's now possible to test Send Email actions before creating them. Prior to this, the Test button would not do anything for the Send Email action.
+
 ## 6 March 2019
 
 * New feature: Extract XPath Custom Action with accompanying xpath() WebhookScript function. [Read more.](/custom-actions.html#extract-xpath)
