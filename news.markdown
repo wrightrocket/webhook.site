@@ -24,6 +24,7 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 
 ## 24 March 2019
 
+* New feature: API Keys can now be created so you can use the API with URLs that have the "Require Authentication" or "Password" options set.
 * Fix: It's now possible to test Send Email actions before creating them. Prior to this, the Test button would not do anything for the Send Email action.
 
 ## 6 March 2019

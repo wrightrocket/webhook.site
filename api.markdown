@@ -13,8 +13,24 @@ At its core, Webhook.site takes your data (HTTP requests) and returns it back to
 
 Base URL: `https://webhook.site`.
 
+We recommend that you set the Accept header to `application/json`.
+
 1. TOC
 {:toc}
+
+## Authentication
+
+While most functions in the API work without any authentication whatsoever, some endpoints do require authentication, or will return a `401 Unauthorized` status code.
+
+### API Key
+
+An API Key can be generated in the Control Panel, and provides access to Tokens that are either a) password protected or b) require login.
+
+To specify an API Key in a request, use a HTTP header: `Api-Key: [your API Key]`
+
+### Password
+
+If you have enabled password authentication on a Webhook.site URL/Token, you can use the `?password=[your password]` query string.
 
 ## Tokens
 
@@ -65,9 +81,9 @@ Note about expiry: If there's no incoming requests for about a week, and the tok
 
 ### Update token
 
-**PUT** `/token/:token_id`
+* Can require authentication.
 
-Takes `?password=` parameter.
+**PUT** `/token/:token_id`
 
 #### Request
 
@@ -77,11 +93,14 @@ Takes `?password=` parameter.
 
 [*See **POST** `/token`*](#11-create-token)
 
-### Set password [P]
+### Set password (Premium)
+
+* Can require authentication.
+* Requires user with Premium upgrade.
 
 **PUT** `/token/:token_id/password`
 
-*[Premium]* Sets a password to view the requests of a token.
+Sets a password to view the requests of a token.
 
 #### Request
 
@@ -93,13 +112,14 @@ Takes `?password=` parameter.
 
 [*See **POST** `/token`*](#11-create-token)
 
-### Set alias [P]
+### Set alias (Premium)
+
+* Can require authentication.
+* Requires user with Premium upgrade.
 
 **PUT** `/token/:token_id/alias`
 
-*[Premium]* Sets the alias for the token. (Can be used when creating requests.)
-
-Takes `?password=` parameter.
+Sets the alias for the token. (Can be used when creating requests.)
 
 #### Request
 
@@ -113,9 +133,9 @@ Takes `?password=` parameter.
 
 ### Get token
 
-**GET** `/token/:token_id`
+* Can require authentication.
 
-Takes `?password=` parameter.
+**GET** `/token/:token_id`
 
 #### Response
 
@@ -123,9 +143,9 @@ Takes `?password=` parameter.
 
 ### Delete token 
 
-**DELETE** `/token/:token_id`
+* Can require authentication.
 
-Takes `?password=` parameter.
+**DELETE** `/token/:token_id`
 
 #### Response
 
@@ -153,11 +173,11 @@ Instead of `tokenId`, an alias can also be supplied.
 
 ### Get requests
 
+* Can require authentication.
+
 **GET** `/token/:token_id/requests`
 
 Lists all request sent to a token. 
-
-Takes `?password=` parameter.
 
 #### Response
 
@@ -199,6 +219,8 @@ Takes `?password=` parameter.
 
 ### Get single request
 
+* Can require authentication.
+
 **GET** `/token/:token_id/request/:request_id`
 
 #### Response
@@ -231,11 +253,15 @@ Takes `?password=` parameter.
 
 ### Get raw request content
 
+* Can require authentication.
+
 **GET** `/token/:token_id/request/:request_id/raw`
 
 Returns the request as a response (body, content-type.)
 
 ### Delete request
+
+* Can require authentication.
 
 **DELETE** `/token/:token_id/request/(:request_id)`
 
