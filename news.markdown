@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 28 March 2019
+
+* New feature: Webhook.site Schedules lets you request any URL – including Webhook.site URLs – automatically on an interval, so you can for example run Custom Actions every 5 minutes, or make a health check for your Web site.
+
 ## 24 March 2019
 
 * New feature: API Keys can now be created so you can use the API with URLs that have the "Require Authentication" or "Password" options set.

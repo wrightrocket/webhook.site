@@ -14,6 +14,9 @@ With Webhook.site Premium, you get more features that allows you to do more with
 ### Custom Actions 
 Run scripts, send emails, HTTP requests and more on each request. [Read more...](/custom-actions.html)
 
+### Schedules
+Request any URL or your Custom Actions automatically on an interval.
+
 ### Private URLs 
 Either mark all URLs associated with your account as private, or just some, if you want to share the requests with others.
 
