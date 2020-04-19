@@ -22,9 +22,14 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 19 April 2019
+
+* New WebhookScript math functions: max(), min(), mod(), pi(), rand() - for more, see the [Reference](/webhookscript/reference.html)
+
 ## 28 March 2019
 
 * New feature: Webhook.site Schedules lets you request any URL – including Webhook.site URLs – automatically on an interval, so you can for example run Custom Actions every 5 minutes, or make a health check for your Web site.
+* Send Request action request timeout has been raised from 5 to 10 seconds. Applies to both the Custom Action and the WebhookScript request() function.
 
 ## 24 March 2019
 

@@ -330,9 +330,25 @@ Given a request with the following content:
 
 ### floor(***number*** number) : number
 
+### max(***array*** numbers) : number
+
+### min(***array*** numbers) : number
+
+### mod(***number*** number, ***number*** divisor) : number
+
+Returns the remainder after number is divided by `divisor`.
+
 ### number_length(***number*** number) : number
 
+### pi() : number
+
+Returns the value of Pi.
+
 ### pow(***number*** number, ***number*** power) : number
+
+### rand(***number*** min, ***number*** max) : number
+
+Returns a random number between `min` and `max`.
 
 ### round(***number*** number, ***number*** precision) : number
 
