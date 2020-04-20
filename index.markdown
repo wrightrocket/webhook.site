@@ -13,7 +13,8 @@ With [Webhook.site](https://webhook.site), you instantly get a unique, random UR
 
 What are people using it for?
 
-* Testing Webhooks without needing an internet-facing Web server
+* Receive Webhooks without needing an internet-facing Web server
+* Send Webhooks to a server that's behind a firewall or private subnet
 * Transforming Webhooks into other formats, and re-sending them to different systems
 * Connect different APIs that aren't compatible
 * Building contact forms that send emails

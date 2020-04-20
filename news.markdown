@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 20 April 2019
+
+* New Global Variables section in Control Panel.
+
 ## 19 April 2019
 
 * New WebhookScript math functions: max(), min(), mod(), pi(), rand() - for more, see the [Reference](/webhookscript/reference.html)
