@@ -78,6 +78,10 @@ Sets a variable for usage in a later WebhookScript Action or other Custom Action
 
 `set_variable()` is an alias to this function.
 
+### store(***string*** global_variable_name, ***any*** value): ***any***
+
+Permanently creates or updates a Global Variable named `global_variable_name` with value. The value can be retrieved with the `var()` function.
+
 ### variables : array
 
 Global variable (not a function) containing an associative array with all available Webhook.site variables.

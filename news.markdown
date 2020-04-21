@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 21 April 2019
+
+* New WebhookScript function: store() - creates or updates an existing Global Variable
+
 ## 20 April 2019
 
 * New Global Variables section in Control Panel.
