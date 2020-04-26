@@ -149,6 +149,14 @@ Sets the HTTP response status of the current URL.
 
 ## String
 
+### base64_decode(***string*** string) : string
+
+Returns a base64-encoded string.
+
+### base64_encode(***string*** string) : string
+
+Returns decoded base64 string.
+
 ### hash(***string/number*** value, ***string*** algo) : string
 
 Returns a hashed version of `value` using the `algo` algorithm.

@@ -22,6 +22,12 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 24 April 2019
+
+* New fullscreen mode in WebhookScript editor
+* Ability to edit your user profile
+* New WebhookScript functions: `base64_encode()`, `base64_decode()`.
+
 ## 21 April 2019
 
 * New WebhookScript function: store() - creates or updates an existing Global Variable
