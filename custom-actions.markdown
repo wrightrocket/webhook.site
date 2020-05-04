@@ -163,3 +163,51 @@ The following "operators" are available:
 * is less than or equal to
 
 The "result" of the condition will be logged below the request details, so you can see what happened.
+
+## Google Sheets (Beta)
+
+Google Sheets Custom Actions lets you manipulate and retrieve values from a Google Sheet.
+
+The following Google Sheets Custom Actions are available:
+
+* Add Row - appends one or more new rows to an existing spreadsheet
+* Update Row - updates one or more cells in an existing spreadsheet
+* Get Values - retrieves one or more cell values from an existing spreadsheet
+
+To start, you need to make sure that you have connected a Google account in the Control Panel, [available here](https://webhook.site/providers).
+
+After that, you can select the account in the dropdown when creating the Custom Action.
+
+### Specifying the spreadsheet
+
+When specifying the spreadsheet, you can either just copy/paste the spreadsheet URL or enter the spreadsheet ID. Variables can be used to specify the spreadsheet.
+
+### Ranges
+
+All actions must specify a range, which behaves similar in all actions. For the Add Row action, Google Sheets will automatically find a "table" (e.g. a homogenous mass of data) and add the values at the bottom. 
+
+A range is the same query as in Google Sheets, e.g. to select A1-C3 in Worksheet "Example", enter `'Example'!A1:C3`.
+
+### Values
+
+When inserting or updating values, you can either enter a value in the text field, or supply multiple cells and/or rows using JSON. To insert two rows, the JSON would be `["cell 1", "cell 2"]`.
+
+### Variables
+
+The Get Values Action allows you to define variables based on the output. Since this action can return multiple pieces of data, multiple variables are created.
+
+For example, if you select two columns and two rows, e.g. `A1:B2`, four variables would be defined:
+
+1. `variable_name.0.0` = value of A1
+1. `variable_name.0.1` = value of A2
+1. `variable_name.1.0` = value of B1
+1. `variable_name.1.1` = value of B2
+
+Additionally, the data is available in JSON, with the `variable_name.json` variable being defined, and continuing with the example above, would contain the following JSON:
+
+```json
+[
+  ["A1","A2"],
+  ["B1","B2"]
+]
+```

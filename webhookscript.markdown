@@ -14,6 +14,16 @@ While the other actions like Extract Regex and Send Email allows you to create f
 
 The syntax is very similar to PHP and JavaScript. See also the [full language specification](/webhookscript/reference.html).
 
+```javascript
+products = ['apple', 'blueberry', 'cake']
+
+name = var('request.query.name')
+
+if (name == 'Ann') {
+  respond('Y)
+}
+```
+
 ## Types
 
 Take a look at the language reference described above for more information about the properties of the different types.

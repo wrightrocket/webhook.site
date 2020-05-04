@@ -22,94 +22,98 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
-## 24 April 2019
+## 3 May 2020
+
+* New Google Sheets Custom Actions (Beta). 3 initial actions are available: Append Row, Update Row and Get Values, which allow you to manipulate or retrieve the values of a Google Sheet without writing any code.
+
+## 24 April 2020
 
 * New fullscreen mode in WebhookScript editor
 * Ability to edit your user profile
 * New WebhookScript functions: `base64_encode()`, `base64_decode()`.
 
-## 21 April 2019
+## 21 April 2020
 
 * New WebhookScript function: store() - creates or updates an existing Global Variable
 
-## 20 April 2019
+## 20 April 2020
 
 * New Global Variables section in Control Panel.
 
-## 19 April 2019
+## 19 April 2020
 
 * New WebhookScript math functions: max(), min(), mod(), pi(), rand() - for more, see the [Reference](/webhookscript/reference.html)
 
-## 28 March 2019
+## 28 March 2020
 
 * New feature: Webhook.site Schedules lets you request any URL – including Webhook.site URLs – automatically on an interval, so you can for example run Custom Actions every 5 minutes, or make a health check for your Web site.
 * Send Request action request timeout has been raised from 5 to 10 seconds. Applies to both the Custom Action and the WebhookScript request() function.
 
-## 24 March 2019
+## 24 March 2020
 
 * New feature: API Keys can now be created so you can use the API with URLs that have the "Require Authentication" or "Password" options set.
 * Fix: It's now possible to test Send Email actions before creating them. Prior to this, the Test button would not do anything for the Send Email action.
 
-## 6 March 2019
+## 6 March 2020
 
 * New feature: Extract XPath Custom Action with accompanying xpath() WebhookScript function. [Read more.](/custom-actions.html#extract-xpath)
 
-## 29 Feburary 2019
+## 29 Feburary 2020
 
 * Values are no longer required for Condition actions, so it's possible to compare an empty string or missing value.
 * Fixed an issue where a tooltip in the Custom Actions modal would not disappear.
 * Removed Beta label from WebhookScript.
 
-## 27 Feburary 2019
+## 27 Feburary 2020
 
 * Fixed a bug where slashes at the end of Webhook.site Single Page App URLs didn't work.
 * Fixed a bug where Copy To CURL sometimes wouldn't return a valid CURL command.
 
-## 26 Feburary 2019
+## 26 Feburary 2020
 
 * It's no longer a requirement to specify a variable for the Send Request action.
 
-## 25 Feburary 2019
+## 25 Feburary 2020
 
 * New feature: It's now possible to receive emails, which are treated like Webhooks – so you can automate emails with Custom Actions on Webhook.site. You can also test email deliverability using DKIM, DMARC and SPF validation.
 * JSON formatting is now always enabled per default.
 * The requests view is cleared after deleting the last request, and the tutorial text is shown.
 
-## 16 Feburary 2019
+## 16 Feburary 2020
 
 * WebhookScript: Added `regex_extract` and `regex_extract_first` functions.
 
-## 15 Feburary 2019
+## 15 Feburary 2020
 
 * WebhookScript: Added `hash` function.
 
-## 14 Feburary 2019
+## 14 Feburary 2020
 
 * New feature: Export to CSV lets you export all requests on a given URL to a CSV file.
 * Fixed a bug where duplicate in-app notifications would appear on new requests.
 
-## 12 Feburary 2019
+## 12 Feburary 2020
 
 * WebhookScript: Added `url_encode`, `url_decode`, and `query` functions.
 
-## 8 Febuary 2019
+## 8 Febuary 2020
 
 * New Custom Action type: Condition, which lets you conditionally stop a set of actions based on comparisons.
 
-## 28 January 2019
+## 28 January 2020
 
 * WebhookScript now supports newline literals (`\\n`) in strings, escaped by 2 backslashes.
 
-## 25 January 2019
+## 25 January 2020
 
 * Global Variables are now available in the Control Panel, which lets you keep configuration like API keys in a separate place from your Custom Actions and scripts while managing them at a central place.
 
 * Changed the font of the WebhookScript editor, which resulted in uneven selection of text.
 
-## 23 January 2019
+## 23 January 2020
 
 * You can now specify a source variable for JSONPath and Regex actions, so you can extract text from not only the request content.
 
-## 12 January 2019
+## 12 January 2020
 
 * Switched to using Ace as editor for WebhookScript.
