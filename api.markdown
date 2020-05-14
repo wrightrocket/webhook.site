@@ -131,6 +131,18 @@ Sets the alias for the token. (Can be used when creating requests.)
 
 [*See **POST** `/token`*](#11-create-token)
 
+### Toggle CORS
+
+Attaches CORS headers to the response of the Token, allowing browsers to request it from all domains.
+
+**PUT** `/token/:token_id/cors/toggle`
+
+#### Response
+
+```json
+{ "enabled": true}
+```
+
 ### Get token
 
 * Can require authentication.
