@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 16 May 2020
+
+* It's now possible to set a Token (URL or email address) to expire automatically, even for Premium users. This is useful for creating tokens for automated testing.
+
 ## 3 May 2020
 
 * New Google Sheets Custom Actions (Beta). 3 initial actions are available: Append Row, Update Row and Get Values, which allow you to manipulate or retrieve the values of a Google Sheet without writing any code.
