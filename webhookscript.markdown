@@ -15,13 +15,26 @@ While the other actions like Extract Regex and Send Email allows you to create f
 The syntax is very similar to PHP and JavaScript. See also the [full language specification](/webhookscript/reference.html).
 
 ```javascript
-products = ['apple', 'blueberry', 'cake']
+products = [
+  'apple':     ['price': 10],
+  'blueberry': ['price': 1],
+  'cake':      ['price': 550]
+]
 
-name = var('request.query.name')
+shouldAddVat = var('request.query.vat');
+selectedProduct = var('request.query.product');
 
-if (name == 'Ann') {
-  respond('Y)
+if (!selectedProduct) {
+    respond('Please select a product!', 500)
 }
+
+price = products[selectedProduct]['price'];
+
+if (shouldAddVat == 1) {
+    price = price * 1.25;
+}
+
+respond('Your price is '+to_string(price), 200);
 ```
 
 ## Types
