@@ -123,6 +123,23 @@ Example: `url_encode('here\'s a value')` returns `here%27s+a+value`.
 
 ## Flow Control and Responses
 
+### delay(***int*** seconds, ***string*** code)
+
+Executes code in the future. Any output will be stored on the request and will show with a "Was delayed" label. The code will not inherit the execution scope.
+
+### exec(***string*** code) : ***any***
+
+Executes code in `code` and returns the result. The code will inherit the execution scope.
+
+### import(***string*** url) : ***any***
+
+Downloads code located at `url` and returns the result. The code will inherit the execution scope. As an example, this can be used if you want to re-use code. Just upload it to your server or e.g. Github and use it in different WebhookScript actions.
+
+```javascript
+result = import('https://raw.githubusercontent.com/fredsted/webhookscripts/ec22946a83ea85f607fcc6bff83f9d81ed2fe4ed/hello_world.ws')
+echo(result) // -> "value"
+```
+
 ### respond(***string*** content, ***int*** status, ***array*** headers)
 
 Halts Custom Action execution and return a response.

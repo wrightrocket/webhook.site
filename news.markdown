@@ -22,6 +22,12 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 17 May 2020
+
+* New WebhookScript function: `delay()`, which lets you delay and execute WebhookScript code a set amount of seconds in the future.
+* New WebhookScript function: `exec()`, which lets you dynamically execute code in a string.
+* New WebhookScript function: `import()`, which downloads and executes code from a URL - great if you want to reuse your code, just put it on Github and import it with the URL!
+
 ## 16 May 2020
 
 * It's now possible to set a Token (URL or email address) to expire automatically, even for Premium users. This is useful for creating tokens for automated testing.
