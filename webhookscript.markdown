@@ -36,7 +36,10 @@ if (shouldAddVat == 1) {
     price = price * 1.25;
 }
 
-respond('Your price is '+to_string(price), 200);
+respond(
+    'Your price is {}'.format(price),
+    200
+);
 ```
 
 ## Types
