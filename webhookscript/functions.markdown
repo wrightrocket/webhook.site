@@ -125,7 +125,25 @@ Example: `url_encode('here\'s a value')` returns `here%27s+a+value`.
 
 ### delay(***int*** seconds, ***string*** code)
 
-Executes code in the future. Any output will be stored on the request and will show with a "Was delayed" label. The code will not inherit the execution scope.
+Executes code in the future. Any output will be stored on the request and will show with a "Was delayed" label. 
+
+The code will not inherit the execution scope, as you can see in this example where the `format` function is used to prepare the code string with a URL, causing `{}` to be replaced with with `https://example.com`.
+
+```javascript
+url = 'https://example.com'
+
+code = '
+  request(
+      "{}",
+      \'{"message": "Hello World!"}\',
+      "POST"
+  )
+'.format(url)
+
+delay(5, code);
+```
+
+The maximum amount of seconds allowed is 604800.
 
 ### exec(***string*** code) : ***any***
 
