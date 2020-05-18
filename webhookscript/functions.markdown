@@ -421,7 +421,7 @@ Returns a copy of ***array***
 
 Returns the items of array1 that are not present in array2 while keeping the array indices.
 
-### array_get(***array*** array, ***string/number*** index, ***any*** default) : any` 
+### array_get(***array*** array, ***string/number*** index, ***any*** default) : any
 
 ### array_has(***array*** array, ***string/number*** key) : bool
 
@@ -447,7 +447,7 @@ Adds ***value*** to end of ***array*** and returns ***value***
 
 Returns random value of ***array*** 
 
-### array_reverse(***array*** array) : array` 
+### array_reverse(***array*** array) : array
 
 Returns ***array*** in reverse order
 

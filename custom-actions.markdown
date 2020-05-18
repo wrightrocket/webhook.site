@@ -108,7 +108,7 @@ The following examples are based on this XML document:
 Example XPath                                     | Notes                                                       | Result
 --------------------------------------------------|------------------------------------------------------------------------------
 `/organization`                                   | Finds all content within the organization element           | Jack<br>Ann
-`//employee[@id != 1]`                            | `//` finds all <employee> elements in document              | Jack
+`//employee[@id != 1]`                            | `//` traverses all `<employee>` elements in document, the @id query selects all except those with `id`=1 | Jack
 `/organization/@name`                             | `@name` to get the "name" property of the element           | ExampleCo
 `/organization/employees/employee[2]`             | `[2]` specifies 2nd element                                 | Ann
 `/organization/employees/employee[2]/@id`         | Get the "id" property of second employee element            | 2
