@@ -33,7 +33,7 @@ The format of variables are dollar signs surrounded by a word, for example: `$ex
 
 ## WebhookScript
 
-!["WebhookScript" Custom Action screenshot](/webhookscript-action.png)
+!["WebhookScript" Custom Action screenshot](/webhookscript-in-action.png)
 
 Executes custom scripts using a scripting language that's very similar to JavaScript and PHP. [More information here](/webhookscript.html)
 

@@ -6,15 +6,17 @@ has_children: true
 
 # WebhookScript
 
+!["WebhookScript" Custom Action screenshot](/webhookscript-in-action.png)
+
 WebhookScript is an easy to use scripting language designed for executing Web-related actions on incoming requests. 
 
 While the other actions like Extract Regex and Send Email allows you to create flows in a visual editor, WebhookScript makes it quicker to create more advanced logic.
 
-WebhookScript can be combined with other Custom Actions as data can be shared between them using [Variables](/webhookscript/reference.html).
+WebhookScript can be combined with other Custom Actions as data can be shared between them using [Variables](/custom-actions.html#about-variables).
 
 ## Syntax
 
-The syntax is very similar to PHP and JavaScript. See also the [full language specification](/custom-actions.html#about-variables).
+The syntax is very similar to PHP and JavaScript. See also the [full language specification](/webhookscript/reference.html).
 
 ```javascript
 products = [
