@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 22 May 2020
+
+* New Schedule intervals: every 1 minute and every 10 minutes, in addition to the already [existing ones](schedules.html).
+
 ## 17 May 2020
 
 * New WebhookScript function: `delay()`, which lets you delay and execute WebhookScript code a set amount of seconds in the future.
