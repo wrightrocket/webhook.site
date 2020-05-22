@@ -44,20 +44,6 @@ respond(
 );
 ```
 
-## Types
-
-Take a look at the language reference described above for more information about the properties of the different types.
-
-* Bool
-* Number
-* String
-* Regex
-* Array
-* Function
-
-
-Returns the type name of value, e.g. `string`.
-
 ## Editor
 
 !["WebhookScript" Custom Action screenshot](/webhookscript-action.png)
