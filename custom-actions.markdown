@@ -211,3 +211,16 @@ Additionally, the data is available in JSON, with the `variable_name.json` varia
   ["B1","B2"]
 ]
 ```
+
+## Amazon Web Services (AWS) (Beta)
+
+### S3
+
+In addition to the "official" Amazon endpoints, Webhook.site also supports S3-compatible storages like DigitalOcean, MinIO, Wasabi and more. The endpoint can be specified when setting up the account in Control Panel.
+
+The following actions are available for AWS S3:
+
+* Create Bucket
+* Create Object
+* Delete Object
+* Get Object (retrieves object contents to a Variable)

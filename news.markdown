@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 25 May 2020
+
+* New set of Amazon Web Services S3 actions: Create Bucket, Put Object, Delete Object and Get Object (which retrieves object contents to a Variable.)
+
 ## 22 May 2020
 
 * New Schedule intervals: every 1 minute and every 10 minutes, in addition to the already [existing ones](schedules.html).
