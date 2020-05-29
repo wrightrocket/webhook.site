@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 29 May 2020
+
+* New set of date functions added to WebhookScript, namely: `to_date()`, `date_format()`, `date_to_array()`, `date_interval()`, `date_interval_human()`. [Read more in the docs](webhookscript/functions.html#date-manipulation)
+
 ## 25 May 2020
 
 * New set of Amazon Web Services S3 actions: Create Bucket, Put Object, Delete Object and Get Object (which retrieves object contents to a Variable.)

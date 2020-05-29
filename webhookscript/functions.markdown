@@ -365,6 +365,200 @@ Given a request with the following content:
 
 [More information and examples regarding XPath](/custom-actions.html#extract-xpath).
 
+## Date Manipulation
+
+In WebhookScript, dates are not a specific type, and ar expressed in strings instead, which WebhookScript will attempt to parse. If possible, we recommend using a specific date format like ISO-8601 which leaves little doubt for misunderstanding.
+
+### Date format characters
+
+WebhookScript uses the ISO format for converting and formatting dates, and the format is compatible with the [Moment.js format method](https://momentjs.com/docs/#/parsing/string-format/).
+
+The following examples are based on the date `2017-01-05 17:04:05.084512`.
+
+| Code      | Example       | Description                                                                                                                                       |
+|-----------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| OD        | 5             | Day number with alternative numbers such as 三 for 3 if locale is ja_JP                                                                           |
+| OM        | 1             | Month number with alternative numbers such as ၀၂ for 2 if locale is my_MM                                                                         |
+| OY        | 2017          | Year number with alternative numbers such as ۱۹۹۸ for 1998 if locale is fa                                                                        |
+| OH        | 17            | 24-hours number with alternative numbers such as ႑႓ for 13 if locale is shn_MM                                                                    |
+| Oh        | 5             | 12-hours number with alternative numbers such as 十一 for 11 if locale is lzh_TW                                                                  |
+| Om        | 4             | Minute number with alternative numbers such as ୫୭ for 57 if locale is or                                                                          |
+| Os        | 5             | Second number with alternative numbers such as 十五 for 15 if locale is ja_JP                                                                     |
+| D         | 5             | Day of month number (from 1 to 31)                                                                                                                |
+| DD        | 05            | Day of month number with trailing zero (from 01 to 31)                                                                                            |
+| Do        | 5th           | Day of month with ordinal suffix (from 1st to 31th), translatable                                                                                 |
+| d         | 4             | Day of week number (from 0 (Sunday) to 6 (Saturday))                                                                                              |
+| dd        | Th            | Minified day name (from Su to Sa), transatable                                                                                                    |
+| ddd       | Thu           | Short day name (from Sun to Sat), transatable                                                                                                     |
+| dddd      | Thursday      | Day name (from Sunday to Saturday), transatable                                                                                                   |
+| DDD       | 5             | Day of year number (from 1 to 366)                                                                                                                |
+| DDDD      | 005           | Day of year number with trailing zeros (3 digits, from 001 to 366)                                                                                |
+| DDDo      | 5th           | Day of year number with ordinal suffix (from 1st to 366th), translatable                                                                          |
+| e         | 4             | Day of week number (from 0 (Sunday) to 6 (Saturday)), similar to "d" but this one is translatable (takes first day of week of the current locale) |
+| E         | 4             | Day of week number (from 1 (Monday) to 7 (Sunday))                                                                                                |
+| H         | 17            | Hour from 0 to 23                                                                                                                                 |
+| HH        | 17            | Hour with trailing zero from 00 to 23                                                                                                             |
+| h         | 5             | Hour from 0 to 12                                                                                                                                 |
+| hh        | 05            | Hour with trailing zero from 00 to 12                                                                                                             |
+| k         | 17            | Hour from 1 to 24                                                                                                                                 |
+| kk        | 17            | Hour with trailing zero from 01 to 24                                                                                                             |
+| m         | 4             | Minute from 0 to 59                                                                                                                               |
+| mm        | 04            | Minute with trailing zero from 00 to 59                                                                                                           |
+| a         | pm            | Meridiem am/pm                                                                                                                                    |
+| A         | PM            | Meridiem AM/PM                                                                                                                                    |
+| s         | 5             | Second from 0 to 59                                                                                                                               |
+| ss        | 05            | Second with trailing zero from 00 to 59                                                                                                           |
+| S         | 0             | Second tenth                                                                                                                                      |
+| SS        | 08            | Second hundredth (on 2 digits with trailing zero)                                                                                                 |
+| SSS       | 084           | Millisecond (on 3 digits with trailing zeros)                                                                                                     |
+| SSSS      | 0845          | Second ten thousandth (on 4 digits with trailing zeros)                                                                                           |
+| SSSSS     | 08451         | Second hundred thousandth (on 5 digits with trailing zeros)                                                                                       |
+| SSSSSS    | 084512        | Microsecond (on 6 digits with trailing zeros)                                                                                                     |
+| SSSSSSS   | 0845120       | Second ten millionth (on 7 digits with trailing zeros)                                                                                            |
+| SSSSSSSS  | 08451200      | Second hundred millionth (on 8 digits with trailing zeros)                                                                                        |
+| SSSSSSSSS | 084512000     | Nanosecond (on 9 digits with trailing zeros)                                                                                                      |
+| M         | 1             | Month from 1 to 12                                                                                                                                |
+| MM        | 01            | Month with trailing zero from 01 to 12                                                                                                            |
+| MMM       | Jan           | Short month name, translatable                                                                                                                    |
+| MMMM      | January       | Month name, translatable                                                                                                                          |
+| Mo        | 1st           | Month with ordinal suffix from 1st to 12th, translatable                                                                                          |
+| Q         | 1             | Quarter from 1 to 4                                                                                                                               |
+| Qo        | 1st           | Quarter with ordinal suffix from 1st to 4th, translatable                                                                                         |
+| G         | 2017          | ISO week year (see ISO week date)                                                                                                                 |
+| GG        | 2017          | ISO week year (on 2 digits with trailing zero)                                                                                                    |
+| GGG       | 2017          | ISO week year (on 3 digits with trailing zeros)                                                                                                   |
+| GGGG      | 2017          | ISO week year (on 4 digits with trailing zeros)                                                                                                   |
+| GGGGG     | 02017         | ISO week year (on 5 digits with trailing zeros)                                                                                                   |
+| g         | 2017          | Week year according to locale settings, translatable                                                                                              |
+| gg        | 2017          | Week year according to locale settings (on 2 digits with trailing zero), translatable                                                             |
+| ggg       | 2017          | Week year according to locale settings (on 3 digits with trailing zeros), translatable                                                            |
+| gggg      | 2017          | Week year according to locale settings (on 4 digits with trailing zeros), translatable                                                            |
+| ggggg     | 02017         | Week year according to locale settings (on 5 digits with trailing zeros), translatable                                                            |
+| W         | 1             | ISO week number in the year (see ISO week date)                                                                                                   |
+| WW        | 01            | ISO week number in the year (on 2 digits with trailing zero)                                                                                      |
+| Wo        | 1st           | ISO week number in the year with ordinal suffix, translatable                                                                                     |
+| w         | 1             | Week number in the year according to locale settings, translatable                                                                                |
+| ww        | 01            | Week number in the year according to locale settings (on 2 digits with trailing zero)                                                             |
+| wo        | 1st           | Week number in the year according to locale settings with ordinal suffix, translatable                                                            |
+| x         | 1483635845085 | Millisecond-precision timestamp (same as date.getTime() in JavaScript)                                                                            |
+| X         | 1483635845    | Timestamp (number of seconds since 1970-01-01)                                                                                                    |
+| Y         | 2017          | Full year from -9999 to 9999                                                                                                                      |
+| YY        | 17            | Year on 2 digits from 00 to 99                                                                                                                    |
+| YYYY      | 2017          | Year on 4 digits from 0000 to 9999                                                                                                                |
+| YYYYY     | 02017         | Year on 5 digits from 00000 to 09999                                                                                                              |
+| YYYYYY    | +002017       | Year on 5 digits with sign from -09999 to +09999                                                                                                  |
+| z         | UTC           | Abbreviated time zone name                                                                                                                        |
+| zz        | UTC           | Time zone name                                                                                                                                    |
+| Z         | +00:00        | Time zone offset HH:mm                                                                                                                            |
+| ZZ        | +0000         | Time zone offset HHmm                                                                                                                             |
+
+Source: [Carbon Docs](https://carbon.nesbot.com/docs/#api-localization)
+
+### Date locales available
+
+aa, aa_DJ, aa_ER, aa_ER@saaho, aa_ET, af, af_NA, af_ZA, agq, agr, agr_PE, ak, ak_GH, am, am_ET, an, an_ES, anp, anp_IN, ar, ar_AE, ar_BH, ar_DJ, ar_DZ, ar_EG, ar_EH, ar_ER, ar_IL, ar_IN, ar_IQ, ar_JO, ar_KM, ar_KW, ar_LB, ar_LY, ar_MA, ar_MR, ar_OM, ar_PS, ar_QA, ar_SA, ar_SD, ar_SO, ar_SS, ar_SY, ar_Shakl, ar_TD, ar_TN, ar_YE, as, as_IN, asa, ast, ast_ES, ayc, ayc_PE, az, az_AZ, az_Cyrl, az_IR, az_Latn, bas, be, be_BY, be_BY@latin, bem, bem_ZM, ber, ber_DZ, ber_MA, bez, bg, bg_BG, bhb, bhb_IN, bho, bho_IN, bi, bi_VU, bm, bn, bn_BD, bn_IN, bo, bo_CN, bo_IN, br, br_FR, brx, brx_IN, bs, bs_BA, bs_Cyrl, bs_Latn, byn, byn_ER, ca, ca_AD, ca_ES, ca_ES_Valencia, ca_FR, ca_IT, ccp, ccp_IN, ce, ce_RU, cgg, chr, chr_US, cmn, cmn_TW, crh, crh_UA, cs, cs_CZ, csb, csb_PL, cu, cv, cv_RU, cy, cy_GB, da, da_DK, da_GL, dav, de, de_AT, de_BE, de_CH, de_DE, de_IT, de_LI, de_LU, dje, doi, doi_IN, dsb, dsb_DE, dua, dv, dv_MV, dyo, dz, dz_BT, ebu, ee, ee_TG, el, el_CY, el_GR, en, en_001, en_150, en_AG, en_AI, en_AS, en_AT, en_AU, en_BB, en_BE, en_BI, en_BM, en_BS, en_BW, en_BZ, en_CA, en_CC, en_CH, en_CK, en_CM, en_CX, en_CY, en_DE, en_DG, en_DK, en_DM, en_ER, en_FI, en_FJ, en_FK, en_FM, en_GB, en_GD, en_GG, en_GH, en_GI, en_GM, en_GU, en_GY, en_HK, en_IE, en_IL, en_IM, en_IN, en_IO, en_ISO, en_JE, en_JM, en_KE, en_KI, en_KN, en_KY, en_LC, en_LR, en_LS, en_MG, en_MH, en_MO, en_MP, en_MS, en_MT, en_MU, en_MW, en_MY, en_NA, en_NF, en_NG, en_NL, en_NR, en_NU, en_NZ, en_PG, en_PH, en_PK, en_PN, en_PR, en_PW, en_RW, en_SB, en_SC, en_SD, en_SE, en_SG, en_SH, en_SI, en_SL, en_SS, en_SX, en_SZ, en_TC, en_TK, en_TO, en_TT, en_TV, en_TZ, en_UG, en_UM, en_US, en_US_Posix, en_VC, en_VG, en_VI, en_VU, en_WS, en_ZA, en_ZM, en_ZW, eo, es, es_419, es_AR, es_BO, es_BR, es_BZ, es_CL, es_CO, es_CR, es_CU, es_DO, es_EA, es_EC, es_ES, es_GQ, es_GT, es_HN, es_IC, es_MX, es_NI, es_PA, es_PE, es_PH, es_PR, es_PY, es_SV, es_US, es_UY, es_VE, et, et_EE, eu, eu_ES, ewo, fa, fa_AF, fa_IR, ff, ff_CM, ff_GN, ff_MR, ff_SN, fi, fi_FI, fil, fil_PH, fo, fo_DK, fo_FO, fr, fr_BE, fr_BF, fr_BI, fr_BJ, fr_BL, fr_CA, fr_CD, fr_CF, fr_CG, fr_CH, fr_CI, fr_CM, fr_DJ, fr_DZ, fr_FR, fr_GA, fr_GF, fr_GN, fr_GP, fr_GQ, fr_HT, fr_KM, fr_LU, fr_MA, fr_MC, fr_MF, fr_MG, fr_ML, fr_MQ, fr_MR, fr_MU, fr_NC, fr_NE, fr_PF, fr_PM, fr_RE, fr_RW, fr_SC, fr_SN, fr_SY, fr_TD, fr_TG, fr_TN, fr_VU, fr_WF, fr_YT, fur, fur_IT, fy, fy_DE, fy_NL, ga, ga_IE, gd, gd_GB, gez, gez_ER, gez_ET, gl, gl_ES, gom, gom_Latn, gsw, gsw_CH, gsw_FR, gsw_LI, gu, gu_IN, guz, gv, gv_GB, ha, ha_GH, ha_NE, ha_NG, hak, hak_TW, haw, he, he_IL, hi, hi_IN, hif, hif_FJ, hne, hne_IN, hr, hr_BA, hr_HR, hsb, hsb_DE, ht, ht_HT, hu, hu_HU, hy, hy_AM, i18n, ia, ia_FR, id, id_ID, ig, ig_NG, ii, ik, ik_CA, in, is, is_IS, it, it_CH, it_IT, it_SM, it_VA, iu, iu_CA, iw, ja, ja_JP, jgo, jmc, jv, ka, ka_GE, kab, kab_DZ, kam, kde, kea, khq, ki, kk, kk_KZ, kkj, kl, kl_GL, kln, km, km_KH, kn, kn_IN, ko, ko_KP, ko_KR, kok, kok_IN, ks, ks_IN, ks_IN@devanagari, ksb, ksf, ksh, ku, ku_TR, kw, kw_GB, ky, ky_KG, lag, lb, lb_LU, lg, lg_UG, li, li_NL, lij, lij_IT, lkt, ln, ln_AO, ln_CD, ln_CF, ln_CG, lo, lo_LA, lrc, lrc_IQ, lt, lt_LT, lu, luo, luy, lv, lv_LV, lzh, lzh_TW, mag, mag_IN, mai, mai_IN, mas, mas_TZ, mer, mfe, mfe_MU, mg, mg_MG, mgh, mgo, mhr, mhr_RU, mi, mi_NZ, miq, miq_NI, mjw, mjw_IN, mk, mk_MK, ml, ml_IN, mn, mn_MN, mni, mni_IN, mo, mr, mr_IN, ms, ms_BN, ms_MY, ms_SG, mt, mt_MT, mua, my, my_MM, mzn, nan, nan_TW, nan_TW@latin, naq, nb, nb_NO, nb_SJ, nd, nds, nds_DE, nds_NL, ne, ne_IN, ne_NP, nhn, nhn_MX, niu, niu_NU, nl, nl_AW, nl_BE, nl_BQ, nl_CW, nl_NL, nl_SR, nl_SX, nmg, nn, nn_NO, nnh, no, nr, nr_ZA, nso, nso_ZA, nus, nyn, oc, oc_FR, om, om_ET, om_KE, or, or_IN, os, os_RU, pa, pa_Arab, pa_Guru, pa_IN, pa_PK, pap, pap_AW, pap_CW, pl, pl_PL, prg, ps, ps_AF, pt, pt_AO, pt_BR, pt_CH, pt_CV, pt_GQ, pt_GW, pt_LU, pt_MO, pt_MZ, pt_PT, pt_ST, pt_TL, qu, qu_BO, qu_EC, quz, quz_PE, raj, raj_IN, rm, rn, ro, ro_MD, ro_RO, rof, ru, ru_BY, ru_KG, ru_KZ, ru_MD, ru_RU, ru_UA, rw, rw_RW, rwk, sa, sa_IN, sah, sah_RU, saq, sat, sat_IN, sbp, sc, sc_IT, sd, sd_IN, sd_IN@devanagari, se, se_FI, se_NO, se_SE, seh, ses, sg, sgs, sgs_LT, sh, shi, shi_Latn, shi_Tfng, shn, shn_MM, shs, shs_CA, si, si_LK, sid, sid_ET, sk, sk_SK, sl, sl_SI, sm, sm_WS, smn, sn, so, so_DJ, so_ET, so_KE, so_SO, sq, sq_AL, sq_MK, sq_XK, sr, sr_Cyrl, sr_Cyrl_BA, sr_Cyrl_ME, sr_Cyrl_XK, sr_Latn, sr_Latn_BA, sr_Latn_ME, sr_Latn_XK, sr_ME, sr_RS, sr_RS@latin, ss, ss_ZA, st, st_ZA, sv, sv_AX, sv_FI, sv_SE, sw, sw_CD, sw_KE, sw_TZ, sw_UG, szl, szl_PL, ta, ta_IN, ta_LK, ta_MY, ta_SG, tcy, tcy_IN, te, te_IN, teo, teo_KE, tet, tg, tg_TJ, th, th_TH, the, the_NP, ti, ti_ER, ti_ET, tig, tig_ER, tk, tk_TM, tl, tl_PH, tlh, tn, tn_ZA, to, to_TO, tpi, tpi_PG, tr, tr_CY, tr_TR, ts, ts_ZA, tt, tt_RU, tt_RU@iqtelif, twq, tzl, tzm, tzm_Latn, ug, ug_CN, uk, uk_UA, unm, unm_US, ur, ur_IN, ur_PK, uz, uz_Arab, uz_Cyrl, uz_Latn, uz_UZ, uz_UZ@cyrillic, vai, vai_Latn, vai_Vaii, ve, ve_ZA, vi, vi_VN, vo, vun, wa, wa_BE, wae, wae_CH, wal, wal_ET, wo, wo_SN, xh, xh_ZA, xog, yav, yi, yi_US, yo, yo_BJ, yo_NG, yue, yue_HK, yue_Hans, yue_Hant, yuw, yuw_PG, zgh, zh, zh_CN, zh_HK, zh_Hans, zh_Hans_HK, zh_Hans_MO, zh_Hans_SG, zh_Hant, zh_Hant_HK, zh_Hant_MO, zh_Hant_TW, zh_MO, zh_SG, zh_TW, zh_YUE, zu, zu_ZA
+
+### to_date(***string*** date, ***?string*** format): ***string***
+
+Will attempt to parse a string to a ISO-8601 formatted date string. If specified, `format` is used to parse the date without having to guess the format (see )
+
+Many formats are supported, like relative dates and various specified date formats.
+
+The date is valid or could not be guessed, `null` is returned.
+
+```javascript
+// Relative formats
+'last wednesday 4 am'.to_date()        // 2020-05-27T04:00:00.000000Z
+'first monday august 2019'.to_date()   // 2019-08-05T00:00:00.000000Z
+
+// Automatic format guessing
+'2020-01-01 23:02:01'.to_date()        // 2020-01-01T23:02:01.000000Z
+
+// Unix timestamp
+'@1215282385'.to_date()                // 2008-07-05T18:26:25.000000Z
+
+// Custom date format
+'2/4/12 06:03'.to_date('M/D/YY HH:mm') // 2012-02-04T06:03:00.000000Z
+
+// To escape characters in the format string, backslashes can be used
+'2020-01-05 12h30m15s'.to_date('YYYY-MM-DD HH\\hmm\\mss\\s') // 2020-01-05T12:30:15.000000Z
+```
+
+### date_format(***string*** date, ***?string*** format, ***?string*** locale): ***string***
+
+Returns a date parsed to the format specified in `format`.
+
+```javascript
+date_format('2008-07-05T18:26:25.000000Z', 'YYYY-MM-DD') // 2008-07-05
+
+date_format('2008-07-05T18:26:25.000000Z', 'LLLL', 'da') // lørdag d. 5. juli 2008 kl. 18:26
+
+// If no format is specified, a default human readable readable string is returned
+date_format('2008-07-05T18:26:25.000000Z') // Sat Jul 05 2008 18:26:25 GMT+0000
+```
+
+### date_to_array(***string***): ***array***
+
+Returns an array containing all the components of a given date
+
+```javascript
+dump(date_to_array('2008-07-05T18:26:25.324542Z'))
+
+// [
+//   "year": 2008,
+//   "month": 7,
+//   "day": 5,
+//   "dayOfWeek": 6,
+//   "dayOfYear": 187,
+//   "hour": 18,
+//   "minute": 26,
+//   "second": 25,
+//   "micro": 324542,
+//   "timestamp": 1215282385,
+//   "formatted": "2008-07-05 18:26:25",
+//   "timezone": "Z"
+// ]
+```
+
+### date_interval(***string*** date1, ***string*** date2, ***?string*** format): ***string/int***
+
+Formats the difference between 2 dates. Note that this function does not use the ISO format, but rather the uses the [PHP `DateInterval` format specification](https://www.php.net/manual/en/dateinterval.format.php).
+
+If no format string is specified, the difference is returned as the number of seconds between the dates, with the number being negative if `date2` is before `date1`.
+
+```javascript
+date_interval('2008-07-16T23:13:26.234212Z', '2008-07-05T18:26:25.324542Z') // -967620
+
+date_interval(
+    '2008-07-16T23:13:26.234212Z',
+    '2008-07-05T18:26:25.324542Z',
+    '%d days, %h hours, %i minutes'
+)
+// 11 days, 4 hours, 47 minutes
+```
+
+### date_interval_human(***string*** date1, ***string*** date2, ***?string*** locale): ***string/int***
+
+Formats the difference between 2 dates in a way that's easy to read for humans.
+
+If no locale is specified, english is used.
+
+```javascript
+date_interval_human(
+    '2008-07-16T23:13:26.234212Z',
+    '2008-07-05T18:26:25.324542Z'
+)
+// 1 week after
+
+date_interval_human(
+    '2008-07-16T23:13:26.234212Z',
+    '2008-07-05T18:26:25.324542Z',
+    'es'
+)
+// 1 semana después
+```
+
+
 ## Math and Numbers
 
 ### abs(***number*** number) : number
