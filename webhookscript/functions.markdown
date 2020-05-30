@@ -460,11 +460,13 @@ aa, aa_DJ, aa_ER, aa_ER@saaho, aa_ET, af, af_NA, af_ZA, agq, agr, agr_PE, ak, ak
 
 ### to_date(***string*** date, ***?string*** format): ***string***
 
-Will attempt to parse a string to a ISO-8601 formatted date string. If specified, `format` is used to parse the date without having to guess the format (see )
+Will attempt to parse a string to a ISO-8601 formatted date string. 
+
+If specified, `format` is used to parse the date without having to guess the format (see the [Date Format Characters](#date-format-characters) above.)
 
 Many formats are supported, like relative dates and various specified date formats.
 
-The date is valid or could not be guessed, `null` is returned.
+If the date is invalid or could not be guessed, `null` is returned.
 
 ```javascript
 // Relative formats
@@ -499,7 +501,7 @@ date_format('2008-07-05T18:26:25.000000Z') // Sat Jul 05 2008 18:26:25 GMT+0000
 
 ### date_to_array(***string***): ***array***
 
-Returns an array containing all the components of a given date
+Returns an array containing all the components of a given date.
 
 ```javascript
 dump(date_to_array('2008-07-05T18:26:25.324542Z'))
@@ -522,9 +524,11 @@ dump(date_to_array('2008-07-05T18:26:25.324542Z'))
 
 ### date_interval(***string*** date1, ***string*** date2, ***?string*** format): ***string/int***
 
-Formats the difference between 2 dates. Note that this function does not use the ISO format, but rather the uses the [PHP `DateInterval` format specification](https://www.php.net/manual/en/dateinterval.format.php).
+Calculates the interval between `date1` and `date2`.
 
-If no format string is specified, the difference is returned as the number of seconds between the dates, with the number being negative if `date2` is before `date1`.
+If no format string is specified, the interval is returned as the number of seconds between the dates, with the number being negative if `date2` is before `date1`.
+
+Note that for the format string, this function does not use the ISO format, but rather the uses the [PHP `DateInterval` format specification](https://www.php.net/manual/en/dateinterval.format.php).
 
 ```javascript
 date_interval('2008-07-16T23:13:26.234212Z', '2008-07-05T18:26:25.324542Z') // -967620
@@ -541,7 +545,7 @@ date_interval(
 
 Formats the difference between 2 dates in a way that's easy to read for humans.
 
-If no locale is specified, english is used.
+If no locale is specified, English is used.
 
 ```javascript
 date_interval_human(
