@@ -225,3 +225,56 @@ Then, you can interact with the bot using the Telegram app:
 !["WebhookScript" Telegram Bot screenshot](/webhookscript/example-telegram-bot.png)
 
 And that's it! Congratulations on your bot. It's not very smart, but from here, the possibilities are endless!
+
+## Building HTML content
+
+The following script builds a piece of HTML content using the string_format function, based on previously defined variables, and shows how to use a function to return different content based on input.
+
+After this, it sends a JSON request (by converting an array to JSON via the json_encode function) containing the HTML using basic Bearer authentication.
+
+```javascript
+function alert_class() {
+    if (status == 'Operational') { return 'success'; }
+    if (status == 'Degraded Performance') { return 'warning'; }
+    if (string_contains(status, 'Disruption')) { return 'danger'; }
+}
+
+template = '
+  <div class="alert alert-{}">
+    <h2 class="alert-title">{} - {}</h2>
+    <p>
+      {}<br />
+      State: {}<br />
+      Component affected: {}
+    </p>
+    <p>{}</p>
+  </div>';
+
+postbody = string_format(
+  template,
+  alert_class(),
+  message,
+  state,
+  component,
+  to_date('now').date_format('LLLL')
+)
+  
+json = [
+  'alert': [
+    'title': '{} - {}'.format(component, state),
+    'body': postbody,
+    'draft': false,
+    'types': ['alert']
+  ],
+]
+
+request(
+  'http://example.com/alerts',
+  json_encode(json),
+  'POST',
+  [
+    'Content-Type: application/json',
+    'Authorization: Basic {}'.format(token)
+  ]
+)
+```
