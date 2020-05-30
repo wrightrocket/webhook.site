@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 30 May 2020
+
+* Added Discord Custom Action for sending messages. [Read more in the docs](custom-actions.html#discord)
+
 ## 29 May 2020
 
 * New set of date functions added to WebhookScript, namely: `to_date()`, `date_format()`, `date_to_array()`, `date_interval()`, `date_interval_human()`. [Read more in the docs](webhookscript/functions.html#date-manipulation)

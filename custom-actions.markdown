@@ -224,3 +224,9 @@ The following actions are available for AWS S3:
 * Create Object
 * Delete Object
 * Get Object (retrieves object contents to a Variable)
+
+## Discord (Beta)
+
+With the Discord Custom Action, you can send messages to a specified channel (Each bot account uses a specific channel, so you can connect more accounts to send to different channels or servers.) In addition, you can choose a custom username and avatar image for the bot user.
+
+!["Discord" Custom Action screenshot](/discord.png)
