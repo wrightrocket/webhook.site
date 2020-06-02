@@ -22,6 +22,11 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+
+## 2 May 2020
+
+* Added Amazon Web Services CloudFront Cache Invalidation Custom Action.
+
 ## 30 May 2020
 
 * Added Discord Custom Action for sending messages. [Read more in the docs](custom-actions.html#discord)

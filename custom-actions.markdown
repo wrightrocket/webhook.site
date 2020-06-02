@@ -216,14 +216,18 @@ Additionally, the data is available in JSON, with the `variable_name.json` varia
 
 ### S3
 
-In addition to the "official" Amazon endpoints, Webhook.site also supports S3-compatible storages like DigitalOcean, MinIO, Wasabi and more. The endpoint can be specified when setting up the account in Control Panel.
-
 The following actions are available for AWS S3:
 
 * Create Bucket
 * Create Object
 * Delete Object
 * Get Object (retrieves object contents to a Variable)
+
+In addition to the "official" Amazon endpoints, Webhook.site also supports S3-compatible storages like DigitalOcean, MinIO, Wasabi and more. The endpoint can be specified when setting up the account in Control Panel.
+
+### CloudFront
+
+The "Create Invalidation" action allows you to dynamically create a CloudFront cache invalidation as a Custom Action. Both the Distribution ID and the paths to be invalidated are replaced with Webhook.site Variables.
 
 ## Discord (Beta)
 
