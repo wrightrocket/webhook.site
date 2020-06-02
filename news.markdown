@@ -26,6 +26,7 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 ## 2 May 2020
 
 * Added Amazon Web Services CloudFront Cache Invalidation Custom Action.
+* Added ability to toggle Auto Cleanup, which automatically cleans up requests/emails.
 
 ## 30 May 2020
 

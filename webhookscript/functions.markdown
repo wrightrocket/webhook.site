@@ -172,11 +172,11 @@ Sets the response content of the URL
 
 ### set_header(***string*** header_name, ***string*** header_value)
 
-Sets or overwrites a response header of the URL. Headers should be an array of strings e.g. `["X-Example: Value"]
+Sets or overwrites a response header of the URL. 
 
 ### set_response(***string*** content, ***int*** status, ***array*** headers)
 
-Set response content, status and headers in single function.
+Set response content, status and headers in single function. `headers`` should be an array of strings e.g. `["X-Example: Value", "X-Foo: Bar"]
 
 ### set_status(***number*** status)
 
