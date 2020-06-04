@@ -249,6 +249,8 @@ Lists all request sent to a token.
 
 **GET** `/token/:token_id/request/:request_id`
 
+**GET** `/token/:token_id/request/latest` - retrieves the latest request sent to the URL
+
 ##### Response
 
 ```json
@@ -282,6 +284,8 @@ Lists all request sent to a token.
 * Can require authentication.
 
 **GET** `/token/:token_id/request/:request_id/raw`
+
+**GET** `/token/:token_id/request/latest/raw` - retrieves the latest request sent to the URL
 
 Returns the request as a response (body, content-type.)
 

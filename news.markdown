@@ -22,6 +22,9 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 4 May 2020
+
+* Added new endpoints to fetch the content and information about the latest request on a URL. See [here](/api.html#get-single-request) and [here](/api.html#get-raw-request-content).
 
 ## 2 May 2020
 
