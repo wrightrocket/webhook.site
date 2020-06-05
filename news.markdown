@@ -22,11 +22,15 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
-## 4 May 2020
+## 5 June 2020
+
+* Added "Formula Mode" checkbox for Add and Update Row Google Sheets actions, which parses values like entered in a cell, and allows inserting formulas.
+
+## 4 June 2020
 
 * Added new endpoints to fetch the content and information about the latest request on a URL. See [here](/api.html#get-single-request) and [here](/api.html#get-raw-request-content).
 
-## 2 May 2020
+## 2 June 2020
 
 * Added Amazon Web Services CloudFront Cache Invalidation Custom Action.
 * Added ability to toggle Auto Cleanup, which automatically cleans up requests/emails.
