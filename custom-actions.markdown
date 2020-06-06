@@ -13,7 +13,7 @@ With Custom Actions, it is possible to string together a set of actions that are
 
 With this, you can connect APIs that aren't compatible, convert a request to an email, and much more.
 
-![Custom actions screenshot](/custom-actions.png)
+![Custom actions screenshot](/images/custom-actions.png)
 
 ## About Variables
 
@@ -21,7 +21,7 @@ Variables are an important part of Custom Actions, and are characterized by a na
 
 Each request or email has a set of base variables that contain information like the request IP, method, headers, query string values, form values and the request content. To see a list of variables, click the Variables button in the editor. Clicking on a variable copies it to the clipboard.
 
-![Variables Menu](/variables.png)
+![Variables Menu](/images/variables.png)
 
 Almost all of the available Custom Actions can register a variable during the runtime of the actions, so for example you can register the result of a JSONPath query and use it in a "Modify Response" action to make the response dynamic, or even use it to send a request to another HTTP address, and then use the response of that.
 
@@ -33,7 +33,7 @@ The format of variables are dollar signs surrounded by a word, for example: `$ex
 
 ## WebhookScript
 
-!["WebhookScript" Custom Action screenshot](/webhookscript-in-action.png)
+!["WebhookScript" Custom Action screenshot](/images/webhookscript-in-action.png)
 
 Executes custom scripts using a scripting language that's very similar to JavaScript and PHP. [More information here](/webhookscript.html)
 
@@ -141,7 +141,7 @@ This action can be used to modify the response of the Webhook.site URL based on 
 
 ## Condition
 
-!["Condition" Custom Action screenshot](/condition-action.png)
+!["Condition" Custom Action screenshot](/images/condition-action.png)
 
 Useful if you need to validate that the request does or does not conform to certain criteria, the Condition action will either stop or continue based on a condition.
 
@@ -233,4 +233,4 @@ The "Create Invalidation" action allows you to dynamically create a CloudFront c
 
 With the Discord Custom Action, you can send messages to a specified channel (Each bot account uses a specific channel, so you can connect more accounts to send to different channels or servers.) In addition, you can choose a custom username and avatar image for the bot user.
 
-!["Discord" Custom Action screenshot](/discord.png)
+!["Discord" Custom Action screenshot](/images/discord.png)

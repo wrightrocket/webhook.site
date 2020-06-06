@@ -9,7 +9,7 @@ Included in your Webhook.site Premium subscription is **Webhook.site Schedules**
 
 After creating the Schedule, you can view the logs for the last 100 scheduled requests.
 
-![Schedules editor](/schedules-editor.png)
+![Schedules editor](/images/schedules-editor.png)
 
 Schedules can be executed at the following intervals:
 

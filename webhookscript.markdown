@@ -6,7 +6,7 @@ has_children: true
 
 # WebhookScript
 
-!["WebhookScript" Custom Action screenshot](/webhookscript-in-action.png)
+!["WebhookScript" Custom Action screenshot](/images/webhookscript-in-action.png)
 
 WebhookScript is an easy to use scripting language designed for executing Web-related actions on incoming requests. 
 
@@ -46,7 +46,7 @@ respond(
 
 ## Editor
 
-!["WebhookScript" Custom Action screenshot](/webhookscript-action.png)
+!["WebhookScript" Custom Action screenshot](/images/webhookscript-action.png)
 
 The editor has syntax highlighting, and below it is data relating to the current and previous actions:
 
