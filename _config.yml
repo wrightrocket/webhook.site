@@ -6,7 +6,7 @@ description: ""
 baseurl: ""
 url: ""
 
-logo: logo.png
+logo: images/logo.png
 
 aux_links:
   "Edit Page": "https://github.com/fredsted/webhook.site/tree/gh-pages"
