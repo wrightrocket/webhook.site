@@ -5,6 +5,7 @@ author: © Simon Fredsted
 description: ""
 baseurl: ""
 url: ""
+source: pages
 
 logo: logo.png
 
@@ -13,8 +14,6 @@ aux_links:
   "Github": "//github.com/fredsted/webhook.site"  
   "Support": "//support.webhook.site"
   "Back to Webhook.site": "//webhook.site"
-
-source: _pages
 
 # Build settings
 remote_theme: pmarsceill/just-the-docs
