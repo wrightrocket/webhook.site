@@ -14,6 +14,8 @@ aux_links:
   "Support": "//support.webhook.site"
   "Back to Webhook.site": "//webhook.site"
 
+source: _pages
+
 # Build settings
 remote_theme: pmarsceill/just-the-docs
 plugins:

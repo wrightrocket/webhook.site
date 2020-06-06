@@ -32,6 +32,14 @@ They can even be chained, for example:
 'Hello World'.hash('md5').echo() 
 ```
 
+Furthermore, functions that begin in a type can be referenced without it, for example, when calling the `format` function with the first argument being a string, the language infers that actually the `string_format` function should be used.
+
+```javascript
+echo(string_format('hello %s', 'world')) // hello world
+
+'hello %s'.format('world').echo() // hello world
+```
+
 Read more about functions in the [reference](/webhookscript/reference.html#functions).
 
 ## Custom functions
@@ -54,7 +62,7 @@ Adds `string` to script debug output.
 
 ### dd(***any*** value)
 
-Halts Custom Action execution and adds `value` to debug output.
+Stops Custom Action execution and adds `value` to script debug output.
 
 ### dump(***any*** value)
 
@@ -66,39 +74,52 @@ These functions lets you interface with other Custom Actions by getting and sett
 
 ### var(***string*** variable_name) : mixed
 
-Gets a specific Webhook.site Variable, including Global Variables (defined in the Control Panel). Variables should be without the `$` format used in other actions. 
+Retrieves the value of a Variable or Global Variable (defined in the Control Panel). The surrounding dollar signs are not mandatory.
 
-Example: `var('request.header.x-request-verification')`. 
+Returns `null` if the variable does not exist.
 
-`get_variable()` is an alias to this function.
+```javascript
+var('request.header.x-request-verification') // returns value of the `x-request-verification` header
+```
 
 ### set(***string*** variable_name, ***string*** variable_value)
 
-Sets a variable for usage in a later WebhookScript Action or other Custom Action. 
-
-`set_variable()` is an alias to this function.
+Sets a Variable for usage in current action execution. The Variable is available to downstream actions, but not stored permanently.
 
 ### store(***string*** global_variable_name, ***any*** value): ***any***
 
-Permanently creates or updates a Global Variable named `global_variable_name` with value. The value can be retrieved with the `var()` function.
+Permanently creates or updates a Global Variable (as defined in Control Panel.)
+
+The value can be retrieved with the `var()` function in subsequent action executions.
 
 ### variables : array
 
-Global variable (not a function) containing an associative array with all available Webhook.site variables.
+A variable (not a function) containing an associative array with all available Webhook.site variables.
+
+```javascript
+user_agent = variables['request.header.user-agent']
+```
 
 ## HTTP
 
 ### query(***array*** form_values) : string
 
-Converts an associative array into a form-style string, like would be used for `application/x-www-form-urlencoded` requests or HTTP query strings.
+Converts an associative array into a form-style string, used for e.g. `application/x-www-form-urlencoded` requests or HTTP query strings.
 
-Example: `query(['country': 'Curaçao', 'population': 158665])` returns `country=Cura%C3%A7ao&population=158665`
+```javascript
+query(['country': 'Curaçao', 'population': 158665]) // country=Cura%C3%A7ao&population=158665
+```
 
 ### request(***string*** url, ***string*** content = '', ***string*** method = 'GET', ***array*** headers = []) : array
 
-Sends a HTTP request and returns an array with the following keys: `content`, `status`, `headers`, `url`.
+Sends a HTTP request and returns an array with the following keys containing response data:
 
-The headers should be an array of strings in the form of `Header-Key: Value`.
+* `content`
+* `status`
+* `headers`
+* `url`
+
+The headers should be an array of strings in the form of `['Header-Key-1: Foo', 'Header-Key-2: Bar']`.
 
 To get a JSON document, validate if valid JSON, and get a property:
 
@@ -119,7 +140,9 @@ Returns an URL-decoded version of *value*.
 
 Returns an URL-encoded version of *value*.
 
-Example: `url_encode('here\'s a value')` returns `here%27s+a+value`.
+```javascript
+url_encode('here\'s a value') // here%27s+a+value
+```
 
 ## Flow Control and Responses
 
@@ -127,23 +150,25 @@ Example: `url_encode('here\'s a value')` returns `here%27s+a+value`.
 
 Executes code in the future. Any output will be stored on the request and will show with a "Was delayed" label. 
 
-The code will not inherit the execution scope, as you can see in this example where the `format` function is used to prepare the code string with a URL, causing `{}` to be replaced with with `https://example.com`.
+The code will not inherit the execution scope.
+
+In this example, the `format` function is used to prepare the code string with a URL, causing `{}` to be replaced with with `https://example.com`.
 
 ```javascript
-url = 'https://example.com'
-
 code = '
   request(
       "{}",
       \'{"message": "Hello World!"}\',
       "POST"
   )
-'.format(url)
+'
 
-delay(5, code);
+url = 'https://example.com'
+
+delay(5, code.format(url));
 ```
 
-The maximum amount of seconds allowed is 604800.
+The maximum amount of seconds allowed is 604800 (7 days).
 
 ### exec(***string*** code) : ***any***
 
@@ -151,36 +176,40 @@ Executes code in `code` and returns the result. The code will inherit the execut
 
 ### import(***string*** url) : ***any***
 
-Downloads code located at `url` and returns the result. The code will inherit the execution scope. As an example, this can be used if you want to re-use code. Just upload it to your server or e.g. Github and use it in different WebhookScript actions.
+Downloads code located at `url` and returns the result. The code will inherit the execution scope. 
+
+As an example, this can be used if you want to re-use code. Just upload it to a server or e.g. Github and use it in different WebhookScript actions.
 
 ```javascript
 result = import('https://raw.githubusercontent.com/fredsted/webhookscripts/ec22946a83ea85f607fcc6bff83f9d81ed2fe4ed/hello_world.ws')
-echo(result) // -> "value"
+echo(result) // value
 ```
 
 ### respond(***string*** content, ***int*** status, ***array*** headers)
 
-Halts Custom Action execution and return a response.
+Stops Custom Action execution and returns a response.
 
 ### stop()
 
-Stop executing current script.
+Stops Custom Action execution.
 
 ### set_content(***string*** content)
 
-Sets the response content of the URL
+Sets or overwrites the response content of the URL. Script execution continues.
 
 ### set_header(***string*** header_name, ***string*** header_value)
 
-Sets or overwrites a response header of the URL. 
+Sets or overwrites a response header of the URL. Script execution continues.
 
 ### set_response(***string*** content, ***int*** status, ***array*** headers)
 
-Set response content, status and headers in single function. `headers`` should be an array of strings e.g. `["X-Example: Value", "X-Foo: Bar"]
+Sets or overwrites response content, status and headers in single function.  Script execution continues.
+
+`headers` should be an array of strings e.g. `["X-Example: Value", "X-Foo: Bar"]`.
 
 ### set_status(***number*** status)
 
-Sets the HTTP response status of the current URL.
+Sets or overwrites the HTTP response status of the current URL.  Script execution continues.
 
 ## String
 
@@ -196,9 +225,13 @@ Returns decoded base64 string.
 
 Returns a hashed version of `value` using the `algo` algorithm.
 
-`hash('md5', 'hello world')` returns `5eb63bbbe01eeed093cb22bb8f5acdc3`.
+```javscript
+hash('md5', 'hello world')  // 5eb63bbbe01eeed093cb22bb8f5acdc3
+```
 
-The following algorithms are available: `md2`, `md4`, `md5`, `sha1`, `sha224`, `sha256`, `sha384`, `sha512/224`, `sha512/256`, `sha512`, `sha3-224`, `sha3-256`, `sha3-384`, `sha3-512`, `ripemd128`, `ripemd160`, `ripemd256`, `ripemd320`, `whirlpool`, `tiger128,3`, `tiger160,3`, `tiger192,3`, `tiger128,4`, `tiger160,4`, `tiger192,4`, `snefru`, `snefru256`, `gost`, `gost-crypto`, `adler32`, `crc32`, `crc32b`, `fnv132`, `fnv1a32`, `fnv164`, `fnv1a64`, `joaat`, `haval128,3`, `haval160,3`, `haval192,3`, `haval224,3`, `haval256,3`, `haval128,4`, `haval160,4`, `haval192,4`, `haval224,4`, `haval256,4`, `haval128,5`, `haval160,5`, `haval192,5`, `haval224,5`, `haval256,5`.
+
+
+The following built-in algorithms are available: `md2`, `md4`, `md5`, `sha1`, `sha224`, `sha256`, `sha384`, `sha512/224`, `sha512/256`, `sha512`, `sha3-224`, `sha3-256`, `sha3-384`, `sha3-512`, `ripemd128`, `ripemd160`, `ripemd256`, `ripemd320`, `whirlpool`, `tiger128,3`, `tiger160,3`, `tiger192,3`, `tiger128,4`, `tiger160,4`, `tiger192,4`, `snefru`, `snefru256`, `gost`, `gost-crypto`, `adler32`, `crc32`, `crc32b`, `fnv132`, `fnv1a32`, `fnv164`, `fnv1a64`, `joaat`, `haval128,3`, `haval160,3`, `haval192,3`, `haval224,3`, `haval256,3`, `haval128,4`, `haval160,4`, `haval192,4`, `haval224,4`, `haval256,4`, `haval128,5`, `haval160,5`, `haval192,5`, `haval224,5`, `haval256,5`.
 
 ### json_decode(***string*** json) : array
 
@@ -456,7 +489,7 @@ Source: [Carbon Docs](https://carbon.nesbot.com/docs/#api-localization)
 
 ### Date locales available
 
-aa, aa_DJ, aa_ER, aa_ER@saaho, aa_ET, af, af_NA, af_ZA, agq, agr, agr_PE, ak, ak_GH, am, am_ET, an, an_ES, anp, anp_IN, ar, ar_AE, ar_BH, ar_DJ, ar_DZ, ar_EG, ar_EH, ar_ER, ar_IL, ar_IN, ar_IQ, ar_JO, ar_KM, ar_KW, ar_LB, ar_LY, ar_MA, ar_MR, ar_OM, ar_PS, ar_QA, ar_SA, ar_SD, ar_SO, ar_SS, ar_SY, ar_Shakl, ar_TD, ar_TN, ar_YE, as, as_IN, asa, ast, ast_ES, ayc, ayc_PE, az, az_AZ, az_Cyrl, az_IR, az_Latn, bas, be, be_BY, be_BY@latin, bem, bem_ZM, ber, ber_DZ, ber_MA, bez, bg, bg_BG, bhb, bhb_IN, bho, bho_IN, bi, bi_VU, bm, bn, bn_BD, bn_IN, bo, bo_CN, bo_IN, br, br_FR, brx, brx_IN, bs, bs_BA, bs_Cyrl, bs_Latn, byn, byn_ER, ca, ca_AD, ca_ES, ca_ES_Valencia, ca_FR, ca_IT, ccp, ccp_IN, ce, ce_RU, cgg, chr, chr_US, cmn, cmn_TW, crh, crh_UA, cs, cs_CZ, csb, csb_PL, cu, cv, cv_RU, cy, cy_GB, da, da_DK, da_GL, dav, de, de_AT, de_BE, de_CH, de_DE, de_IT, de_LI, de_LU, dje, doi, doi_IN, dsb, dsb_DE, dua, dv, dv_MV, dyo, dz, dz_BT, ebu, ee, ee_TG, el, el_CY, el_GR, en, en_001, en_150, en_AG, en_AI, en_AS, en_AT, en_AU, en_BB, en_BE, en_BI, en_BM, en_BS, en_BW, en_BZ, en_CA, en_CC, en_CH, en_CK, en_CM, en_CX, en_CY, en_DE, en_DG, en_DK, en_DM, en_ER, en_FI, en_FJ, en_FK, en_FM, en_GB, en_GD, en_GG, en_GH, en_GI, en_GM, en_GU, en_GY, en_HK, en_IE, en_IL, en_IM, en_IN, en_IO, en_ISO, en_JE, en_JM, en_KE, en_KI, en_KN, en_KY, en_LC, en_LR, en_LS, en_MG, en_MH, en_MO, en_MP, en_MS, en_MT, en_MU, en_MW, en_MY, en_NA, en_NF, en_NG, en_NL, en_NR, en_NU, en_NZ, en_PG, en_PH, en_PK, en_PN, en_PR, en_PW, en_RW, en_SB, en_SC, en_SD, en_SE, en_SG, en_SH, en_SI, en_SL, en_SS, en_SX, en_SZ, en_TC, en_TK, en_TO, en_TT, en_TV, en_TZ, en_UG, en_UM, en_US, en_US_Posix, en_VC, en_VG, en_VI, en_VU, en_WS, en_ZA, en_ZM, en_ZW, eo, es, es_419, es_AR, es_BO, es_BR, es_BZ, es_CL, es_CO, es_CR, es_CU, es_DO, es_EA, es_EC, es_ES, es_GQ, es_GT, es_HN, es_IC, es_MX, es_NI, es_PA, es_PE, es_PH, es_PR, es_PY, es_SV, es_US, es_UY, es_VE, et, et_EE, eu, eu_ES, ewo, fa, fa_AF, fa_IR, ff, ff_CM, ff_GN, ff_MR, ff_SN, fi, fi_FI, fil, fil_PH, fo, fo_DK, fo_FO, fr, fr_BE, fr_BF, fr_BI, fr_BJ, fr_BL, fr_CA, fr_CD, fr_CF, fr_CG, fr_CH, fr_CI, fr_CM, fr_DJ, fr_DZ, fr_FR, fr_GA, fr_GF, fr_GN, fr_GP, fr_GQ, fr_HT, fr_KM, fr_LU, fr_MA, fr_MC, fr_MF, fr_MG, fr_ML, fr_MQ, fr_MR, fr_MU, fr_NC, fr_NE, fr_PF, fr_PM, fr_RE, fr_RW, fr_SC, fr_SN, fr_SY, fr_TD, fr_TG, fr_TN, fr_VU, fr_WF, fr_YT, fur, fur_IT, fy, fy_DE, fy_NL, ga, ga_IE, gd, gd_GB, gez, gez_ER, gez_ET, gl, gl_ES, gom, gom_Latn, gsw, gsw_CH, gsw_FR, gsw_LI, gu, gu_IN, guz, gv, gv_GB, ha, ha_GH, ha_NE, ha_NG, hak, hak_TW, haw, he, he_IL, hi, hi_IN, hif, hif_FJ, hne, hne_IN, hr, hr_BA, hr_HR, hsb, hsb_DE, ht, ht_HT, hu, hu_HU, hy, hy_AM, i18n, ia, ia_FR, id, id_ID, ig, ig_NG, ii, ik, ik_CA, in, is, is_IS, it, it_CH, it_IT, it_SM, it_VA, iu, iu_CA, iw, ja, ja_JP, jgo, jmc, jv, ka, ka_GE, kab, kab_DZ, kam, kde, kea, khq, ki, kk, kk_KZ, kkj, kl, kl_GL, kln, km, km_KH, kn, kn_IN, ko, ko_KP, ko_KR, kok, kok_IN, ks, ks_IN, ks_IN@devanagari, ksb, ksf, ksh, ku, ku_TR, kw, kw_GB, ky, ky_KG, lag, lb, lb_LU, lg, lg_UG, li, li_NL, lij, lij_IT, lkt, ln, ln_AO, ln_CD, ln_CF, ln_CG, lo, lo_LA, lrc, lrc_IQ, lt, lt_LT, lu, luo, luy, lv, lv_LV, lzh, lzh_TW, mag, mag_IN, mai, mai_IN, mas, mas_TZ, mer, mfe, mfe_MU, mg, mg_MG, mgh, mgo, mhr, mhr_RU, mi, mi_NZ, miq, miq_NI, mjw, mjw_IN, mk, mk_MK, ml, ml_IN, mn, mn_MN, mni, mni_IN, mo, mr, mr_IN, ms, ms_BN, ms_MY, ms_SG, mt, mt_MT, mua, my, my_MM, mzn, nan, nan_TW, nan_TW@latin, naq, nb, nb_NO, nb_SJ, nd, nds, nds_DE, nds_NL, ne, ne_IN, ne_NP, nhn, nhn_MX, niu, niu_NU, nl, nl_AW, nl_BE, nl_BQ, nl_CW, nl_NL, nl_SR, nl_SX, nmg, nn, nn_NO, nnh, no, nr, nr_ZA, nso, nso_ZA, nus, nyn, oc, oc_FR, om, om_ET, om_KE, or, or_IN, os, os_RU, pa, pa_Arab, pa_Guru, pa_IN, pa_PK, pap, pap_AW, pap_CW, pl, pl_PL, prg, ps, ps_AF, pt, pt_AO, pt_BR, pt_CH, pt_CV, pt_GQ, pt_GW, pt_LU, pt_MO, pt_MZ, pt_PT, pt_ST, pt_TL, qu, qu_BO, qu_EC, quz, quz_PE, raj, raj_IN, rm, rn, ro, ro_MD, ro_RO, rof, ru, ru_BY, ru_KG, ru_KZ, ru_MD, ru_RU, ru_UA, rw, rw_RW, rwk, sa, sa_IN, sah, sah_RU, saq, sat, sat_IN, sbp, sc, sc_IT, sd, sd_IN, sd_IN@devanagari, se, se_FI, se_NO, se_SE, seh, ses, sg, sgs, sgs_LT, sh, shi, shi_Latn, shi_Tfng, shn, shn_MM, shs, shs_CA, si, si_LK, sid, sid_ET, sk, sk_SK, sl, sl_SI, sm, sm_WS, smn, sn, so, so_DJ, so_ET, so_KE, so_SO, sq, sq_AL, sq_MK, sq_XK, sr, sr_Cyrl, sr_Cyrl_BA, sr_Cyrl_ME, sr_Cyrl_XK, sr_Latn, sr_Latn_BA, sr_Latn_ME, sr_Latn_XK, sr_ME, sr_RS, sr_RS@latin, ss, ss_ZA, st, st_ZA, sv, sv_AX, sv_FI, sv_SE, sw, sw_CD, sw_KE, sw_TZ, sw_UG, szl, szl_PL, ta, ta_IN, ta_LK, ta_MY, ta_SG, tcy, tcy_IN, te, te_IN, teo, teo_KE, tet, tg, tg_TJ, th, th_TH, the, the_NP, ti, ti_ER, ti_ET, tig, tig_ER, tk, tk_TM, tl, tl_PH, tlh, tn, tn_ZA, to, to_TO, tpi, tpi_PG, tr, tr_CY, tr_TR, ts, ts_ZA, tt, tt_RU, tt_RU@iqtelif, twq, tzl, tzm, tzm_Latn, ug, ug_CN, uk, uk_UA, unm, unm_US, ur, ur_IN, ur_PK, uz, uz_Arab, uz_Cyrl, uz_Latn, uz_UZ, uz_UZ@cyrillic, vai, vai_Latn, vai_Vaii, ve, ve_ZA, vi, vi_VN, vo, vun, wa, wa_BE, wae, wae_CH, wal, wal_ET, wo, wo_SN, xh, xh_ZA, xog, yav, yi, yi_US, yo, yo_BJ, yo_NG, yue, yue_HK, yue_Hans, yue_Hant, yuw, yuw_PG, zgh, zh, zh_CN, zh_HK, zh_Hans, zh_Hans_HK, zh_Hans_MO, zh_Hans_SG, zh_Hant, zh_Hant_HK, zh_Hant_MO, zh_Hant_TW, zh_MO, zh_SG, zh_TW, zh_YUE, zu, zu_ZA
+[Click here for a list of possible locales/translations available for date display functions.](/webhookscript/date-locales.html)
 
 ### to_date(***string*** date, ***?string*** format): ***string***
 
