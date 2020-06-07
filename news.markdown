@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 7 June 2020
+
+* Added new Slack Send Message Custom Action, which lets you send Slack messages via a Slack Webhook URL.
+
 ## 5 June 2020
 
 * Added "Formula Mode" checkbox for Add and Update Row Google Sheets actions, which parses values like entered in a cell, and allows inserting formulas.
