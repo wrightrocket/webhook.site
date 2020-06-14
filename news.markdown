@@ -29,6 +29,7 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 * Fix WebhookScript fullscreen mode not being disengaged when saving
 * URLs can now accept file uploads via multipart. File contents are available via variables: `request.file.<formname>.content`, `request.file.<formname>.size`, `request.file.<formname>.filename`
 * New WebhookScript function: `csv_to_array()`, which converts a CSV file from a string to an array that can easily be parsed.
+* Added an [example script](/examples.html#uploading-and-parsing-csv-file) demoing file uploads and CSV parsing
 
 ## 7 June 2020
 

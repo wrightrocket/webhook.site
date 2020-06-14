@@ -29,7 +29,30 @@ This works since Custom Actions are executed synchronously in a chain, sharing d
 
 The format of variables are dollar signs surrounded by a word, for example: `$example$`. 
 
+### Default request variables
 
+| Variable name                | Description                                                                                            |
+|------------------------------|--------------------------------------------------------------------------------------------------------|
+| request.query.[name]         | Created for each query string (e.g. ?name=value)                                                       |
+| request.form.[name]          | Created for each form field                                                                            |
+| request.header.[name]        | Created for each HTTP header                                                                           |
+| request.file.[name].filename | Created for each file upload, with `name` being the input name property. Contains the client file name |
+| request.file.[name].size     | Contains the file size in bytes                                                                        |
+| request.file.[name].content  | Contains the file content                                                                              |
+| request.uuid                 | The UUID of the request                                                                                |
+| request.token_id             | The Token ID (URL ID) of the request                                                                   |
+| request.content              | The body content of the request                                                                        |
+| request.date                 | Request date in Y-m-d H:m:s format                                                                     |
+| request.hostname             | Hostname of the request (usually `webhook.site`)                                                       |
+| request.ip                   | IP of the host making the request                                                                      |
+| request.user_agent           | User agent header                                                                                      |
+| request.url                  | Full URL of the request (e.g. https://webhook.site/xxx-xxx...)                                         |
+| request.method               | HTTP method (GET, POST, etc.)                                                                          |
+| request.sender               | Sender address (email only)                                                                            |
+| request.message_id           | Email message ID (email only)                                                                          |
+| request.text_content         | Parsed plaintext content (email only)                                                                  |
+| request.destinations         | Comma separated list of recipients (email only)                                                        |
+| request.checks.[name]        | True or false for email checks (DKIM, SPF, etc., email only)                                           |
 
 ## WebhookScript
 
