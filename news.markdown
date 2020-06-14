@@ -22,6 +22,14 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 14 June 2020
+
+* WebhookScript editor syntax highlighting improved with regards to multiline strings, escape characters and more
+* New WebhookScript editor keyboard shortcut for saving (Mac: Cmd-S, Windows: Ctrl-S.)
+* Fix WebhookScript fullscreen mode not being disengaged when saving
+* URLs can now accept file uploads via multipart. File contents are available via variables: `request.file.<formname>.content`, `request.file.<formname>.size`, `request.file.<formname>.filename`
+* New WebhookScript function: `csv_to_array()`, which converts a CSV file from a string to an array that can easily be parsed.
+
 ## 7 June 2020
 
 * Added new Slack Send Message Custom Action, which lets you send Slack messages via a Slack Webhook URL.

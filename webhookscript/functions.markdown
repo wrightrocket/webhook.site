@@ -221,6 +221,38 @@ Returns a base64-encoded string.
 
 Returns decoded base64 string.
 
+### csv_to_array(***string*** csvString, ***string*** delimiter, ***int*** headerOffset, ***string*** enclosure, ***string*** escape) : array
+
+Takes a CSV string and outputs to an array, with each row being an item in the array. Optionally, if `headerOffset` is 
+
+* `delimiter` will explicitly set the CSV delimiter the parser will attempt to use (e.g. `;`). Must be a single character. Defaults to `,` (comma.)
+* `headerOffset`, when specified, causes the output array item's keys to be set to the header values. Setting to `0` will mark the first row as the header row. 
+* `enclosure` sets the field enclosure character. Must be a single character. Defaults to `"` (double quote.)
+* `escape` sets the field escape character. Must be a single character. Defaults to `\` (backslash.)
+
+```javascript
+csv_content = 'firstname,lastname,title
+"M. J.",Plumley,"Sr. Developer"
+Emily,"Jenna Platt","Chief Information Officer"'
+
+array = csv_to_array(csv_content, ',', 0)
+
+echo(json_encode(array))
+
+// [
+//     {
+//         "firstname": "John",
+//         "lastname": "Doe",
+//         "title": "Sr. Developer"
+//     },
+//     {
+//         "firstname": "Emily",
+//         "lastname": "Jenna Platt",
+//         "title": "Chief Information Officer"
+//     }
+// ]
+```
+
 ### hash(***string/number*** value, ***string*** algo) : string
 
 Returns a hashed version of `value` using the `algo` algorithm.
@@ -228,8 +260,7 @@ Returns a hashed version of `value` using the `algo` algorithm.
 ```javscript
 hash('md5', 'hello world')  // 5eb63bbbe01eeed093cb22bb8f5acdc3
 ```
-
-
+<br>
 
 The following built-in algorithms are available: `md2`, `md4`, `md5`, `sha1`, `sha224`, `sha256`, `sha384`, `sha512/224`, `sha512/256`, `sha512`, `sha3-224`, `sha3-256`, `sha3-384`, `sha3-512`, `ripemd128`, `ripemd160`, `ripemd256`, `ripemd320`, `whirlpool`, `tiger128,3`, `tiger160,3`, `tiger192,3`, `tiger128,4`, `tiger160,4`, `tiger192,4`, `snefru`, `snefru256`, `gost`, `gost-crypto`, `adler32`, `crc32`, `crc32b`, `fnv132`, `fnv1a32`, `fnv164`, `fnv1a64`, `joaat`, `haval128,3`, `haval160,3`, `haval192,3`, `haval224,3`, `haval256,3`, `haval128,4`, `haval160,4`, `haval192,4`, `haval224,4`, `haval256,4`, `haval128,5`, `haval160,5`, `haval192,5`, `haval224,5`, `haval256,5`.
 
@@ -342,9 +373,9 @@ Reverses string ***subject***
 
 ### string_shuffle(***string*** string) : string
 
-Returns shuffled string
+Returns string where the individual characters has been shuffled.
 
-### string_split(***string*** subject, ***string/regex*** delimiter) : string
+### string_split(***string*** subject, ***string/regex*** delimiter) : array
 
 Returns array of split string ***subject*** with ***delimiter*** 
 

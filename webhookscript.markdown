@@ -48,10 +48,25 @@ respond(
 
 !["WebhookScript" Custom Action screenshot](/images/webhookscript-action.png)
 
-The editor has syntax highlighting, and below it is data relating to the current and previous actions:
+### Shortcuts
+
+The shortcuts are available when the editor is focused.
+
+| Windows  | Mac     | Shortcut                       |
+|----------|---------|--------------------------------|
+| Alt-R    | Alt-R   | Test code (update Debug Panel) |
+| Ctrl-S   | Cmd-S   | Save action without exiting    |
+
+### Debug Panel
+
+Below the editor is the "debug panel" containing data relating to the current and previous actions:
 
 * **Debug outputs** shows the outputs of all the actions, with the current action being edited or created marked in blue.
 
 * **Response** shows details of the response of the URL formatted in JSON.
 
 * **Variables** is a table of all current available variables for use in the script with the `var()` function or `variables` array.
+
+### Fullscreen Mode
+
+To enable fullscreen mode, click the little button in the upper right corner to make the editor take up more screen space. Click again to disengage.
