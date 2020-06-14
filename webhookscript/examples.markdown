@@ -278,3 +278,47 @@ request(
   ]
 )
 ```
+
+## Uploading and parsing CSV file
+
+With this script, a file upload form is displayed when visiting the URL. After submitting the form, the CSV file is processed and validated (in this example, there must be more than 2 rows). If it can't be validated, an error message is shown. Finally, the user is shown an "Upload successful" message if the CSV file is valid.
+
+```javascript
+url = var('request.url')
+
+// Display file upload form and exit if HTTP method is not POST
+if (var('request.method') != 'POST') {
+    respond('
+        <html>
+            <head><title>Upload CSV</title></head>
+            <body>
+                <h1>Upload CSV</h1>
+                <form action="{}" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="file"/>
+                    <button type="submit">Upload</button>
+                </form>
+            </body>
+        </html>
+    '.format(url))
+}
+
+// Use a comma as delimiter and treat first row (0) as header row
+array = csv_to_array(var('request.file.file.content'), ',', 0)
+
+// If CSV can't be parsed, or there's less than 2 rows, fail
+if (!array or array.length() < 2) {
+    respond('
+        <h1>Could not parse CSV</h1>
+        <a href="{}">Upload again</a>
+    '.format(url));
+}
+
+// Display the parsed CSV in JSON format 
+respond('
+    <h1>Upload successful</h1>
+    <pre>{}</pre>
+    <p>
+        <a href="{}">Upload again</a>
+    </p>
+'.format(json_encode(array), url))
+```
