@@ -31,28 +31,32 @@ The format of variables are dollar signs surrounded by a word, for example: `$ex
 
 ### Default request variables
 
-| Variable name                | Description                                                                                            |
-|------------------------------|--------------------------------------------------------------------------------------------------------|
-| request.query.[name]         | Created for each query string (e.g. ?name=value)                                                       |
-| request.form.[name]          | Created for each form field                                                                            |
-| request.header.[name]        | Created for each HTTP header                                                                           |
-| request.file.[name].filename | Created for each file upload, with `name` being the input name property. Contains the client file name |
-| request.file.[name].size     | Contains the file size in bytes                                                                        |
-| request.file.[name].content  | Contains the file content                                                                              |
-| request.uuid                 | The UUID of the request                                                                                |
-| request.token_id             | The Token ID (URL ID) of the request                                                                   |
-| request.content              | The body content of the request                                                                        |
-| request.date                 | Request date in Y-m-d H:m:s format                                                                     |
-| request.hostname             | Hostname of the request (usually `webhook.site`)                                                       |
-| request.ip                   | IP of the host making the request                                                                      |
-| request.user_agent           | User agent header                                                                                      |
-| request.url                  | Full URL of the request (e.g. https://webhook.site/xxx-xxx...)                                         |
-| request.method               | HTTP method (GET, POST, etc.)                                                                          |
-| request.sender               | Sender address (email only)                                                                            |
-| request.message_id           | Email message ID (email only)                                                                          |
-| request.text_content         | Parsed plaintext content (email only)                                                                  |
-| request.destinations         | Comma separated list of recipients (email only)                                                        |
-| request.checks.[name]        | True or false for email checks (DKIM, SPF, etc., email only)                                           |
+These variables are automatically available for each request or email. Different variables are available depending on the type.
+
+| Variable Name                 | Available For | Description                                                                                            |
+|-------------------------------|---------------|--------------------------------------------------------------------------------------------------------|
+| request.uuid                  | All           | The UUID of the request                                                                                |
+| request.token_id              | All           | The Token UUID (URL ID) of the request                                                                 |
+| request.content               | All           | The body content of the request                                                                        |
+| request.date                  | All           | Creation date in Y-m-d H:m:s format                                                                    |
+| request.hostname              | All           | Hostname of the request (usually `webhook.site`)                                                       |
+| request.header.[name]         | All           | Created for each HTTP header                                                                           |
+| request.size                  | All           | Request body size in bytes                                                                             |
+| request.type                  | All           | Request type (`email` or `web`)                                                                        |
+| request.query.[name]          | Web           | Created for each query string (e.g. ?name=value)                                                       |
+| request.form.[name]           | Web           | Created for each form field                                                                            |
+| request.file.[name].filenamee | Web           | Created for each file upload, with `name` being the input name property. Contains the client file name |
+| request.file.[name].size      | Web           | Contains the file size in bytes                                                                        |
+| request.file.[name].content   | Web           | Contains the file content                                                                              |
+| request.ip                    | Web           | IP of the host making the request                                                                      |
+| request.user_agent            | Web           | User agent header                                                                                      |
+| request.url                   | Web           | Full URL of the request (e.g. https://webhook.site/xxx-xxx...)                                         |
+| request.method                | Web           | HTTP method (GET, POST, etc.)                                                                          |
+| request.sender                | Email         | Sender address                                                                                         |
+| request.message_id            | Email         | Email message ID                                                                                       |
+| request.text_content          | Email         | Parsed plaintext content                                                                               |
+| request.destinations          | Email         | Comma separated list of recipients.                                                                    |
+| request.checks.[name]         | Email         | True or false for email checks (DKIM, SPF, etc.)                                                       |
 
 ## WebhookScript
 
