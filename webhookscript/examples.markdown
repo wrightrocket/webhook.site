@@ -285,6 +285,7 @@ With this script, a file upload form is displayed when visiting the URL. After s
 
 ```javascript
 url = var('request.url')
+set_header('content-type', 'text/html');
 
 // Display file upload form and exit if HTTP method is not POST
 if (var('request.method') != 'POST') {
