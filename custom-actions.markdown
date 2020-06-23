@@ -261,3 +261,19 @@ The "Create Invalidation" action allows you to dynamically create a CloudFront c
 With the Discord Custom Action, you can send messages to a specified channel (Each bot account uses a specific channel, so you can connect more accounts to send to different channels or servers.) In addition, you can choose a custom username and avatar image for the bot user.
 
 !["Discord" Custom Action screenshot](/images/discord.png)
+
+
+## Slack (Beta)
+
+With the Slack Custom Action, you can easily use Slack's Webhook URLs to send messages to a channel.
+
+## Dropbox
+
+The Dropbox integration has access to the entire contents of your dropbox, and currently the following actions are available:
+
+* Create Folder
+* Download File
+* Upload File
+* Delete File
+* Delete Folder
+* Get Link - creates a temporary download link for any file in your Dropbox, and saves it in a variable.
