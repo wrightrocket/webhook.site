@@ -7,7 +7,7 @@ parent: WebhookScript
 # WebhookScript Examples
 {: .no_toc }
 
-Do you have a nice example to share with other users? Please send them to [support@webhook.site](mailto:support@webhook.site) 😊
+Do you have a nice example to share with other users? Or looking for even more examples? Take a look at the WebhookScript example repository, and make a pull request if you want to contribute: https://github.com/fredsted/webhookscripts
 
 1. TOC
 {:toc}
