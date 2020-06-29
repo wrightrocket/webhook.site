@@ -22,6 +22,10 @@ Subscribe below to receive updates about improvements and new features on Webhoo
 </form>
 </div>
 
+## 23 June 2020
+
+* Added new Dropbox Custom Actions: Create Folder, Download, Upload, Delete, Get Link. 
+
 ## 14 June 2020
 
 * WebhookScript editor syntax highlighting improved with regards to multiline strings, escape characters and more
