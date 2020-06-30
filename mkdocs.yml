@@ -1,13 +1,23 @@
 site_name: Webhook.site Docs
+
 theme:
   name: material
   logo: images/icon.png
   
 use_directory_urls: false
 
+plugins:
+  - search
+  - redirects:
+      redirect_maps:
+        'webhookscript.md': webhookscript/index.markdown
+
 markdown_extensions:
   - codehilite
   - admonition
+  
+extra_css:
+  - stylesheets/extra.css
   
 nav:
   - About: index.markdown
@@ -24,5 +34,3 @@ nav:
     - Functions: webhookscript/functions.markdown
   
 
-extra_css:
-  - stylesheets/extra.css
