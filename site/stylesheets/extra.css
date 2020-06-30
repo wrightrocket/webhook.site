@@ -1,0 +1,38 @@
+:root {
+  --md-primary-bg-color: white;
+  --md-primary-fg-color: black;
+  
+  --md-code-fg-color: #00ff00;
+}
+
+body {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+}
+
+.md-header-nav__topic {
+  font-weight: bold;
+}
+
+/* NAV */
+
+.md-nav__title {
+  display: none;
+}
+
+.md-nav__link--active {
+  font-weight: bold;
+}
+
+
+/* BODY */
+
+.md-typeset a {
+  text-decoration: underline;
+  color: #337ab7;
+}
+
+.md-typeset code {
+  color: rgb(205, 0, 103);
+}

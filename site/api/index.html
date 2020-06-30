@@ -1,0 +1,761 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#webhooksite-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Webhook.site Docs" class="md-header-nav__button md-logo" aria-label="Webhook.site Docs">
+      
+  <img src="../images/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Webhook.site Docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              API
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Webhook.site Docs" class="md-nav__button md-logo" aria-label="Webhook.site Docs">
+      
+  <img src="../images/icon.png" alt="logo">
+
+    </a>
+    Webhook.site Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../news/" title="News & Changelog" class="md-nav__link">
+      News & Changelog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="Install" class="md-nav__link">
+      Install
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        API
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="API" class="md-nav__link md-nav__link--active">
+      API
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-tokens" class="md-nav__link">
+    About Tokens
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-key" class="md-nav__link">
+    API Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    Password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../premium/" title="Premium" class="md-nav__link">
+      Premium
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../schedules/" title="Schedules" class="md-nav__link">
+      Schedules
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../custom-actions/" title="Custom Actions" class="md-nav__link">
+      Custom Actions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      WebhookScript
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="WebhookScript" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        WebhookScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webhookscript/" title="About WebhookScript" class="md-nav__link">
+      About WebhookScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webhookscript/reference/" title="Reference" class="md-nav__link">
+      Reference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webhookscript/examples/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webhookscript/functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-tokens" class="md-nav__link">
+    About Tokens
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-key" class="md-nav__link">
+    API Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    Password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="webhooksite-api">Webhook.site API</h1>
+<p>The Webhook.site API is public, free to use, doesn't require authentication and is relatively easy to use. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that fair use guidelines and other limitations apply as described by the <a href="https://webhook.site/terms">Terms of Service</a>.</p>
+</div>
+<p>At its core, Webhook.site takes your data (HTTP requests) and returns it back to you, and also letting you execute various actions based on the contents with <a href="/custom-actions.html">Custom Actions</a>.</p>
+<p>Base URL: <code>https://webhook.site</code>.</p>
+<p>We recommend that you set the Accept header to <code>application/json</code>.</p>
+<h3 id="about-tokens">About Tokens</h3>
+<p>A <strong>token</strong> is a container for incoming requests and emails, and corresponds to a Webhook.site URL or Email. A <strong>token ID</strong> is a 36 character UUID consisting of hexadecimal characters and dashes.</p>
+<p>Simply, the token ID is the part after <code>https://webhook.site/</code> in the URL, or before <code>@email.webhook.site</code> in the email address.</p>
+<h3 id="authentication">Authentication</h3>
+<p>While most functions in the API work without any authentication whatsoever, some endpoints do require authentication, or will return a <code>401 Unauthorized</code> status code.</p>
+<h5 id="api-key">API Key</h5>
+<p>An API Key can be generated in the Control Panel, and provides access to Tokens that are either a) password protected or b) require login.</p>
+<p>To specify an API Key in a request, use a HTTP header: <code>Api-Key: [your API Key]</code></p>
+<h5 id="password">Password</h5>
+<p>If you have enabled password authentication on a Webhook.site URL/Token, to access the resource, either a) use the <code>?password=[your password]</code> query string b) set the password using HTTP Basic Auth.</p>
+<h1 id="tokens">Tokens</h1>
+<h2 id="create-token">Create token</h2>
+<p><strong>POST</strong> <code>/token</code></p>
+<p>After creating your token, the URL at <code>https://webhook.site/{token.uuid}</code> becomes accessible, and emails can be sent to <code>{token.uuid}@email.webhook.site</code>.</p>
+<ul>
+<li><code>default_*</code> parameters sets the response of the URL.</li>
+<li><code>timeout</code> waits an amount of seconds before returning the response (intended for testing timeouts)</li>
+<li><code>expiry</code> set to true will cause the token to automatically be deleted within 7 days of no activity, even if creating the token as a Premium user. If you're using tokens for automated testing, for example, you can enable this to avoid filling up your user profile.</li>
+<li><code>cors</code> set to true will add CORS headers to the request so browsers will send cross-domain requests to the URL</li>
+</ul>
+<h5 id="request">Request</h5>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;default_status&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="nt">&quot;default_content&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello world!&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;default_content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;text/html&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;timeout&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nt">&quot;cors&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;expiry&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<h5 id="response">Response</h5>
+<p><code>200 OK</code></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;redirect&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nt">&quot;timeout&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nt">&quot;premium&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;9981f9f4-657a-4ebf-be7c-1915bedd4775&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;ip&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;user_agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Paw\/3.1.8 (Macintosh; OS X\/10.14.6) GCDHTTPRequest&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;default_content&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello world!&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;default_status&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="nt">&quot;default_content_type&quot;</span><span class="p">:</span> <span class="s2">&quot;text\/plain&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;premium_expires_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-10-22 10:52:20&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-22 10:52:20&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-22 10:52:20&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Note about expiry: If there's no incoming requests for about a week, and the token is not upgraded to premium, the token is automatically deleted along with any other data.</p>
+<h2 id="update-token">Update token</h2>
+<ul>
+<li>Can require authentication.</li>
+</ul>
+<p><strong>PUT</strong> <code>/token/:token_id</code></p>
+<h5 id="request_1">Request</h5>
+<p><a href="#11-create-token"><em>See </em><em>POST</em><em> <code>/token</code></em></a></p>
+<h5 id="response_1">Response</h5>
+<p><a href="#11-create-token"><em>See </em><em>POST</em><em> <code>/token</code></em></a></p>
+<h2 id="set-password-premium">Set password (Premium)</h2>
+<ul>
+<li>Can require authentication.</li>
+<li>Requires user with Premium upgrade.</li>
+</ul>
+<p><strong>PUT</strong> <code>/token/:token_id/password</code></p>
+<p>Sets a password to view the requests of a token.</p>
+<h5 id="request_2">Request</h5>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;hunter2&quot;</span><span class="p">,</span> <span class="nt">&quot;old_password&quot;</span><span class="p">:</span> <span class="s2">&quot;hunter1&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+
+<h5 id="response_2">Response</h5>
+<p><a href="#11-create-token"><em>See </em><em>POST</em><em> <code>/token</code></em></a></p>
+<h2 id="set-alias-premium">Set alias (Premium)</h2>
+<ul>
+<li>Can require authentication.</li>
+<li>Requires user with Premium upgrade.</li>
+</ul>
+<p><strong>PUT</strong> <code>/token/:token_id/alias</code></p>
+<p>Sets the alias for the token. (Can be used when creating requests.)</p>
+<h5 id="request_3">Request</h5>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;my-webhook&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+
+<h5 id="response_3">Response</h5>
+<p><a href="#11-create-token"><em>See </em><em>POST</em><em> <code>/token</code></em></a></p>
+<h2 id="toggle-cors">Toggle CORS</h2>
+<p>Attaches CORS headers to the response of the Token, allowing browsers to request it from all domains.</p>
+<p><strong>PUT</strong> <code>/token/:token_id/cors/toggle</code></p>
+<h5 id="response_4">Response</h5>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span> <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span>
+</code></pre></div>
+
+
+<h2 id="get-token">Get token</h2>
+<ul>
+<li>Can require authentication.</li>
+</ul>
+<p><strong>GET</strong> <code>/token/:token_id</code></p>
+<h5 id="response_5">Response</h5>
+<p><a href="#11-create-token"><em>See </em><em>POST</em><em> <code>/token</code></em></a></p>
+<h2 id="delete-token">Delete token</h2>
+<ul>
+<li>Can require authentication.</li>
+</ul>
+<p><strong>DELETE</strong> <code>/token/:token_id</code></p>
+<h5 id="response_6">Response</h5>
+<p><code>204 No Content</code></p>
+<h1 id="requests">Requests</h1>
+<h2 id="create-request">Create request</h2>
+<p><strong><em>(any method)</em></strong> <code>/:tokenId</code> <br>
+<strong><em>(any method)</em></strong> <code>/:tokenId/:statusCode</code> <br>
+<strong><em>(any method)</em></strong> <code>/:tokenId/(anything)</code></p>
+<p>If <code>statusCode</code> is valid, that HTTP status will be used in the response (instead of the default.)</p>
+<p>Instead of <code>tokenId</code>, an alias can also be supplied.</p>
+<h5 id="request_4">Request</h5>
+<p><em>(Anything.)</em></p>
+<h5 id="response_7">Response</h5>
+<p><em>(The default response of the Token.)</em></p>
+<h2 id="get-requests">Get requests</h2>
+<ul>
+<li>Can require authentication.</li>
+</ul>
+<p><strong>GET</strong> <code>/token/:token_id/requests</code></p>
+<p>Lists all request sent to a token. </p>
+<h5 id="response_8">Response</h5>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;a2a6a4ae-4130-4063-953a-84fa29d81d43&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;token_id&quot;</span><span class="p">:</span> <span class="s2">&quot;a94a7294-c4aa-4074-ab77-c4cf86fd53b1&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;ip&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;webhook.site&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;user_agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Paw\/3.1.8 (Macintosh; OS X\/10.14.6) GCDHTTPRequest&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;first_name\&quot;:\&quot;Arch\&quot;,\&quot;last_name\&quot;:\&quot;Weber\&quot;}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;create&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;content-length&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;271&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;user-agent&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;Paw\/3.1.8 (Macintosh; OS X\/10.14.6) GCDHTTPRequest&quot;</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https:\/\/webhook.site\/a94a7294-c4aa-4074-ab77-c4cf86fd53b1\/201?&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-10-03 19:06:35&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-10-03 19:06:35&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;total&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;per_page&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+  <span class="nt">&quot;current_page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;is_last_page&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;from&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;to&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<h2 id="get-single-request">Get single request</h2>
+<ul>
+<li>Can require authentication.</li>
+</ul>
+<p><strong>GET</strong> <code>/token/:token_id/request/:request_id</code></p>
+<p><strong>GET</strong> <code>/token/:token_id/request/latest</code> - retrieves the latest request sent to the URL</p>
+<h5 id="response_9">Response</h5>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;a2a6a4ae-4130-4063-953a-84fa29d81d43&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;token_id&quot;</span><span class="p">:</span> <span class="s2">&quot;a94a7294-c4aa-4074-ab77-c4cf86fd53b1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;ip&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;webhook.site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;user_agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Paw\/3.1.8 (Macintosh; OS X\/10.14.6) GCDHTTPRequest&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;first_name\&quot;:\&quot;Arch\&quot;,\&quot;last_name\&quot;:\&quot;Weber\&quot;}&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;create&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;headers&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;content-length&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;271&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;user-agent&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;Paw\/3.1.8 (Macintosh; OS X\/10.14.6) GCDHTTPRequest&quot;</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https:\/\/webhook.site\/a94a7294-c4aa-4074-ab77-c4cf86fd53b1\/201?&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-10-03 19:06:35&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-10-03 19:06:35&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<h2 id="get-raw-request-content">Get raw request content</h2>
+<ul>
+<li>Can require authentication.</li>
+</ul>
+<p><strong>GET</strong> <code>/token/:token_id/request/:request_id/raw</code></p>
+<p><strong>GET</strong> <code>/token/:token_id/request/latest/raw</code> - retrieves the latest request sent to the URL</p>
+<p>Returns the request as a response (body, content-type.)</p>
+<h2 id="delete-request">Delete request</h2>
+<ul>
+<li>Can require authentication.</li>
+</ul>
+<p><strong>DELETE</strong> <code>/token/:token_id/request/(:request_id)</code></p>
+<p>Deletes a request. </p>
+<p>If no ID, all requests related to the token will be deleted.</p>
+<h5 id="response_10">Response</h5>
+<p><code>204 No Content</code></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../install/" title="Install" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Install
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../premium/" title="Premium" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Premium
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

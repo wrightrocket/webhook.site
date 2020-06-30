@@ -1,0 +1,26 @@
+site_name: Webhook.site Docs
+theme:
+  name: material
+  logo: images/icon.png
+
+markdown_extensions:
+  - codehilite
+  - admonition
+  
+nav:
+  - About: index.markdown
+  - News & Changelog: news.markdown
+  - Install: install.markdown
+  - API: api.markdown
+  - Premium: premium.markdown
+  - Schedules: schedules.md
+  - Custom Actions: custom-actions.markdown
+  - WebhookScript:
+    - About WebhookScript: webhookscript/index.markdown
+    - Reference: webhookscript/reference.markdown
+    - Examples: webhookscript/examples.markdown
+    - Functions: webhookscript/functions.markdown
+  
+
+extra_css:
+  - stylesheets/extra.css

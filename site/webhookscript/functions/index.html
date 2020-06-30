@@ -1,0 +1,2839 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Functions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fe0cca5b.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#global-functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Webhook.site Docs" class="md-header-nav__button md-logo" aria-label="Webhook.site Docs">
+      
+  <img src="../../images/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Webhook.site Docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Functions
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Webhook.site Docs" class="md-nav__button md-logo" aria-label="Webhook.site Docs">
+      
+  <img src="../../images/icon.png" alt="logo">
+
+    </a>
+    Webhook.site Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../news/" title="News & Changelog" class="md-nav__link">
+      News & Changelog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../install/" title="Install" class="md-nav__link">
+      Install
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../api/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../premium/" title="Premium" class="md-nav__link">
+      Premium
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../schedules/" title="Schedules" class="md-nav__link">
+      Schedules
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../custom-actions/" title="Custom Actions" class="md-nav__link">
+      Custom Actions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      WebhookScript
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="WebhookScript" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        WebhookScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="About WebhookScript" class="md-nav__link">
+      About WebhookScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reference/" title="Reference" class="md-nav__link">
+      Reference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../examples/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Functions
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Functions" class="md-nav__link md-nav__link--active">
+      Functions
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-functions" class="md-nav__link">
+    About Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="About Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chaining" class="md-nav__link">
+    Chaining
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-functions" class="md-nav__link">
+    Custom functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-and-output" class="md-nav__link">
+    Debugging and output
+  </a>
+  
+    <nav class="md-nav" aria-label="Debugging and output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#echostring-string" class="md-nav__link">
+    echo(string string)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddany-value" class="md-nav__link">
+    dd(any value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dumpany-value" class="md-nav__link">
+    dump(any value)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-action-variables" class="md-nav__link">
+    Custom Action Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Action Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varstring-variable_name-mixed" class="md-nav__link">
+    var(string variable_name) : mixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setstring-variable_name-string-variable_value" class="md-nav__link">
+    set(string variable_name, string variable_value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storestring-global_variable_name-any-value-any" class="md-nav__link">
+    store(string global_variable_name, any value): any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-array" class="md-nav__link">
+    variables : array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    HTTP
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queryarray-form_values-string" class="md-nav__link">
+    query(array form_values) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requeststring-url-string-content-string-method-get-array-headers-array" class="md-nav__link">
+    request(string url, string content = '', string method = 'GET', array headers = []) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_decodestring-value-string" class="md-nav__link">
+    url_decode(string value) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_encodestring-value-string" class="md-nav__link">
+    url_encode(string value) : string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow-control-and-responses" class="md-nav__link">
+    Flow Control and Responses
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow Control and Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delayint-seconds-string-code" class="md-nav__link">
+    delay(int seconds, string code)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execstring-code-any" class="md-nav__link">
+    exec(string code) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importstring-url-any" class="md-nav__link">
+    import(string url) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respondstring-content-int-status-array-headers" class="md-nav__link">
+    respond(string content, int status, array headers)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop" class="md-nav__link">
+    stop()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_contentstring-content" class="md-nav__link">
+    set_content(string content)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_headerstring-header_name-string-header_value" class="md-nav__link">
+    set_header(string header_name, string header_value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_responsestring-content-int-status-array-headers" class="md-nav__link">
+    set_response(string content, int status, array headers)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_statusnumber-status" class="md-nav__link">
+    set_status(number status)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    String
+  </a>
+  
+    <nav class="md-nav" aria-label="String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base64_decodestring-string-string" class="md-nav__link">
+    base64_decode(string string) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base64_encodestring-string-string" class="md-nav__link">
+    base64_encode(string string) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv_to_arraystring-csvstring-string-delimiter-int-headeroffset-string-enclosure-string-escape-array" class="md-nav__link">
+    csv_to_array(string csvString, string delimiter, int headerOffset, string enclosure, string escape) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashstringnumber-value-string-algo-string" class="md-nav__link">
+    hash(string/number value, string algo) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_decodestring-json-array" class="md-nav__link">
+    json_decode(string json) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_encodearray-array-string" class="md-nav__link">
+    json_encode(array array) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_pathstring-json-string-jsonpath-bool-return_first-true-string" class="md-nav__link">
+    json_path(string json, string jsonpath, bool return_first = true) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex_extractregex-regex-string-subject-arrayfalse" class="md-nav__link">
+    regex_extract(regex regex, string subject) : array/false
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex_extract_firstregex-regex-string-subject-stringfalse" class="md-nav__link">
+    regex_extract_first(regex regex, string subject) : string/false
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex_matchregex-regex-string-subject-stringfalse" class="md-nav__link">
+    regex_match(regex regex, string subject) : string/false
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex_to_stringregex-regex-string" class="md-nav__link">
+    regex_to_string(regex regex) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_containsstring-subject-numberstringregex-value-bool" class="md-nav__link">
+    string_contains(string subject, number/string/regex value) : bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_find_firststring-subject-numberstring-value-number" class="md-nav__link">
+    string_find_first(string subject, number/string value) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_find_laststring-subject-numberstring-value-number" class="md-nav__link">
+    string_find_last(string subject, number/string value) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_formatstring-formatstring-any-items-string" class="md-nav__link">
+    string_format(string formatString, ...any items) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_joinstring-subject-array-items-numberstringboolarray-string" class="md-nav__link">
+    string_join(string subject, array items (number/string/bool/array)) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_lengthstring-string-number" class="md-nav__link">
+    string_length(string string) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_number_ofstring-string-number" class="md-nav__link">
+    string_number_of(string string) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_replacestring-subject-string-search-string-replace-string" class="md-nav__link">
+    string_replace(string subject, string search, string replace) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_reversestring-subject-string" class="md-nav__link">
+    string_reverse(string subject) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_shufflestring-string-string" class="md-nav__link">
+    string_shuffle(string string) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_splitstring-subject-stringregex-delimiter-array" class="md-nav__link">
+    string_split(string subject, string/regex delimiter) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_regexstring-regex-regex" class="md-nav__link">
+    to_regex(string regex) : regex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_stringstringnumberbool-value-string" class="md-nav__link">
+    to_string(string/number/bool value) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpathstring-xpath-string-input-stringnull" class="md-nav__link">
+    xpath(string xpath, string input): string/null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpath_allstring-xpath-string-input-stringnull" class="md-nav__link">
+    xpath_all(string xpath, string input): string/null
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date-manipulation" class="md-nav__link">
+    Date Manipulation
+  </a>
+  
+    <nav class="md-nav" aria-label="Date Manipulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-format-characters" class="md-nav__link">
+    Date format characters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-locales-available" class="md-nav__link">
+    Date locales available
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_datestring-date-string-format-string" class="md-nav__link">
+    to_date(string date, ?string format): string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date_formatstring-date-string-format-string-locale-string" class="md-nav__link">
+    date_format(string date, ?string format, ?string locale): string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date_to_arraystring-array" class="md-nav__link">
+    date_to_array(string): array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date_intervalstring-date1-string-date2-string-format-stringint" class="md-nav__link">
+    date_interval(string date1, string date2, ?string format): string/int
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date_interval_humanstring-date1-string-date2-string-locale-stringint" class="md-nav__link">
+    date_interval_human(string date1, string date2, ?string locale): string/int
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math-and-numbers" class="md-nav__link">
+    Math and Numbers
+  </a>
+  
+    <nav class="md-nav" aria-label="Math and Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absnumber-number-number" class="md-nav__link">
+    abs(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atannumber-number-number" class="md-nav__link">
+    atan(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ceilnumber-number-number" class="md-nav__link">
+    ceil(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosnumber-number-number" class="md-nav__link">
+    cos(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floornumber-number-number" class="md-nav__link">
+    floor(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxarray-numbers-number" class="md-nav__link">
+    max(array numbers) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minarray-numbers-number" class="md-nav__link">
+    min(array numbers) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modnumber-number-number-divisor-number" class="md-nav__link">
+    mod(number number, number divisor) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number_lengthnumber-number-number" class="md-nav__link">
+    number_length(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi-number" class="md-nav__link">
+    pi() : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pownumber-number-number-power-number" class="md-nav__link">
+    pow(number number, number power) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randnumber-min-number-max-number" class="md-nav__link">
+    rand(number min, number max) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roundnumber-number-number-precision-number" class="md-nav__link">
+    round(number number, number precision) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinnumber-number-number" class="md-nav__link">
+    sin(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqrtnumber-number-number" class="md-nav__link">
+    sqrt(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tannumber-number-number" class="md-nav__link">
+    tan(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_numberany-value-number" class="md-nav__link">
+    to_number(any value) : number
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array_containsarray-array-stringnumber-needle-bool" class="md-nav__link">
+    array_contains(array array, string/number needle) : bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_copyarray-array-array" class="md-nav__link">
+    array_copy(array array) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_diffarray-array1-array-array2-array" class="md-nav__link">
+    array_diff(array array1, array array2) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_getarray-array-stringnumber-index-any-default-any" class="md-nav__link">
+    array_get(array array, string/number index, any default) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_hasarray-array-stringnumber-key-bool" class="md-nav__link">
+    array_has(array array, string/number key) : bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_lengtharray-array-number" class="md-nav__link">
+    array_length(array array) : number`
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_maparray-array-func-function" class="md-nav__link">
+    array_map(array array, func function)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_number_ofarray-stringnumber-value-number" class="md-nav__link">
+    array_number_of(array, string/number value) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_poparray-array-any" class="md-nav__link">
+    array_pop(array array) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_pusharray-array-any-value-any" class="md-nav__link">
+    array_push(array array, any value) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_randomarray-array-any" class="md-nav__link">
+    array_random(array array) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_reversearray-array-array" class="md-nav__link">
+    array_reverse(array array) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_shufflearray-array-array" class="md-nav__link">
+    array_shuffle(array array) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_arrayarray-array-array" class="md-nav__link">
+    to_array(array array) : array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#booleans" class="md-nav__link">
+    Booleans
+  </a>
+  
+    <nav class="md-nav" aria-label="Booleans">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool_andbool-value1-bool-value2-bool" class="md-nav__link">
+    bool_and(bool value1, bool value2): bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool_notbool-value-bool" class="md-nav__link">
+    bool_not(bool value) : bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_boolstringnumberarraybool-value-bool" class="md-nav__link">
+    to_bool(string/number/array/bool value) : bool
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typeany-value-string" class="md-nav__link">
+    type(any value) : string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about-functions" class="md-nav__link">
+    About Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="About Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chaining" class="md-nav__link">
+    Chaining
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-functions" class="md-nav__link">
+    Custom functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-and-output" class="md-nav__link">
+    Debugging and output
+  </a>
+  
+    <nav class="md-nav" aria-label="Debugging and output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#echostring-string" class="md-nav__link">
+    echo(string string)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddany-value" class="md-nav__link">
+    dd(any value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dumpany-value" class="md-nav__link">
+    dump(any value)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-action-variables" class="md-nav__link">
+    Custom Action Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Action Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varstring-variable_name-mixed" class="md-nav__link">
+    var(string variable_name) : mixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setstring-variable_name-string-variable_value" class="md-nav__link">
+    set(string variable_name, string variable_value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storestring-global_variable_name-any-value-any" class="md-nav__link">
+    store(string global_variable_name, any value): any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-array" class="md-nav__link">
+    variables : array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    HTTP
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queryarray-form_values-string" class="md-nav__link">
+    query(array form_values) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requeststring-url-string-content-string-method-get-array-headers-array" class="md-nav__link">
+    request(string url, string content = '', string method = 'GET', array headers = []) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_decodestring-value-string" class="md-nav__link">
+    url_decode(string value) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_encodestring-value-string" class="md-nav__link">
+    url_encode(string value) : string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow-control-and-responses" class="md-nav__link">
+    Flow Control and Responses
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow Control and Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delayint-seconds-string-code" class="md-nav__link">
+    delay(int seconds, string code)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execstring-code-any" class="md-nav__link">
+    exec(string code) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importstring-url-any" class="md-nav__link">
+    import(string url) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respondstring-content-int-status-array-headers" class="md-nav__link">
+    respond(string content, int status, array headers)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop" class="md-nav__link">
+    stop()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_contentstring-content" class="md-nav__link">
+    set_content(string content)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_headerstring-header_name-string-header_value" class="md-nav__link">
+    set_header(string header_name, string header_value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_responsestring-content-int-status-array-headers" class="md-nav__link">
+    set_response(string content, int status, array headers)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_statusnumber-status" class="md-nav__link">
+    set_status(number status)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    String
+  </a>
+  
+    <nav class="md-nav" aria-label="String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base64_decodestring-string-string" class="md-nav__link">
+    base64_decode(string string) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base64_encodestring-string-string" class="md-nav__link">
+    base64_encode(string string) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv_to_arraystring-csvstring-string-delimiter-int-headeroffset-string-enclosure-string-escape-array" class="md-nav__link">
+    csv_to_array(string csvString, string delimiter, int headerOffset, string enclosure, string escape) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashstringnumber-value-string-algo-string" class="md-nav__link">
+    hash(string/number value, string algo) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_decodestring-json-array" class="md-nav__link">
+    json_decode(string json) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_encodearray-array-string" class="md-nav__link">
+    json_encode(array array) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json_pathstring-json-string-jsonpath-bool-return_first-true-string" class="md-nav__link">
+    json_path(string json, string jsonpath, bool return_first = true) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex_extractregex-regex-string-subject-arrayfalse" class="md-nav__link">
+    regex_extract(regex regex, string subject) : array/false
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex_extract_firstregex-regex-string-subject-stringfalse" class="md-nav__link">
+    regex_extract_first(regex regex, string subject) : string/false
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex_matchregex-regex-string-subject-stringfalse" class="md-nav__link">
+    regex_match(regex regex, string subject) : string/false
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex_to_stringregex-regex-string" class="md-nav__link">
+    regex_to_string(regex regex) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_containsstring-subject-numberstringregex-value-bool" class="md-nav__link">
+    string_contains(string subject, number/string/regex value) : bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_find_firststring-subject-numberstring-value-number" class="md-nav__link">
+    string_find_first(string subject, number/string value) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_find_laststring-subject-numberstring-value-number" class="md-nav__link">
+    string_find_last(string subject, number/string value) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_formatstring-formatstring-any-items-string" class="md-nav__link">
+    string_format(string formatString, ...any items) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_joinstring-subject-array-items-numberstringboolarray-string" class="md-nav__link">
+    string_join(string subject, array items (number/string/bool/array)) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_lengthstring-string-number" class="md-nav__link">
+    string_length(string string) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_number_ofstring-string-number" class="md-nav__link">
+    string_number_of(string string) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_replacestring-subject-string-search-string-replace-string" class="md-nav__link">
+    string_replace(string subject, string search, string replace) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_reversestring-subject-string" class="md-nav__link">
+    string_reverse(string subject) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_shufflestring-string-string" class="md-nav__link">
+    string_shuffle(string string) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string_splitstring-subject-stringregex-delimiter-array" class="md-nav__link">
+    string_split(string subject, string/regex delimiter) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_regexstring-regex-regex" class="md-nav__link">
+    to_regex(string regex) : regex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_stringstringnumberbool-value-string" class="md-nav__link">
+    to_string(string/number/bool value) : string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpathstring-xpath-string-input-stringnull" class="md-nav__link">
+    xpath(string xpath, string input): string/null
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xpath_allstring-xpath-string-input-stringnull" class="md-nav__link">
+    xpath_all(string xpath, string input): string/null
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date-manipulation" class="md-nav__link">
+    Date Manipulation
+  </a>
+  
+    <nav class="md-nav" aria-label="Date Manipulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-format-characters" class="md-nav__link">
+    Date format characters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-locales-available" class="md-nav__link">
+    Date locales available
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_datestring-date-string-format-string" class="md-nav__link">
+    to_date(string date, ?string format): string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date_formatstring-date-string-format-string-locale-string" class="md-nav__link">
+    date_format(string date, ?string format, ?string locale): string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date_to_arraystring-array" class="md-nav__link">
+    date_to_array(string): array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date_intervalstring-date1-string-date2-string-format-stringint" class="md-nav__link">
+    date_interval(string date1, string date2, ?string format): string/int
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date_interval_humanstring-date1-string-date2-string-locale-stringint" class="md-nav__link">
+    date_interval_human(string date1, string date2, ?string locale): string/int
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math-and-numbers" class="md-nav__link">
+    Math and Numbers
+  </a>
+  
+    <nav class="md-nav" aria-label="Math and Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absnumber-number-number" class="md-nav__link">
+    abs(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atannumber-number-number" class="md-nav__link">
+    atan(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ceilnumber-number-number" class="md-nav__link">
+    ceil(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosnumber-number-number" class="md-nav__link">
+    cos(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floornumber-number-number" class="md-nav__link">
+    floor(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxarray-numbers-number" class="md-nav__link">
+    max(array numbers) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minarray-numbers-number" class="md-nav__link">
+    min(array numbers) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modnumber-number-number-divisor-number" class="md-nav__link">
+    mod(number number, number divisor) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number_lengthnumber-number-number" class="md-nav__link">
+    number_length(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pi-number" class="md-nav__link">
+    pi() : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pownumber-number-number-power-number" class="md-nav__link">
+    pow(number number, number power) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randnumber-min-number-max-number" class="md-nav__link">
+    rand(number min, number max) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roundnumber-number-number-precision-number" class="md-nav__link">
+    round(number number, number precision) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinnumber-number-number" class="md-nav__link">
+    sin(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqrtnumber-number-number" class="md-nav__link">
+    sqrt(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tannumber-number-number" class="md-nav__link">
+    tan(number number) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_numberany-value-number" class="md-nav__link">
+    to_number(any value) : number
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array_containsarray-array-stringnumber-needle-bool" class="md-nav__link">
+    array_contains(array array, string/number needle) : bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_copyarray-array-array" class="md-nav__link">
+    array_copy(array array) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_diffarray-array1-array-array2-array" class="md-nav__link">
+    array_diff(array array1, array array2) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_getarray-array-stringnumber-index-any-default-any" class="md-nav__link">
+    array_get(array array, string/number index, any default) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_hasarray-array-stringnumber-key-bool" class="md-nav__link">
+    array_has(array array, string/number key) : bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_lengtharray-array-number" class="md-nav__link">
+    array_length(array array) : number`
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_maparray-array-func-function" class="md-nav__link">
+    array_map(array array, func function)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_number_ofarray-stringnumber-value-number" class="md-nav__link">
+    array_number_of(array, string/number value) : number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_poparray-array-any" class="md-nav__link">
+    array_pop(array array) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_pusharray-array-any-value-any" class="md-nav__link">
+    array_push(array array, any value) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_randomarray-array-any" class="md-nav__link">
+    array_random(array array) : any
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_reversearray-array-array" class="md-nav__link">
+    array_reverse(array array) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array_shufflearray-array-array" class="md-nav__link">
+    array_shuffle(array array) : array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_arrayarray-array-array" class="md-nav__link">
+    to_array(array array) : array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#booleans" class="md-nav__link">
+    Booleans
+  </a>
+  
+    <nav class="md-nav" aria-label="Booleans">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool_andbool-value1-bool-value2-bool" class="md-nav__link">
+    bool_and(bool value1, bool value2): bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool_notbool-value-bool" class="md-nav__link">
+    bool_not(bool value) : bool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_boolstringnumberarraybool-value-bool" class="md-nav__link">
+    to_bool(string/number/array/bool value) : bool
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typeany-value-string" class="md-nav__link">
+    type(any value) : string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="global-functions">Global Functions</h1>
+<h2 id="about-functions">About Functions</h2>
+<p>These are the functions that can be used in your script, and includes various utility functions and functions to interact with your Webhook.site URL.</p>
+<h3 id="chaining">Chaining</h3>
+<p>Functions can be chained directly to a primitive (strings, numbers, arrays).</p>
+<p>These two statements are equivalent:</p>
+<div class="codehilite"><pre><span></span><code><span class="s1">&#39;Hello World&#39;</span><span class="p">.</span><span class="nx">echo</span><span class="p">()</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="nx">echo</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>They can even be chained, for example:</p>
+<div class="codehilite"><pre><span></span><code><span class="s1">&#39;Hello World&#39;</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="s1">&#39;md5&#39;</span><span class="p">).</span><span class="nx">echo</span><span class="p">()</span> 
+</code></pre></div>
+
+
+<p>Furthermore, functions that begin in a type can be referenced without it, for example, when calling the <code>format</code> function with the first argument being a string, the language infers that actually the <code>string_format</code> function should be used.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">echo</span><span class="p">(</span><span class="nx">string_format</span><span class="p">(</span><span class="s1">&#39;hello %s&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">))</span> <span class="c1">// hello world</span>
+
+<span class="s1">&#39;hello %s&#39;</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="s1">&#39;world&#39;</span><span class="p">).</span><span class="nx">echo</span><span class="p">()</span> <span class="c1">// hello world</span>
+</code></pre></div>
+
+
+<p>Read more about functions in the <a href="/webhookscript/reference.html#functions">reference</a>.</p>
+<h3 id="custom-functions">Custom functions</h3>
+<p>Define your own functions like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span> <span class="nx">sub</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Read more about functions in the <a href="/webhookscript/reference.html#functions">reference</a>.</p>
+<h2 id="debugging-and-output">Debugging and output</h2>
+<h3 id="echostring-string">echo(<strong><em>string</em></strong> string)</h3>
+<p>Adds <code>string</code> to script debug output.</p>
+<h3 id="ddany-value">dd(<strong><em>any</em></strong> value)</h3>
+<p>Stops Custom Action execution and adds <code>value</code> to script debug output.</p>
+<h3 id="dumpany-value">dump(<strong><em>any</em></strong> value)</h3>
+<p>Adds <code>value</code> as a decoded string to script debug output.</p>
+<h2 id="custom-action-variables">Custom Action Variables</h2>
+<p>These functions lets you interface with other Custom Actions by getting and setting variables from them. These functions are also how you retrieve Global Variables defined in the Control Panel.</p>
+<h3 id="varstring-variable_name-mixed">var(<strong><em>string</em></strong> variable_name) : mixed</h3>
+<p>Retrieves the value of a Variable or Global Variable (defined in the Control Panel). The surrounding dollar signs are not mandatory.</p>
+<p>Returns <code>null</code> if the variable does not exist.</p>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="p">(</span><span class="s1">&#39;request.header.x-request-verification&#39;</span><span class="p">)</span> <span class="c1">// returns value of the `x-request-verification` header</span>
+</code></pre></div>
+
+
+<h3 id="setstring-variable_name-string-variable_value">set(<strong><em>string</em></strong> variable_name, <strong><em>string</em></strong> variable_value)</h3>
+<p>Sets a Variable for usage in current action execution. The Variable is available to downstream actions, but not stored permanently.</p>
+<h3 id="storestring-global_variable_name-any-value-any">store(<strong><em>string</em></strong> global_variable_name, <strong><em>any</em></strong> value): <strong><em>any</em></strong></h3>
+<p>Permanently creates or updates a Global Variable (as defined in Control Panel.)</p>
+<p>The value can be retrieved with the <code>var()</code> function in subsequent action executions.</p>
+<h3 id="variables-array">variables : array</h3>
+<p>A variable (not a function) containing an associative array with all available Webhook.site variables.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">user_agent</span> <span class="o">=</span> <span class="nx">variables</span><span class="p">[</span><span class="s1">&#39;request.header.user-agent&#39;</span><span class="p">]</span>
+</code></pre></div>
+
+
+<h2 id="http">HTTP</h2>
+<h3 id="queryarray-form_values-string">query(<strong><em>array</em></strong> form_values) : string</h3>
+<p>Converts an associative array into a form-style string, used for e.g. <code>application/x-www-form-urlencoded</code> requests or HTTP query strings.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">query</span><span class="p">([</span><span class="s1">&#39;country&#39;</span><span class="o">:</span> <span class="s1">&#39;Curaçao&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="o">:</span> <span class="mi">158665</span><span class="p">])</span> <span class="c1">// country=Cura%C3%A7ao&amp;population=158665</span>
+</code></pre></div>
+
+
+<h3 id="requeststring-url-string-content-string-method-get-array-headers-array">request(<strong><em>string</em></strong> url, <strong><em>string</em></strong> content = '', <strong><em>string</em></strong> method = 'GET', <strong><em>array</em></strong> headers = []) : array</h3>
+<p>Sends a HTTP request and returns an array with the following keys containing response data:</p>
+<ul>
+<li><code>content</code></li>
+<li><code>status</code></li>
+<li><code>headers</code></li>
+<li><code>url</code></li>
+</ul>
+<p>The headers should be an array of strings in the form of <code>['Header-Key-1: Foo', 'Header-Key-2: Bar']</code>.</p>
+<p>To get a JSON document, validate if valid JSON, and get a property:</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">response</span> <span class="o">=</span> <span class="nx">request</span><span class="p">(</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">)</span>
+
+<span class="nx">decoded</span> <span class="o">=</span> <span class="nx">json_decode</span><span class="p">(</span><span class="nx">response</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">])</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">decoded</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">value</span> <span class="o">=</span> <span class="nx">decoded</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<h3 id="url_decodestring-value-string">url_decode(<strong><em>string</em></strong> value) : string</h3>
+<p>Returns an URL-decoded version of <em>value</em>.</p>
+<h3 id="url_encodestring-value-string">url_encode(<strong><em>string</em></strong> value) : string</h3>
+<p>Returns an URL-encoded version of <em>value</em>.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">url_encode</span><span class="p">(</span><span class="s1">&#39;here\&#39;s a value&#39;</span><span class="p">)</span> <span class="c1">// here%27s+a+value</span>
+</code></pre></div>
+
+
+<h2 id="flow-control-and-responses">Flow Control and Responses</h2>
+<h3 id="delayint-seconds-string-code">delay(<strong><em>int</em></strong> seconds, <strong><em>string</em></strong> code)</h3>
+<p>Executes code in the future. Any output will be stored on the request and will show with a "Was delayed" label. </p>
+<p>The code will not inherit the execution scope.</p>
+<p>In this example, the <code>format</code> function is used to prepare the code string with a URL, causing <code>{}</code> to be replaced with with <code>https://example.com</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">code</span> <span class="o">=</span> <span class="s1">&#39;</span>
+<span class="s1">  request(</span>
+<span class="s1">      &quot;{}&quot;,</span>
+<span class="s1">      \&#39;{&quot;message&quot;: &quot;Hello World!&quot;}\&#39;,</span>
+<span class="s1">      &quot;POST&quot;</span>
+<span class="s1">  )</span>
+<span class="s1">&#39;</span>
+
+<span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;https://example.com&#39;</span>
+
+<span class="nx">delay</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nx">code</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="nx">url</span><span class="p">));</span>
+</code></pre></div>
+
+
+<p>The maximum amount of seconds allowed is 604800 (7 days).</p>
+<h3 id="execstring-code-any">exec(<strong><em>string</em></strong> code) : <strong><em>any</em></strong></h3>
+<p>Executes code in <code>code</code> and returns the result. The code will inherit the execution scope.</p>
+<h3 id="importstring-url-any">import(<strong><em>string</em></strong> url) : <strong><em>any</em></strong></h3>
+<p>Downloads code located at <code>url</code> and returns the result. The code will inherit the execution scope. </p>
+<p>As an example, this can be used if you want to re-use code. Just upload it to a server or e.g. Github and use it in different WebhookScript actions.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">result</span> <span class="o">=</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/fredsted/webhookscripts/ec22946a83ea85f607fcc6bff83f9d81ed2fe4ed/hello_world.ws&#39;</span><span class="p">)</span>
+<span class="nx">echo</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="c1">// value</span>
+</code></pre></div>
+
+
+<h3 id="respondstring-content-int-status-array-headers">respond(<strong><em>string</em></strong> content, <strong><em>int</em></strong> status, <strong><em>array</em></strong> headers)</h3>
+<p>Stops Custom Action execution and returns a response.</p>
+<h3 id="stop">stop()</h3>
+<p>Stops Custom Action execution.</p>
+<h3 id="set_contentstring-content">set_content(<strong><em>string</em></strong> content)</h3>
+<p>Sets or overwrites the response content of the URL. Script execution continues.</p>
+<h3 id="set_headerstring-header_name-string-header_value">set_header(<strong><em>string</em></strong> header_name, <strong><em>string</em></strong> header_value)</h3>
+<p>Sets or overwrites a response header of the URL. Script execution continues.</p>
+<h3 id="set_responsestring-content-int-status-array-headers">set_response(<strong><em>string</em></strong> content, <strong><em>int</em></strong> status, <strong><em>array</em></strong> headers)</h3>
+<p>Sets or overwrites response content, status and headers in single function.  Script execution continues.</p>
+<p><code>headers</code> should be an array of strings e.g. <code>["X-Example: Value", "X-Foo: Bar"]</code>.</p>
+<h3 id="set_statusnumber-status">set_status(<strong><em>number</em></strong> status)</h3>
+<p>Sets or overwrites the HTTP response status of the current URL.  Script execution continues.</p>
+<h2 id="string">String</h2>
+<h3 id="base64_decodestring-string-string">base64_decode(<strong><em>string</em></strong> string) : string</h3>
+<p>Returns a base64-encoded string.</p>
+<h3 id="base64_encodestring-string-string">base64_encode(<strong><em>string</em></strong> string) : string</h3>
+<p>Returns decoded base64 string.</p>
+<h3 id="csv_to_arraystring-csvstring-string-delimiter-int-headeroffset-string-enclosure-string-escape-array">csv_to_array(<strong><em>string</em></strong> csvString, <strong><em>string</em></strong> delimiter, <strong><em>int</em></strong> headerOffset, <strong><em>string</em></strong> enclosure, <strong><em>string</em></strong> escape) : array</h3>
+<p>Takes a CSV string and outputs to an array, with each row being an item in the array. Optionally, if <code>headerOffset</code> is </p>
+<ul>
+<li><code>delimiter</code> will explicitly set the CSV delimiter the parser will attempt to use (e.g. <code>;</code>). Must be a single character. Defaults to <code>,</code> (comma.)</li>
+<li><code>headerOffset</code>, when specified, causes the output array item's keys to be set to the header values. Setting to <code>0</code> will mark the first row as the header row. </li>
+<li><code>enclosure</code> sets the field enclosure character. Must be a single character. Defaults to <code>"</code> (double quote.)</li>
+<li><code>escape</code> sets the field escape character. Must be a single character. Defaults to <code>\</code> (backslash.)</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nx">csv_content</span> <span class="o">=</span> <span class="s1">&#39;firstname,lastname,title</span>
+<span class="s1">&quot;M. J.&quot;,Plumley,&quot;Sr. Developer&quot;</span>
+<span class="s1">Emily,&quot;Jenna Platt&quot;,&quot;Chief Information Officer&quot;&#39;</span>
+
+<span class="nx">array</span> <span class="o">=</span> <span class="nx">csv_to_array</span><span class="p">(</span><span class="nx">csv_content</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nx">echo</span><span class="p">(</span><span class="nx">json_encode</span><span class="p">(</span><span class="nx">array</span><span class="p">))</span>
+
+<span class="c1">// [</span>
+<span class="c1">//     {</span>
+<span class="c1">//         &quot;firstname&quot;: &quot;John&quot;,</span>
+<span class="c1">//         &quot;lastname&quot;: &quot;Doe&quot;,</span>
+<span class="c1">//         &quot;title&quot;: &quot;Sr. Developer&quot;</span>
+<span class="c1">//     },</span>
+<span class="c1">//     {</span>
+<span class="c1">//         &quot;firstname&quot;: &quot;Emily&quot;,</span>
+<span class="c1">//         &quot;lastname&quot;: &quot;Jenna Platt&quot;,</span>
+<span class="c1">//         &quot;title&quot;: &quot;Chief Information Officer&quot;</span>
+<span class="c1">//     }</span>
+<span class="c1">// ]</span>
+</code></pre></div>
+
+
+<h3 id="hashstringnumber-value-string-algo-string">hash(<strong><em>string/number</em></strong> value, <strong><em>string</em></strong> algo) : string</h3>
+<p>Returns a hashed version of <code>value</code> using the <code>algo</code> algorithm.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">hash(&#39;md5&#39;, &#39;hello world&#39;)  // 5eb63bbbe01eeed093cb22bb8f5acdc3</span>
+</code></pre></div>
+
+
+<p><br></p>
+<p>The following built-in algorithms are available: <code>md2</code>, <code>md4</code>, <code>md5</code>, <code>sha1</code>, <code>sha224</code>, <code>sha256</code>, <code>sha384</code>, <code>sha512/224</code>, <code>sha512/256</code>, <code>sha512</code>, <code>sha3-224</code>, <code>sha3-256</code>, <code>sha3-384</code>, <code>sha3-512</code>, <code>ripemd128</code>, <code>ripemd160</code>, <code>ripemd256</code>, <code>ripemd320</code>, <code>whirlpool</code>, <code>tiger128,3</code>, <code>tiger160,3</code>, <code>tiger192,3</code>, <code>tiger128,4</code>, <code>tiger160,4</code>, <code>tiger192,4</code>, <code>snefru</code>, <code>snefru256</code>, <code>gost</code>, <code>gost-crypto</code>, <code>adler32</code>, <code>crc32</code>, <code>crc32b</code>, <code>fnv132</code>, <code>fnv1a32</code>, <code>fnv164</code>, <code>fnv1a64</code>, <code>joaat</code>, <code>haval128,3</code>, <code>haval160,3</code>, <code>haval192,3</code>, <code>haval224,3</code>, <code>haval256,3</code>, <code>haval128,4</code>, <code>haval160,4</code>, <code>haval192,4</code>, <code>haval224,4</code>, <code>haval256,4</code>, <code>haval128,5</code>, <code>haval160,5</code>, <code>haval192,5</code>, <code>haval224,5</code>, <code>haval256,5</code>.</p>
+<h3 id="json_decodestring-json-array">json_decode(<strong><em>string</em></strong> json) : array</h3>
+<p>Decodes <code>json</code> and returns an array</p>
+<h3 id="json_encodearray-array-string">json_encode(<strong><em>array</em></strong> array) : string</h3>
+<p>Takes an array and encodes it as a JSON string</p>
+<h3 id="json_pathstring-json-string-jsonpath-bool-return_first-true-string">json_path(<strong><em>string</em></strong> json, <strong><em>string</em></strong> jsonpath, <strong><em>bool</em></strong> return_first = true) : string</h3>
+<p>Returns the result of a <code>json</code> string parsed using the <a href="/custom-actions.html#extract-jsonpath">JSONPath</a> functionality.</p>
+<p>Per default, if there's just one match (e.g. if matching on a property value that's a string), this value is returned. To always return an array, set <code>return_first</code> to false. </p>
+<div class="codehilite"><pre><span></span><code><span class="nx">dump</span><span class="p">(</span><span class="nx">json_path</span><span class="p">(</span><span class="s1">&#39;{&quot;v&quot;: []}&#39;</span><span class="p">,</span> <span class="s1">&#39;v[*]&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">))</span>
+<span class="nx">dump</span><span class="p">(</span><span class="nx">json_path</span><span class="p">(</span><span class="s1">&#39;{&quot;v&quot;: []}&#39;</span><span class="p">,</span> <span class="s1">&#39;v[*]&#39;</span><span class="p">))</span>
+<span class="c1">// []</span>
+<span class="c1">// &quot;&quot;</span>
+
+<span class="nx">dump</span><span class="p">(</span><span class="nx">json_path</span><span class="p">(</span><span class="s1">&#39;{&quot;v&quot;: [&quot;item1&quot;]}&#39;</span><span class="p">,</span> <span class="s1">&#39;v[*]&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">))</span>
+<span class="nx">dump</span><span class="p">(</span><span class="nx">json_path</span><span class="p">(</span><span class="s1">&#39;{&quot;v&quot;: [&quot;item1&quot;]}&#39;</span><span class="p">,</span> <span class="s1">&#39;v[*]&#39;</span><span class="p">))</span>
+<span class="c1">// [0: &quot;item1&quot;]</span>
+<span class="c1">// &quot;item1&quot;</span>
+
+<span class="nx">dump</span><span class="p">(</span><span class="nx">json_path</span><span class="p">(</span><span class="s1">&#39;{&quot;v&quot;: [&quot;item1&quot;, &quot;item2&quot;]}&#39;</span><span class="p">,</span> <span class="s1">&#39;v[*]&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">))</span>
+<span class="nx">dump</span><span class="p">(</span><span class="nx">json_path</span><span class="p">(</span><span class="s1">&#39;{&quot;v&quot;: [&quot;item1&quot;, &quot;item2&quot;]}&#39;</span><span class="p">,</span> <span class="s1">&#39;v[*]&#39;</span><span class="p">))</span>
+<span class="c1">// [0: &quot;item1&quot;, 1: &quot;item2&quot;]</span>
+<span class="c1">// [0: &quot;item1&quot;, 1: &quot;item2&quot;]</span>
+</code></pre></div>
+
+
+<h3 id="regex_extractregex-regex-string-subject-arrayfalse">regex_extract(<strong><em>regex</em></strong> regex, <strong><em>string</em></strong> subject) : array/false</h3>
+<p>Returns the matching string and all match groups as an array, and <code>false</code> on failure.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot;You&#39;re a good bot&quot;</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">regex_extract</span><span class="p">(</span><span class="nx">r</span><span class="s2">&quot;You&#39;re (\w) (.*)&quot;</span><span class="p">,</span> <span class="nx">input</span><span class="p">)</span>
+
+<span class="nx">dump</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span> <span class="c1">// [0: &quot;You&#39;re a good bot&quot;, 1: &quot;a&quot;, 2: &quot;good bot&quot;]</span>
+</code></pre></div>
+
+
+<h3 id="regex_extract_firstregex-regex-string-subject-stringfalse">regex_extract_first(<strong><em>regex</em></strong> regex, <strong><em>string</em></strong> subject) : string/false</h3>
+<p>Returns the first match group of a regex, and <code>false</code> on failure.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot;You&#39;re a good bot&quot;</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">regex_extract</span><span class="p">(</span><span class="nx">r</span><span class="s2">&quot;You&#39;re (.*)&quot;</span><span class="p">,</span> <span class="nx">input</span><span class="p">)</span>
+
+<span class="nx">dump</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span> <span class="c1">// &quot;a good bot&quot;</span>
+</code></pre></div>
+
+
+<h3 id="regex_matchregex-regex-string-subject-stringfalse">regex_match(<strong><em>regex</em></strong> regex, <strong><em>string</em></strong> subject) : string/false</h3>
+<p>Returns the first matching string, otherwise false.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">input</span> <span class="o">=</span> <span class="s2">&quot;You&#39;re a good bot&quot;</span>
+
+<span class="nx">output</span> <span class="o">=</span> <span class="nx">regex_match</span><span class="p">(</span><span class="nx">r</span><span class="s2">&quot;You&#39;re .*&quot;</span><span class="p">,</span> <span class="nx">input</span><span class="p">)</span>
+
+<span class="nx">dump</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span> <span class="c1">// &quot;You&#39;re a good bot&quot;</span>
+</code></pre></div>
+
+
+<h3 id="regex_to_stringregex-regex-string">regex_to_string(<strong><em>regex</em></strong> regex) : string</h3>
+<p>Returns the regex converted to a string</p>
+<h3 id="string_containsstring-subject-numberstringregex-value-bool">string_contains(<strong><em>string</em></strong> subject, <strong><em>number/string/regex</em></strong> value) : bool</h3>
+<p>Returns boolean if <strong><em>subject</em></strong> contains <strong><em>value</em></strong></p>
+<h3 id="string_find_firststring-subject-numberstring-value-number">string_find_first(<strong><em>string</em></strong> subject, <strong><em>number/string</em></strong> value) : number</h3>
+<p>Returns position of <strong><em>value</em></strong> in <strong><em>subject</em></strong>, or false if not found</p>
+<h3 id="string_find_laststring-subject-numberstring-value-number">string_find_last(<strong><em>string</em></strong> subject, <strong><em>number/string</em></strong> value) : number</h3>
+<p>Returns position of <strong><em>value</em></strong> in <strong><em>subject</em></strong>, or false if not found</p>
+<h3 id="string_formatstring-formatstring-any-items-string">string_format(<strong><em>string</em></strong> formatString, ...<strong><em>any</em></strong> items) : string</h3>
+<p>Sprintf-like formatting of formatString with <strong><em>items</em></strong>, see PHP sprintf docs.</p>
+<h3 id="string_joinstring-subject-array-items-numberstringboolarray-string">string_join(<strong><em>string</em></strong> subject, <strong><em>array</em></strong> items (number/string/bool/array)) : string</h3>
+<p>Joins items with string <strong><em>subject</em></strong></p>
+<h3 id="string_lengthstring-string-number">string_length(<strong><em>string</em></strong> string) : number</h3>
+<p>Returns length of string (multibyte-aware)</p>
+<h3 id="string_number_ofstring-string-number">string_number_of(<strong><em>string</em></strong> string) : number</h3>
+<p>Returns number value of <strong><em>string</em></strong></p>
+<h3 id="string_replacestring-subject-string-search-string-replace-string">string_replace(<strong><em>string</em></strong> subject, <strong><em>string</em></strong> search, <strong><em>string</em></strong> replace) : string</h3>
+<p>Replaces string <strong><em>search</em></strong> with <strong><em>replace</em></strong> found in <strong><em>subject</em></strong>.</p>
+<h3 id="string_reversestring-subject-string">string_reverse(<strong><em>string</em></strong> subject) : string</h3>
+<p>Reverses string <strong><em>subject</em></strong> </p>
+<h3 id="string_shufflestring-string-string">string_shuffle(<strong><em>string</em></strong> string) : string</h3>
+<p>Returns string where the individual characters has been shuffled.</p>
+<h3 id="string_splitstring-subject-stringregex-delimiter-array">string_split(<strong><em>string</em></strong> subject, <strong><em>string/regex</em></strong> delimiter) : array</h3>
+<p>Returns array of split string <strong><em>subject</em></strong> with <strong><em>delimiter</em></strong> </p>
+<h3 id="to_regexstring-regex-regex">to_regex(<strong><em>string</em></strong> regex) : regex</h3>
+<p>Converts a regex string to a regex type</p>
+<h3 id="to_stringstringnumberbool-value-string">to_string(<strong><em>string/number/bool</em></strong> value) : string</h3>
+<p>Returns <strong><em>value</em></strong> as string </p>
+<h3 id="xpathstring-xpath-string-input-stringnull">xpath(<strong><em>string</em></strong> xpath, <strong><em>string</em></strong> input): string/null</h3>
+<p>Returns the first result of an XPath query on XML document <code>input</code>.</p>
+<p>Given a request with the following content:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;organization</span> <span class="na">name=</span><span class="s">&quot;ExampleCo&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;employees&gt;</span>
+    <span class="nt">&lt;employee</span> <span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Jack<span class="nt">&lt;/employee&gt;</span>
+    <span class="nt">&lt;employee</span> <span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Ann<span class="nt">&lt;/employee&gt;</span>
+  <span class="nt">&lt;/employees&gt;</span>
+<span class="nt">&lt;/organization&gt;</span>
+</code></pre></div>
+
+
+<ul>
+<li><code>xpath(var('$request.content$'), '//employee[1]') // returns "Jack"</code></li>
+<li><code>var('$request.content$').xpath('//employee[1]') // returns "Jack"</code></li>
+</ul>
+<p><a href="/custom-actions.html#extract-xpath">More information and examples regarding XPath</a>.</p>
+<h3 id="xpath_allstring-xpath-string-input-stringnull">xpath_all(<strong><em>string</em></strong> xpath, <strong><em>string</em></strong> input): string/null</h3>
+<p>Returns the results of an XPath query on XML document <code>input</code> as an array.</p>
+<p>Given a request with the following content:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;organization</span> <span class="na">name=</span><span class="s">&quot;ExampleCo&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;employees&gt;</span>
+    <span class="nt">&lt;employee</span> <span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>Jack<span class="nt">&lt;/employee&gt;</span>
+    <span class="nt">&lt;employee</span> <span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>Ann<span class="nt">&lt;/employee&gt;</span>
+  <span class="nt">&lt;/employees&gt;</span>
+<span class="nt">&lt;/organization&gt;</span>
+</code></pre></div>
+
+
+<ul>
+<li><code>xpath_all(var('$request.content$'), '//employee]') // returns [0: "Jack", 1: "Ann"]</code></li>
+<li><code>var('$request.content$').xpath('//employee') // returns [0: "Jack", 1: "Ann"]</code></li>
+</ul>
+<p><a href="/custom-actions.html#extract-xpath">More information and examples regarding XPath</a>.</p>
+<h2 id="date-manipulation">Date Manipulation</h2>
+<p>In WebhookScript, dates are not a specific type, and ar expressed in strings instead, which WebhookScript will attempt to parse. If possible, we recommend using a specific date format like ISO-8601 which leaves little doubt for misunderstanding.</p>
+<h3 id="date-format-characters">Date format characters</h3>
+<p>WebhookScript uses the ISO format for converting and formatting dates, and the format is compatible with the <a href="https://momentjs.com/docs/#/parsing/string-format/">Moment.js format method</a>.</p>
+<p>The following examples are based on the date <code>2017-01-05 17:04:05.084512</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OD</td>
+<td>5</td>
+<td>Day number with alternative numbers such as 三 for 3 if locale is ja_JP</td>
+</tr>
+<tr>
+<td>OM</td>
+<td>1</td>
+<td>Month number with alternative numbers such as ၀၂ for 2 if locale is my_MM</td>
+</tr>
+<tr>
+<td>OY</td>
+<td>2017</td>
+<td>Year number with alternative numbers such as ۱۹۹۸ for 1998 if locale is fa</td>
+</tr>
+<tr>
+<td>OH</td>
+<td>17</td>
+<td>24-hours number with alternative numbers such as ႑႓ for 13 if locale is shn_MM</td>
+</tr>
+<tr>
+<td>Oh</td>
+<td>5</td>
+<td>12-hours number with alternative numbers such as 十一 for 11 if locale is lzh_TW</td>
+</tr>
+<tr>
+<td>Om</td>
+<td>4</td>
+<td>Minute number with alternative numbers such as ୫୭ for 57 if locale is or</td>
+</tr>
+<tr>
+<td>Os</td>
+<td>5</td>
+<td>Second number with alternative numbers such as 十五 for 15 if locale is ja_JP</td>
+</tr>
+<tr>
+<td>D</td>
+<td>5</td>
+<td>Day of month number (from 1 to 31)</td>
+</tr>
+<tr>
+<td>DD</td>
+<td>05</td>
+<td>Day of month number with trailing zero (from 01 to 31)</td>
+</tr>
+<tr>
+<td>Do</td>
+<td>5th</td>
+<td>Day of month with ordinal suffix (from 1st to 31th), translatable</td>
+</tr>
+<tr>
+<td>d</td>
+<td>4</td>
+<td>Day of week number (from 0 (Sunday) to 6 (Saturday))</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>Th</td>
+<td>Minified day name (from Su to Sa), transatable</td>
+</tr>
+<tr>
+<td>ddd</td>
+<td>Thu</td>
+<td>Short day name (from Sun to Sat), transatable</td>
+</tr>
+<tr>
+<td>dddd</td>
+<td>Thursday</td>
+<td>Day name (from Sunday to Saturday), transatable</td>
+</tr>
+<tr>
+<td>DDD</td>
+<td>5</td>
+<td>Day of year number (from 1 to 366)</td>
+</tr>
+<tr>
+<td>DDDD</td>
+<td>005</td>
+<td>Day of year number with trailing zeros (3 digits, from 001 to 366)</td>
+</tr>
+<tr>
+<td>DDDo</td>
+<td>5th</td>
+<td>Day of year number with ordinal suffix (from 1st to 366th), translatable</td>
+</tr>
+<tr>
+<td>e</td>
+<td>4</td>
+<td>Day of week number (from 0 (Sunday) to 6 (Saturday)), similar to "d" but this one is translatable (takes first day of week of the current locale)</td>
+</tr>
+<tr>
+<td>E</td>
+<td>4</td>
+<td>Day of week number (from 1 (Monday) to 7 (Sunday))</td>
+</tr>
+<tr>
+<td>H</td>
+<td>17</td>
+<td>Hour from 0 to 23</td>
+</tr>
+<tr>
+<td>HH</td>
+<td>17</td>
+<td>Hour with trailing zero from 00 to 23</td>
+</tr>
+<tr>
+<td>h</td>
+<td>5</td>
+<td>Hour from 0 to 12</td>
+</tr>
+<tr>
+<td>hh</td>
+<td>05</td>
+<td>Hour with trailing zero from 00 to 12</td>
+</tr>
+<tr>
+<td>k</td>
+<td>17</td>
+<td>Hour from 1 to 24</td>
+</tr>
+<tr>
+<td>kk</td>
+<td>17</td>
+<td>Hour with trailing zero from 01 to 24</td>
+</tr>
+<tr>
+<td>m</td>
+<td>4</td>
+<td>Minute from 0 to 59</td>
+</tr>
+<tr>
+<td>mm</td>
+<td>04</td>
+<td>Minute with trailing zero from 00 to 59</td>
+</tr>
+<tr>
+<td>a</td>
+<td>pm</td>
+<td>Meridiem am/pm</td>
+</tr>
+<tr>
+<td>A</td>
+<td>PM</td>
+<td>Meridiem AM/PM</td>
+</tr>
+<tr>
+<td>s</td>
+<td>5</td>
+<td>Second from 0 to 59</td>
+</tr>
+<tr>
+<td>ss</td>
+<td>05</td>
+<td>Second with trailing zero from 00 to 59</td>
+</tr>
+<tr>
+<td>S</td>
+<td>0</td>
+<td>Second tenth</td>
+</tr>
+<tr>
+<td>SS</td>
+<td>08</td>
+<td>Second hundredth (on 2 digits with trailing zero)</td>
+</tr>
+<tr>
+<td>SSS</td>
+<td>084</td>
+<td>Millisecond (on 3 digits with trailing zeros)</td>
+</tr>
+<tr>
+<td>SSSS</td>
+<td>0845</td>
+<td>Second ten thousandth (on 4 digits with trailing zeros)</td>
+</tr>
+<tr>
+<td>SSSSS</td>
+<td>08451</td>
+<td>Second hundred thousandth (on 5 digits with trailing zeros)</td>
+</tr>
+<tr>
+<td>SSSSSS</td>
+<td>084512</td>
+<td>Microsecond (on 6 digits with trailing zeros)</td>
+</tr>
+<tr>
+<td>SSSSSSS</td>
+<td>0845120</td>
+<td>Second ten millionth (on 7 digits with trailing zeros)</td>
+</tr>
+<tr>
+<td>SSSSSSSS</td>
+<td>08451200</td>
+<td>Second hundred millionth (on 8 digits with trailing zeros)</td>
+</tr>
+<tr>
+<td>SSSSSSSSS</td>
+<td>084512000</td>
+<td>Nanosecond (on 9 digits with trailing zeros)</td>
+</tr>
+<tr>
+<td>M</td>
+<td>1</td>
+<td>Month from 1 to 12</td>
+</tr>
+<tr>
+<td>MM</td>
+<td>01</td>
+<td>Month with trailing zero from 01 to 12</td>
+</tr>
+<tr>
+<td>MMM</td>
+<td>Jan</td>
+<td>Short month name, translatable</td>
+</tr>
+<tr>
+<td>MMMM</td>
+<td>January</td>
+<td>Month name, translatable</td>
+</tr>
+<tr>
+<td>Mo</td>
+<td>1st</td>
+<td>Month with ordinal suffix from 1st to 12th, translatable</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>1</td>
+<td>Quarter from 1 to 4</td>
+</tr>
+<tr>
+<td>Qo</td>
+<td>1st</td>
+<td>Quarter with ordinal suffix from 1st to 4th, translatable</td>
+</tr>
+<tr>
+<td>G</td>
+<td>2017</td>
+<td>ISO week year (see ISO week date)</td>
+</tr>
+<tr>
+<td>GG</td>
+<td>2017</td>
+<td>ISO week year (on 2 digits with trailing zero)</td>
+</tr>
+<tr>
+<td>GGG</td>
+<td>2017</td>
+<td>ISO week year (on 3 digits with trailing zeros)</td>
+</tr>
+<tr>
+<td>GGGG</td>
+<td>2017</td>
+<td>ISO week year (on 4 digits with trailing zeros)</td>
+</tr>
+<tr>
+<td>GGGGG</td>
+<td>02017</td>
+<td>ISO week year (on 5 digits with trailing zeros)</td>
+</tr>
+<tr>
+<td>g</td>
+<td>2017</td>
+<td>Week year according to locale settings, translatable</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>2017</td>
+<td>Week year according to locale settings (on 2 digits with trailing zero), translatable</td>
+</tr>
+<tr>
+<td>ggg</td>
+<td>2017</td>
+<td>Week year according to locale settings (on 3 digits with trailing zeros), translatable</td>
+</tr>
+<tr>
+<td>gggg</td>
+<td>2017</td>
+<td>Week year according to locale settings (on 4 digits with trailing zeros), translatable</td>
+</tr>
+<tr>
+<td>ggggg</td>
+<td>02017</td>
+<td>Week year according to locale settings (on 5 digits with trailing zeros), translatable</td>
+</tr>
+<tr>
+<td>W</td>
+<td>1</td>
+<td>ISO week number in the year (see ISO week date)</td>
+</tr>
+<tr>
+<td>WW</td>
+<td>01</td>
+<td>ISO week number in the year (on 2 digits with trailing zero)</td>
+</tr>
+<tr>
+<td>Wo</td>
+<td>1st</td>
+<td>ISO week number in the year with ordinal suffix, translatable</td>
+</tr>
+<tr>
+<td>w</td>
+<td>1</td>
+<td>Week number in the year according to locale settings, translatable</td>
+</tr>
+<tr>
+<td>ww</td>
+<td>01</td>
+<td>Week number in the year according to locale settings (on 2 digits with trailing zero)</td>
+</tr>
+<tr>
+<td>wo</td>
+<td>1st</td>
+<td>Week number in the year according to locale settings with ordinal suffix, translatable</td>
+</tr>
+<tr>
+<td>x</td>
+<td>1483635845085</td>
+<td>Millisecond-precision timestamp (same as date.getTime() in JavaScript)</td>
+</tr>
+<tr>
+<td>X</td>
+<td>1483635845</td>
+<td>Timestamp (number of seconds since 1970-01-01)</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>2017</td>
+<td>Full year from -9999 to 9999</td>
+</tr>
+<tr>
+<td>YY</td>
+<td>17</td>
+<td>Year on 2 digits from 00 to 99</td>
+</tr>
+<tr>
+<td>YYYY</td>
+<td>2017</td>
+<td>Year on 4 digits from 0000 to 9999</td>
+</tr>
+<tr>
+<td>YYYYY</td>
+<td>02017</td>
+<td>Year on 5 digits from 00000 to 09999</td>
+</tr>
+<tr>
+<td>YYYYYY</td>
+<td>+002017</td>
+<td>Year on 5 digits with sign from -09999 to +09999</td>
+</tr>
+<tr>
+<td>z</td>
+<td>UTC</td>
+<td>Abbreviated time zone name</td>
+</tr>
+<tr>
+<td>zz</td>
+<td>UTC</td>
+<td>Time zone name</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>+00:00</td>
+<td>Time zone offset HH:mm</td>
+</tr>
+<tr>
+<td>ZZ</td>
+<td>+0000</td>
+<td>Time zone offset HHmm</td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a href="https://carbon.nesbot.com/docs/#api-localization">Carbon Docs</a></p>
+<h3 id="date-locales-available">Date locales available</h3>
+<p><a href="/webhookscript/date-locales.html">Click here for a list of possible locales/translations available for date display functions.</a></p>
+<h3 id="to_datestring-date-string-format-string">to_date(<strong><em>string</em></strong> date, <strong><em>?string</em></strong> format): <strong><em>string</em></strong></h3>
+<p>Will attempt to parse a string to a ISO-8601 formatted date string. </p>
+<p>If specified, <code>format</code> is used to parse the date without having to guess the format (see the <a href="#date-format-characters">Date Format Characters</a> above.)</p>
+<p>Many formats are supported, like relative dates and various specified date formats.</p>
+<p>If the date is invalid or could not be guessed, <code>null</code> is returned.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Relative formats</span>
+<span class="s1">&#39;last wednesday 4 am&#39;</span><span class="p">.</span><span class="nx">to_date</span><span class="p">()</span>        <span class="c1">// 2020-05-27T04:00:00.000000Z</span>
+<span class="s1">&#39;first monday august 2019&#39;</span><span class="p">.</span><span class="nx">to_date</span><span class="p">()</span>   <span class="c1">// 2019-08-05T00:00:00.000000Z</span>
+
+<span class="c1">// Automatic format guessing</span>
+<span class="s1">&#39;2020-01-01 23:02:01&#39;</span><span class="p">.</span><span class="nx">to_date</span><span class="p">()</span>        <span class="c1">// 2020-01-01T23:02:01.000000Z</span>
+
+<span class="c1">// Unix timestamp</span>
+<span class="s1">&#39;@1215282385&#39;</span><span class="p">.</span><span class="nx">to_date</span><span class="p">()</span>                <span class="c1">// 2008-07-05T18:26:25.000000Z</span>
+
+<span class="c1">// Custom date format</span>
+<span class="s1">&#39;2/4/12 06:03&#39;</span><span class="p">.</span><span class="nx">to_date</span><span class="p">(</span><span class="s1">&#39;M/D/YY HH:mm&#39;</span><span class="p">)</span> <span class="c1">// 2012-02-04T06:03:00.000000Z</span>
+
+<span class="c1">// To escape characters in the format string, backslashes can be used</span>
+<span class="s1">&#39;2020-01-05 12h30m15s&#39;</span><span class="p">.</span><span class="nx">to_date</span><span class="p">(</span><span class="s1">&#39;YYYY-MM-DD HH\\hmm\\mss\\s&#39;</span><span class="p">)</span> <span class="c1">// 2020-01-05T12:30:15.000000Z</span>
+</code></pre></div>
+
+
+<h3 id="date_formatstring-date-string-format-string-locale-string">date_format(<strong><em>string</em></strong> date, <strong><em>?string</em></strong> format, <strong><em>?string</em></strong> locale): <strong><em>string</em></strong></h3>
+<p>Returns a date parsed to the format specified in <code>format</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">date_format</span><span class="p">(</span><span class="s1">&#39;2008-07-05T18:26:25.000000Z&#39;</span><span class="p">,</span> <span class="s1">&#39;YYYY-MM-DD&#39;</span><span class="p">)</span> <span class="c1">// 2008-07-05</span>
+
+<span class="nx">date_format</span><span class="p">(</span><span class="s1">&#39;2008-07-05T18:26:25.000000Z&#39;</span><span class="p">,</span> <span class="s1">&#39;LLLL&#39;</span><span class="p">,</span> <span class="s1">&#39;da&#39;</span><span class="p">)</span> <span class="c1">// lørdag d. 5. juli 2008 kl. 18:26</span>
+
+<span class="c1">// If no format is specified, a default human readable readable string is returned</span>
+<span class="nx">date_format</span><span class="p">(</span><span class="s1">&#39;2008-07-05T18:26:25.000000Z&#39;</span><span class="p">)</span> <span class="c1">// Sat Jul 05 2008 18:26:25 GMT+0000</span>
+</code></pre></div>
+
+
+<h3 id="date_to_arraystring-array">date_to_array(<strong><em>string</em></strong>): <strong><em>array</em></strong></h3>
+<p>Returns an array containing all the components of a given date.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">dump</span><span class="p">(</span><span class="nx">date_to_array</span><span class="p">(</span><span class="s1">&#39;2008-07-05T18:26:25.324542Z&#39;</span><span class="p">))</span>
+
+<span class="c1">// [</span>
+<span class="c1">//   &quot;year&quot;: 2008,</span>
+<span class="c1">//   &quot;month&quot;: 7,</span>
+<span class="c1">//   &quot;day&quot;: 5,</span>
+<span class="c1">//   &quot;dayOfWeek&quot;: 6,</span>
+<span class="c1">//   &quot;dayOfYear&quot;: 187,</span>
+<span class="c1">//   &quot;hour&quot;: 18,</span>
+<span class="c1">//   &quot;minute&quot;: 26,</span>
+<span class="c1">//   &quot;second&quot;: 25,</span>
+<span class="c1">//   &quot;micro&quot;: 324542,</span>
+<span class="c1">//   &quot;timestamp&quot;: 1215282385,</span>
+<span class="c1">//   &quot;formatted&quot;: &quot;2008-07-05 18:26:25&quot;,</span>
+<span class="c1">//   &quot;timezone&quot;: &quot;Z&quot;</span>
+<span class="c1">// ]</span>
+</code></pre></div>
+
+
+<h3 id="date_intervalstring-date1-string-date2-string-format-stringint">date_interval(<strong><em>string</em></strong> date1, <strong><em>string</em></strong> date2, <strong><em>?string</em></strong> format): <strong><em>string/int</em></strong></h3>
+<p>Calculates the interval between <code>date1</code> and <code>date2</code>.</p>
+<p>If no format string is specified, the interval is returned as the number of seconds between the dates, with the number being negative if <code>date2</code> is before <code>date1</code>.</p>
+<p>Note that for the format string, this function does not use the ISO format, but rather the uses the <a href="https://www.php.net/manual/en/dateinterval.format.php">PHP <code>DateInterval</code> format specification</a>.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">date_interval</span><span class="p">(</span><span class="s1">&#39;2008-07-16T23:13:26.234212Z&#39;</span><span class="p">,</span> <span class="s1">&#39;2008-07-05T18:26:25.324542Z&#39;</span><span class="p">)</span> <span class="c1">// -967620</span>
+
+<span class="nx">date_interval</span><span class="p">(</span>
+    <span class="s1">&#39;2008-07-16T23:13:26.234212Z&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;2008-07-05T18:26:25.324542Z&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;%d days, %h hours, %i minutes&#39;</span>
+<span class="p">)</span>
+<span class="c1">// 11 days, 4 hours, 47 minutes</span>
+</code></pre></div>
+
+
+<h3 id="date_interval_humanstring-date1-string-date2-string-locale-stringint">date_interval_human(<strong><em>string</em></strong> date1, <strong><em>string</em></strong> date2, <strong><em>?string</em></strong> locale): <strong><em>string/int</em></strong></h3>
+<p>Formats the difference between 2 dates in a way that's easy to read for humans.</p>
+<p>If no locale is specified, English is used.</p>
+<div class="codehilite"><pre><span></span><code><span class="nx">date_interval_human</span><span class="p">(</span>
+    <span class="s1">&#39;2008-07-16T23:13:26.234212Z&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;2008-07-05T18:26:25.324542Z&#39;</span>
+<span class="p">)</span>
+<span class="c1">// 1 week after</span>
+
+<span class="nx">date_interval_human</span><span class="p">(</span>
+    <span class="s1">&#39;2008-07-16T23:13:26.234212Z&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;2008-07-05T18:26:25.324542Z&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;es&#39;</span>
+<span class="p">)</span>
+<span class="c1">// 1 semana después</span>
+</code></pre></div>
+
+
+<h2 id="math-and-numbers">Math and Numbers</h2>
+<h3 id="absnumber-number-number">abs(<strong><em>number</em></strong> number) : number</h3>
+<h3 id="atannumber-number-number">atan(<strong><em>number</em></strong> number) : number</h3>
+<h3 id="ceilnumber-number-number">ceil(<strong><em>number</em></strong> number) : number</h3>
+<h3 id="cosnumber-number-number">cos(<strong><em>number</em></strong> number) : number</h3>
+<h3 id="floornumber-number-number">floor(<strong><em>number</em></strong> number) : number</h3>
+<h3 id="maxarray-numbers-number">max(<strong><em>array</em></strong> numbers) : number</h3>
+<h3 id="minarray-numbers-number">min(<strong><em>array</em></strong> numbers) : number</h3>
+<h3 id="modnumber-number-number-divisor-number">mod(<strong><em>number</em></strong> number, <strong><em>number</em></strong> divisor) : number</h3>
+<p>Returns the remainder after number is divided by <code>divisor</code>.</p>
+<h3 id="number_lengthnumber-number-number">number_length(<strong><em>number</em></strong> number) : number</h3>
+<h3 id="pi-number">pi() : number</h3>
+<p>Returns the value of Pi.</p>
+<h3 id="pownumber-number-number-power-number">pow(<strong><em>number</em></strong> number, <strong><em>number</em></strong> power) : number</h3>
+<h3 id="randnumber-min-number-max-number">rand(<strong><em>number</em></strong> min, <strong><em>number</em></strong> max) : number</h3>
+<p>Returns a random number between <code>min</code> and <code>max</code>.</p>
+<h3 id="roundnumber-number-number-precision-number">round(<strong><em>number</em></strong> number, <strong><em>number</em></strong> precision) : number</h3>
+<h3 id="sinnumber-number-number">sin(<strong><em>number</em></strong> number) : number</h3>
+<h3 id="sqrtnumber-number-number">sqrt(<strong><em>number</em></strong> number) : number</h3>
+<h3 id="tannumber-number-number">tan(<strong><em>number</em></strong> number) : number</h3>
+<h3 id="to_numberany-value-number">to_number(<strong><em>any</em></strong> value) : number</h3>
+<h2 id="arrays">Arrays</h2>
+<h3 id="array_containsarray-array-stringnumber-needle-bool">array_contains(<strong><em>array</em></strong> array, <strong><em>string/number</em></strong> needle) : bool</h3>
+<p>Returns true or false depending on whether <strong><em>array</em></strong> contains <strong><em>needle</em></strong> </p>
+<h3 id="array_copyarray-array-array">array_copy(<strong><em>array</em></strong> array) : array</h3>
+<p>Returns a copy of <strong><em>array</em></strong></p>
+<h3 id="array_diffarray-array1-array-array2-array">array_diff(<strong><em>array</em></strong> array1, <strong><em>array</em></strong> array2) : array</h3>
+<p>Returns the items of array1 that are not present in array2 while keeping the array indices.</p>
+<h3 id="array_getarray-array-stringnumber-index-any-default-any">array_get(<strong><em>array</em></strong> array, <strong><em>string/number</em></strong> index, <strong><em>any</em></strong> default) : any</h3>
+<h3 id="array_hasarray-array-stringnumber-key-bool">array_has(<strong><em>array</em></strong> array, <strong><em>string/number</em></strong> key) : bool</h3>
+<h3 id="array_lengtharray-array-number">array_length(<strong><em>array</em></strong> array) : number`</h3>
+<h3 id="array_maparray-array-func-function">array_map(<strong><em>array</em></strong> array, <strong><em>func</em></strong> function)</h3>
+<p>Runs function with each array value, and returns array with key as result</p>
+<h3 id="array_number_ofarray-stringnumber-value-number">array_number_of(<strong><em>array</em></strong>, <strong><em>string/number</em></strong> value) : number</h3>
+<p>Returns amount of <strong><em>value</em></strong></p>
+<h3 id="array_poparray-array-any">array_pop(<strong><em>array</em></strong> array) : any</h3>
+<p>Pop element off end of array</p>
+<h3 id="array_pusharray-array-any-value-any">array_push(<strong><em>array</em></strong> array, <strong><em>any</em></strong> value) : any</h3>
+<p>Adds <strong><em>value</em></strong> to end of <strong><em>array</em></strong> and returns <strong><em>value</em></strong></p>
+<h3 id="array_randomarray-array-any">array_random(<strong><em>array</em></strong> array) : any</h3>
+<p>Returns random value of <strong><em>array</em></strong> </p>
+<h3 id="array_reversearray-array-array">array_reverse(<strong><em>array</em></strong> array) : array</h3>
+<p>Returns <strong><em>array</em></strong> in reverse order</p>
+<h3 id="array_shufflearray-array-array">array_shuffle(<strong><em>array</em></strong> array) : array</h3>
+<p>Returns shuffled version of <strong><em>array</em></strong></p>
+<h3 id="to_arrayarray-array-array">to_array(<strong><em>array</em></strong> array) : array</h3>
+<p>Returns <strong><em>array</em></strong>.</p>
+<h2 id="booleans">Booleans</h2>
+<h3 id="bool_andbool-value1-bool-value2-bool">bool_and(<strong><em>bool</em></strong> value1, <strong><em>bool</em></strong> value2): <strong><em>bool</em></strong></h3>
+<p>Returns `value1 &amp;&amp; value2</p>
+<h3 id="bool_notbool-value-bool">bool_not(<strong><em>bool</em></strong> value) : <strong><em>bool</em></strong></h3>
+<p>Returns `!value</p>
+<h3 id="to_boolstringnumberarraybool-value-bool">to_bool(<strong><em>string/number/array/bool</em></strong> value) : <strong><em>bool</em></strong></h3>
+<p>Casts <code>value</code> to a bool.</p>
+<h2 id="types">Types</h2>
+<h3 id="typeany-value-string">type(<strong><em>any</em></strong> value) : <strong><em>string</em></strong></h3>
+<p>Returns the type name of a value, e.g. <code>"string"</code>.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../examples/" title="Examples" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Examples
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
