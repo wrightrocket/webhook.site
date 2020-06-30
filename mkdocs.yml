@@ -2,6 +2,8 @@ site_name: Webhook.site Docs
 theme:
   name: material
   logo: images/icon.png
+  
+use_directory_urls: false
 
 markdown_extensions:
   - codehilite
